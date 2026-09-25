@@ -15,7 +15,7 @@ Abre `http://localhost:8000/`. No hace falta instalar dependencias.
 ## Contenido
 
 - `script.js`: países, ciudades y lugares de España, Italia y Francia, además de la navegación y las funciones de la web.
-- `japan.js` y `japan-expanded.js`: guías de Japón organizadas por ciudades y lugares. Las notas personales de viaje se usaron como referencia temática; la web no publica el itinerario ni sus fechas.
+- `japan.js` y `data/japon/`: guías de Japón organizadas por ciudades y lugares. Cada ciudad tiene su propio fichero de puntos de interés; las notas personales de viaje se usaron como referencia temática y la web no publica el itinerario ni sus fechas.
 - `styles.css`: diseño adaptable a móvil y escritorio.
 - `assets/`: fotografías locales y metadatos de atribución.
 - `credits.js`: créditos mostrados en la página de imágenes.
