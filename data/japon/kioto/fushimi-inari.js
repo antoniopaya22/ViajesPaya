@@ -49,7 +49,10 @@ addJapanPlace({
     {type:'stop', title:'Cumbre Ichi-no-mine', text:['La cima principal del monte Inari, a 233 metros sobre el nivel del mar, alberga el santuario Kamisha Shinseki dedicado a Suehiro Okami. Es habitual sacar aquí papeletas de la fortuna omikuji, especialmente valoradas por los vecinos de Kioto.']},
     {type:'stop', title:'Santuario Mitsurugisha', text:['Consagra a la misma deidad que el santuario Shimogamo de Kioto. Justo al lado se puede ver la roca Kaminari-iwa, la «roca del trueno», que según la leyenda fue golpeada varias veces por rayos.']},
     {type:'stop', title:'Santuario Yakurikisha', text:['A solo cinco minutos de la cumbre, este santuario está dedicado a la deidad de la tos, por lo que actores de teatro kabuki acuden a pedir que no les falle la voz.']},
-    {type:'stop', title:'Gozendani Hōhaisho', text:['Situada entre las tres cimas, esta zona de plegarias ofrece una vista privilegiada de toda la montaña. Aquí se celebra cada 5 de enero el festival Oyama-sai, en el que se cuelga una cuerda sagrada shimenawa y se ofrece sake a las deidades antes de una peregrinación ritual.']},
+    {type:'stop', title:'Gozendani Hōhaisho', text:[
+      'Situada entre las tres cimas, esta zona de plegarias ofrece una vista privilegiada de toda la montaña. Aquí se celebra cada 5 de enero el festival Oyama-sai, en el que se cuelga una cuerda sagrada shimenawa y se ofrece sake a las deidades antes de una peregrinación ritual.',
+      'Desde aquí, un camino de bajada de unos 200 metros lleva a las cascadas Kiyotaki. Si se sigue por esa ruta alternativa uno se aleja de Fushimi Inari, pero llega, por un trayecto muy distinto y espectacular, hasta los templos Tōfuku-ji y Sennyū-ji.'
+    ]},
     {type:'stop', title:'Santuario Suehiro', text:['Ya de bajada, este santuario rompe la norma de los zorros guardianes: aquí custodian el lugar unas ranas de piedra, con un juego de palabras que las asocia a «la suerte que vuelve» (fuku kaeru).']}
   ],
   hours: 'Acceso libre las 24 horas; oficinas y edificios del santuario tienen horario propio.',

@@ -21,6 +21,16 @@ addJapanPlace({
     ]},
     {type:'stop', title:'Calle Nene y los templos Kōdai-ji y Entoku-in', text:[
       'Siguiendo hacia el sur se llega a la estatua de Ryōzen Kannon, un monumento de 24 metros en memoria de las víctimas de la guerra del Pacífico, y a la calle Nene, construida junto a los templos Kōdai-ji y Entoku-in por la esposa de Toyotomi Hideyoshi. El Entoku-in, subtemplo poco conocido por los turistas, guarda biombos fusuma-e de Hasegawa Tōhaku y jardines especialmente bonitos en otoño.'
+    ]},
+    {type:'heading', text:'Rincones menos conocidos junto a Kōdai-ji', icon:'footprints'},
+    {type:'stop', title:'Callejuela Ishibei-kōji', text:[
+      'Literalmente «la calle de las paredes de piedra», esta callejuela empedrada flanqueada por muros de piedra y antiguos ryokan conecta la zona de Kōdai-ji y Entoku-in con el santuario Yasaka. Es un desvío corto y muy fotogénico, bastante más tranquilo que las cuestas principales.'
+    ]},
+    {type:'stop', title:'Gion Kaku', text:[
+      'Una curiosa edificación del templo Daiun-in construida a imagen de las carrozas hoko del festival Gion Matsuri. Está dedicada al señor de la guerra Oda Nobunaga y a su hijo mayor, Oda Nobutada, cuyas tumbas se encuentran aquí: Nobunaga cometió seppuku en 1582 durante el llamado «incidente del templo Honnō-ji».'
+    ]},
+    {type:'stop', title:'Cementerio Higashi Ōtani', text:[
+      'Perteneciente al templo Higashi Hongan-ji, este enorme cementerio escalona cientos de altares funerarios por la ladera de Higashiyama. Impresiona en cualquier época del año, pero especialmente a mediados de agosto, durante las festividades del Obon, cuando se llena de farolillos de papel.'
     ]}
   ],
   hours: 'Calles públicas a cualquier hora; las tiendas suelen abrir de 10:00 a 18:00 aproximadamente.',
