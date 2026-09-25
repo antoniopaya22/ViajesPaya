@@ -141,3 +141,7 @@ dist
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 .vite/
+
+# Generated per-city data bundles (scripts/generate-bundles.js) — built fresh on every
+# deploy from data/japon/<city>/*.js, never committed so they can't drift from source.
+data/japon/*.bundle.js
