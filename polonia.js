@@ -3,7 +3,7 @@
 const polandCountry = {
   slug: 'polonia', name: 'Polonia', kicker: 'Ciudades reconstruidas y calles con memoria', flag: 'PL',
   intro: 'Entre plazas medievales, barrios judíos y una historia del siglo XX que todavía se respira en cada calle. Cracovia y Varsovia cuentan Polonia desde ángulos muy distintos: una que sobrevivió casi intacta, otra que se reconstruyó piedra a piedra.',
-  image: 'assets/cracovia.jpg', cities: ['cracovia', 'varsovia'],
+  image: 'assets/cracovia.jpg', cities: ['cracovia', 'wieliczka', 'varsovia'],
   guide: {
     title: 'Guía práctica <em>de Polonia.</em>',
     intro: 'Moneda, tarjetas y presupuesto: lo esencial para organizar el viaje antes de pisar Polonia.',
@@ -58,6 +58,18 @@ const polandCities = [
         ]}
       ]
     }
+  },
+  {
+    slug: 'wieliczka', country: 'polonia', name: 'Wieliczka', region: 'Voivodato de Pequeña Polonia',
+    image: 'assets/wieliczka.jpg', eyebrow: 'Una catedral entera excavada en sal',
+    intro: 'A las afueras de Cracovia, la Mina de Sal de Wieliczka lleva más de siglos y medio de historia minera bajo tierra y una capilla íntegramente tallada en sal, a más de 100 metros de profundidad.',
+    days: 'Medio día', best: 'Todo el año (visita interior, sin depender del clima)', move: 'Tren o autobús desde Cracovia',
+    lat: 49.9857, lon: 20.0533,
+    tips: [
+      ['Reserva con antelación', 'Es una de las visitas más demandadas de la región y el aforo por turno es limitado.'],
+      ['Lleva algo de abrigo', 'La temperatura bajo tierra ronda los 14-16 °C todo el año.'],
+      ['Cuenta con varias horas', 'La ruta turística estándar recorre unos 3-3,5 km y dura entre 2 y 3 horas.']
+    ]
   },
   {
     slug: 'varsovia', country: 'polonia', name: 'Varsovia', region: 'Voivodato de Masovia',

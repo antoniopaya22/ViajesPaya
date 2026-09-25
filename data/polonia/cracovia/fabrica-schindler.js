@@ -10,10 +10,13 @@ addPolandPlace({
     {value: '1.100', label: 'trabajadores judíos empleados en 1944, frente a los 150 de 1940', icon: 'trophy'}
   ],
   blocks: [
-    {type: 'lead', text: 'Fundada en 1937 por tres empresarios judíos con el nombre de «Rekord», la fábrica pasó a manos de Oskar Schindler —afiliado al partido nazi— en noviembre de 1939, que la rebautizó como Deutsche Emailwarenfabrik (DEF) en enero de 1940.'},
-    {type: 'p', text: 'Schindler empleó a trabajadores judíos del gueto de Cracovia y más tarde gestionó aquí un subcampo de Płaszów; su plantilla creció de unos 150 empleados en 1940 a cerca de 1.100 en 1944. Ofreció mejores raciones a sus trabajadores y usó sobornos y argumentos de eficiencia para protegerlos de la deportación.'},
+    {type: 'lead', text: 'Fundada en marzo de 1937 por tres empresarios judíos —Michał Gutman, Izrael Kahn y Wolf Luzer Glajtman— con el nombre de «Rekord», la fábrica quebró en junio de 1939 y pasó a manos de Oskar Schindler —afiliado al partido nazi— en noviembre de ese mismo año, que la rebautizó como Deutsche Emailwarenfabrik (DEF) en enero de 1940.'},
+    {type: 'p', text: 'Schindler empleó a trabajadores judíos del gueto de Cracovia y más tarde gestionó aquí un subcampo de Płaszów; su plantilla creció de unos 150 empleados en 1940 a cerca de 1.100 en 1944. Ofreció mejores raciones a sus trabajadores y usó sobornos y argumentos de eficiencia para protegerlos de la deportación, llegando a conseguir un barracón propio con alambrada y torres de vigilancia dentro del recinto para evitar que sus obreros hicieran a diario más de 10 km a pie desde el campo principal.'},
     {type: 'heading', text: '«Cracovia bajo ocupación 1939-1945»', icon: 'scroll'},
-    {type: 'p', text: 'Desde 2007, el edificio es una filial del Museo de Cracovia con la exposición «Cracovia — Ocupación 1939-1945», que reconstruye apartamentos del gueto, un sótano usado como escondite y objetos del rodaje de La lista de Schindler.'}
+    {type: 'p', text: 'Desde 2007, el edificio es una filial del Museo de Cracovia con la exposición «Cracovia — Ocupación 1939-1945», que reconstruye apartamentos del gueto, un sótano usado como escondite y objetos del rodaje de La lista de Schindler.'},
+    {type: 'callout', label: '¿SABÍAS QUE...?', items: [
+      'Entre el final de la guerra y la apertura del museo, el edificio tuvo una segunda vida industrial: de 1948 a 2002 lo ocupó el fabricante de telecomunicaciones Telpod, y no fue hasta 2005 cuando el ayuntamiento recuperó el solar para construir el museo actual.'
+    ]}
   ],
   hours: 'Lunes 10:00–15:00, martes a domingo 9:00–20:00; cerrado el primer martes de cada mes. Última entrada 90 minutos antes del cierre.',
   official: 'https://muzeumkrakowa.pl/en/branches/oskar-schindlers-enamel-factory',

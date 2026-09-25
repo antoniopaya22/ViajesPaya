@@ -13,7 +13,7 @@ module.exports = [
     slug: 'polonia',
     countryFile: 'polonia.js',
     creditsFile: 'polonia-credits.js',
-    cityDirs: ['cracovia', 'varsovia'],
+    cityDirs: ['cracovia', 'wieliczka', 'varsovia'],
     countryVar: 'polandCountry', citiesVar: 'polandCities', placesVar: 'polandPlaces',
   },
   {

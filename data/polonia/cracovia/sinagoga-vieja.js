@@ -10,7 +10,10 @@ addPolandPlace({
   ],
   blocks: [
     {type: 'lead', text: 'La Sinagoga Vieja es el edificio de sinagoga más antiguo que se conserva en Polonia; las fuentes sitúan su construcción a mediados del siglo XV. Tras un incendio en 1557, el arquitecto italiano Matteo Gucci la reconstruyó en un estilo renacentista con aire de fortificación.'},
-    {type: 'p', text: 'Durante la Segunda Guerra Mundial, los ocupantes nazis la usaron como almacén, saquearon sus objetos rituales y, en 1943, ejecutaron junto a sus muros a 30 rehenes polacos. Restaurada entre 1956 y 1959, es hoy una filial del Museo de Cracovia dedicada al nacimiento, la oración, la alimentación y la muerte en la tradición judía de la ciudad.'}
+    {type: 'p', text: 'Durante la Segunda Guerra Mundial, los ocupantes nazis la usaron como almacén, saquearon sus objetos rituales y, en 1943, ejecutaron junto a sus muros a 30 rehenes polacos. Restaurada entre 1956 y 1959, es hoy una filial del Museo de Cracovia dedicada al nacimiento, la oración, la alimentación y la muerte en la tradición judía de la ciudad.'},
+    {type: 'callout', label: '¿SABÍAS QUE...?', items: [
+      'En 1794, Tadeusz Kościuszko pronunció aquí un discurso pidiendo el apoyo de la comunidad judía para su levantamiento contra el dominio ruso y prusiano, un episodio que hoy recuerda una placa conmemorativa.'
+    ]}
   ],
   official: 'https://muzeumkrakowa.pl/en/branches/old-synagogue',
   tips: [

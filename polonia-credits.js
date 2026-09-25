@@ -1,5 +1,11 @@
 // Créditos de fotografías específicas de las fichas de Polonia.
 Object.assign(imageCredits, {
+  "wieliczka.jpg": {
+    "url": "https://commons.wikimedia.org/wiki/File:Poland-01583_-_St._Kinga%27s_Chapel_(31547044100).jpg",
+    "artist": "Dennis G. Jarvis",
+    "license": "CC BY-SA 2.0",
+    "sourceTitle": "File:Poland-01583 - St. Kinga's Chapel (31547044100).jpg"
+  },
   "cracovia.jpg": {
     "url": "https://commons.wikimedia.org/wiki/File:Krakow_-_Cloth_Hall_from_Basilica_-_1.jpg",
     "artist": "Ingo Mehling",

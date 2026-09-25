@@ -13,7 +13,11 @@ addPolandPlace({
     {type: 'lead', text: 'El relato más antiguo conocido de la leyenda del dragón de Wawel se remonta al siglo XIII: un dragón devorador de ganado aterroriza Cracovia bajo el reinado del legendario rey Krak, exigiendo tributo semanal.'},
     {type: 'p', text: 'En la versión más popular, un aprendiz de zapatero llamado Skuba rellena una oveja con azufre; el dragón se la come y, para calmar el ardor, bebe agua del Vístula hasta que revienta.'},
     {type: 'heading', text: 'La estatua que respira fuego', icon: 'flame'},
-    {type: 'p', text: 'Junto a la Guarida del Dragón (Smocza Jama), en la base de la colina, el escultor Bronisław Chromy diseñó en 1969 una estatua de bronce con siete cabezas, instalada en 1972: un surtidor de gas hace que respire fuego de verdad cada pocos minutos.'}
+    {type: 'p', text: 'Junto a la Guarida del Dragón (Smocza Jama), en la base de la colina, el escultor Bronisław Chromy diseñó en 1969 una estatua de bronce con siete cabezas, instalada en 1972: un surtidor de gas hace que respire fuego de verdad cada pocos minutos.'},
+    {type: 'callout', label: '¿SABÍAS QUE...?', items: [
+      'En la versión escrita más antigua, del cronista Wincenty Kadłubek hacia 1190, quienes matan al dragón no son un zapatero sino los propios hijos del rey Krak; el astuto Skuba solo aparece en una versión posterior, del cronista Marcin Bielski, en 1597.',
+      'Durante siglos, los habitantes de Cracovia creyeron que unos huesos enormes colgados junto a la catedral de Wawel eran los restos del propio dragón; en realidad son huesos de ballena y de animales de la era del Pleistoceno.'
+    ]}
   ],
   official: 'https://krakow.travel/en/64-krakow-dragons-den',
   tips: [

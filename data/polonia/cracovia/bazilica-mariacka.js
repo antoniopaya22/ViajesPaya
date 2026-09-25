@@ -11,7 +11,10 @@ addPolandPlace({
   blocks: [
     {type: 'lead', text: 'Sus dos torres, de altura desigual, dominan el Rynek Główny desde la Edad Media. La más alta acoge cada hora el hejnał mariacki, la llamada de trompeta que se corta abruptamente a media frase.'},
     {type: 'heading', text: 'El retablo de Veit Stoss', icon: 'scroll'},
-    {type: 'p', text: 'El altar mayor, obra del escultor alemán Veit Stoss, se terminó en 1489 y es el mayor tríptico gótico de su época. Durante la ocupación nazi fue saqueado por orden del gobernador Hans Frank y trasladado a Alemania; se recuperó en 1945 en los sótanos del castillo de Núremberg y volvió a instalarse tras su restauración.'}
+    {type: 'p', text: 'El altar mayor, obra del escultor alemán Veit Stoss, se terminó en 1489 y es el mayor tríptico gótico de su época. Durante la ocupación nazi fue saqueado por orden del gobernador Hans Frank y trasladado a Alemania; se recuperó en 1945 en los sótanos del castillo de Núremberg y volvió a instalarse tras su restauración.'},
+    {type: 'callout', label: '¿SABÍAS QUE...?', items: [
+      'Un trompetista del 2.º Cuerpo polaco tocó el hejnał para anunciar la victoria en la batalla de Monte Cassino, el 18 de mayo de 1944; entre 1941 y 1946, soldados polacos exiliados en Escocia mantuvieron viva la tradición tocándolo cada día desde la torre de un mercado de grano en una ciudad escocesa.'
+    ]}
   ],
   hours: 'Abierta a las visitas la mayoría de los días, aproximadamente de 11:30 a 18:00, con excepciones por oficios religiosos.',
   official: 'https://mariacki.com/en/',
