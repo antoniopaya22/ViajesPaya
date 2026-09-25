@@ -1,6 +1,6 @@
 // Pontochō — ficha con estructura de bloques.
 addJapanPlace({
-  slug: 'pontocho', city: 'kioto', name: 'Pontochō', category: 'Barrio histórico',
+  slug: 'pontocho', city: 'kioto', zone: 'centro', name: 'Pontochō', category: 'Barrio histórico',
   image: 'assets/japon-pontocho.jpg',
   lat: 35.0072, lon: 135.7708,
   lead: 'Una única calle estrecha de casas de té y restaurantes, paralela al río Kamo.',

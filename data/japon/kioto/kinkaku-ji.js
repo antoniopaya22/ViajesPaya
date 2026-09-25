@@ -1,6 +1,6 @@
 // Kinkaku-ji — ficha con estructura de bloques.
 addJapanPlace({
-  slug: 'kinkaku-ji', city: 'kioto', name: 'Kinkaku-ji', category: 'Templo y jardín',
+  slug: 'kinkaku-ji', city: 'kioto', zone: 'noroeste', name: 'Kinkaku-ji', category: 'Templo y jardín',
   image: 'assets/kinkakuji.jpg',
   lat: 35.0394, lon: 135.7292,
   lead: 'El Pabellón Dorado reflejado en su estanque, con las dos plantas superiores recubiertas de pan de oro.',

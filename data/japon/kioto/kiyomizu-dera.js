@@ -1,6 +1,6 @@
 // Kiyomizu-dera — ficha propia con estructura de bloques (ver japan.js: renderBlocks).
 addJapanPlace({
-  slug: 'kiyomizu-dera', city: 'kioto', name: 'Kiyomizu-dera', category: 'Templo',
+  slug: 'kiyomizu-dera', city: 'kioto', zone: 'higashiyama-sur', name: 'Kiyomizu-dera', category: 'Templo',
   image: 'assets/japon-kiyomizu-dera.jpg',
   lat: 34.9948, lon: 135.785,
   lead: 'Un templo del siglo VIII sobre la ladera de Higashiyama, con un gran balcón de madera sin un solo clavo.',

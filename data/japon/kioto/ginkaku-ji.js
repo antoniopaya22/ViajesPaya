@@ -1,6 +1,6 @@
 // Ginkaku-ji — ficha con estructura de bloques.
 addJapanPlace({
-  slug: 'ginkaku-ji', city: 'kioto', name: 'Ginkaku-ji', category: 'Templo y jardín',
+  slug: 'ginkaku-ji', city: 'kioto', zone: 'higashiyama-norte', name: 'Ginkaku-ji', category: 'Templo y jardín',
   image: 'assets/japon-ginkaku-ji.jpg',
   lat: 35.027, lon: 135.7982,
   lead: 'El Pabellón de Plata que nunca llegó a recubrirse de plata, con un jardín de arena que imita el mar.',

@@ -176,5 +176,11 @@ Object.assign(imageCredits, {
   "kiyomizu/otowa.jpg": { "url": "https://commons.wikimedia.org/wiki/File:Otowa_waterfall_at_Kiyomizu-dera.jpg", "artist": "Hu Totya", "license": "CC BY-SA 3.0", "sourceTitle": "File:Otowa waterfall at Kiyomizu-dera.jpg" },
   "kiyomizu/pagoda.jpg": { "url": "https://commons.wikimedia.org/wiki/File:Kiyomizu-dera,_Kyoto,_November_2016_-02.jpg", "artist": "Martin Falbisoner", "license": "CC BY-SA 4.0", "sourceTitle": "File:Kiyomizu-dera, Kyoto, November 2016 -02.jpg" },
   "japon-toji.jpg": { "url": "https://commons.wikimedia.org/wiki/File:Toji-temple-kyoto.jpg", "artist": "Michael Reeve", "license": "CC BY-SA 3.0", "sourceTitle": "File:Toji-temple-kyoto.jpg" },
-  "japon-higashi-honganji.jpg": { "url": "https://commons.wikimedia.org/wiki/File:170216_Higashi_Honganji_Kyoto_Japan03bs5.jpg", "artist": "663highland", "license": "CC BY-SA 4.0", "sourceTitle": "File:170216 Higashi Honganji Kyoto Japan03bs5.jpg" }
+  "japon-higashi-honganji.jpg": { "url": "https://commons.wikimedia.org/wiki/File:170216_Higashi_Honganji_Kyoto_Japan03bs5.jpg", "artist": "663highland", "license": "CC BY-SA 4.0", "sourceTitle": "File:170216 Higashi Honganji Kyoto Japan03bs5.jpg" },
+  "japon-eikando.jpg": { "url": "https://commons.wikimedia.org/wiki/File:Eikando_Zenrinji-temple_Tahoto.JPG", "artist": "Tomomarusan", "license": "CC BY-SA 3.0", "sourceTitle": "File:Eikando Zenrinji-temple Tahoto.JPG" },
+  "japon-sanjusangen-do.jpg": { "url": "https://commons.wikimedia.org/wiki/File:Sanjusangendo-building-dec2013.jpg", "artist": "Nesnad", "license": "CC BY 3.0", "sourceTitle": "File:Sanjusangendo-building-dec2013.jpg" },
+  "japon-tenryu-ji.jpg": { "url": "https://commons.wikimedia.org/wiki/File:Tenryuji_Kyoto.jpg", "artist": "Osakaosaka", "license": "CC BY-SA 3.0", "sourceTitle": "File:Tenryuji Kyoto.jpg" },
+  "japon-torre-de-kioto.jpg": { "url": "https://commons.wikimedia.org/wiki/File:Kyoto_Tower_2023-12_ac_(1).jpg", "artist": "Asturio Cantabrio", "license": "CC BY-SA 4.0", "sourceTitle": "File:Kyoto Tower 2023-12 ac (1).jpg" },
+  "japon-kodai-ji.jpg": { "url": "https://commons.wikimedia.org/wiki/File:170923_Kodaiji_Kyoto_Japan25n.jpg", "artist": "663highland", "license": "CC BY-SA 4.0", "sourceTitle": "File:170923 Kodaiji Kyoto Japan25n.jpg" },
+  "japon-arashiyama-monkey-park.jpg": { "url": "https://commons.wikimedia.org/wiki/File:Macaca_fuscata_in_Arashiyama_Monkey_Park_Iwatayama.jpg", "artist": "Marco Almbauer", "license": "CC BY-SA 4.0", "sourceTitle": "File:Macaca fuscata in Arashiyama Monkey Park Iwatayama.jpg" }
 });

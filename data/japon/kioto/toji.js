@@ -1,6 +1,6 @@
 // Tō-ji — ficha con estructura de bloques.
 addJapanPlace({
-  slug: 'toji', city: 'kioto', name: 'Tō-ji', category: 'Templo',
+  slug: 'toji', city: 'kioto', zone: 'estacion', name: 'Tō-ji', category: 'Templo',
   image: 'assets/japon-toji.jpg',
   lat: 34.9808, lon: 135.7477,
   lead: 'La pagoda de madera más alta de Japón y el templo que Kōbō Daishi convirtió en cuna del budismo Shingon.',

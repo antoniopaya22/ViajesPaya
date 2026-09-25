@@ -1,6 +1,6 @@
 // Fushimi Inari Taisha — ficha propia con estructura de bloques (ver japan.js: renderBlocks).
 addJapanPlace({
-  slug: 'fushimi-inari', city: 'kioto', name: 'Fushimi Inari Taisha', category: 'Santuario',
+  slug: 'fushimi-inari', city: 'kioto', zone: 'fushimi', name: 'Fushimi Inari Taisha', category: 'Santuario',
   image: 'assets/fushimi-inari.jpg',
   lat: 34.9671, lon: 135.7727,
   lead: 'Miles de torii bermellón que ascienden por el monte Inari, uno detrás de otro, por cuatro kilómetros de senderos.',

@@ -1,6 +1,6 @@
 // Arashiyama y el bosque de bambú — ficha con estructura de bloques.
 addJapanPlace({
-  slug: 'arashiyama', city: 'kioto', name: 'Arashiyama y el bosque de bambú', category: 'Naturaleza',
+  slug: 'arashiyama', city: 'kioto', zone: 'arashiyama', name: 'Arashiyama y el bosque de bambú', category: 'Naturaleza',
   image: 'assets/arashiyama.jpg',
   lat: 35.017, lon: 135.6713,
   lead: 'El bosque de bambú, un puente sobre el río Katsura y macacos en semilibertad, al oeste de Kioto.',

@@ -1,6 +1,6 @@
 // Santuario Yasaka — ficha con estructura de bloques.
 addJapanPlace({
-  slug: 'yasaka-jinja', city: 'kioto', name: 'Santuario Yasaka', category: 'Santuario',
+  slug: 'yasaka-jinja', city: 'kioto', zone: 'higashiyama-sur', name: 'Santuario Yasaka', category: 'Santuario',
   image: 'assets/japon-yasaka-jinja.jpg',
   lat: 35.0037, lon: 135.7786,
   lead: 'El santuario del siglo VII que da origen al Gion Matsuri, en el límite entre Gion y el parque Maruyama.',

@@ -129,18 +129,21 @@ const placeUrl = place => `${cityUrl(place.city)}/lugar/${place.slug}`;
 const mapUrl = (lat, lon) => `https://www.google.com/maps/search/?api=1&query=${lat},${lon}`;
 const directionsUrl = (lat, lon) => `https://www.google.com/maps/dir/?api=1&destination=${lat},${lon}`;
 const mapEmbed = (lat, lon, title, id) => `<div class="leaflet-map" id="${id}" data-lat="${lat}" data-lon="${lon}" data-title="${(title || '').replace(/"/g,'&quot;')}" role="img" aria-label="Mapa de ${title || ''}"></div>`;
+const zonePalette = ['#d86143', '#193e35', '#3d6b8c', '#a8672c', '#7a5a9e', '#5b8a4a', '#b0475a'];
+const zoneColor = (city, zoneSlug) => { const i = (city.zones || []).findIndex(z => z.slug === zoneSlug); return i === -1 ? zonePalette[0] : zonePalette[i % zonePalette.length]; };
 const activeMaps = [];
 const mapTileUrl = 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}';
 const mapLabelsUrl = 'https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}';
 const mapAttribution = 'Tiles © <a href="https://www.esri.com" target="_blank" rel="noopener">Esri</a> — Esri, Maxar, Earthstar Geographics';
-const pinDivIcon = (big) => L.divIcon({
+const pinDivIcon = (big, color) => L.divIcon({
   className: 'map-pin',
-  html: `<svg viewBox="0 0 32 40" width="${big ? 40 : 30}" height="${big ? 50 : 38}"><path d="M16 1C7.7 1 1 7.7 1 16c0 11 15 22.5 15 22.5S31 27 31 16C31 7.7 24.3 1 16 1Z" fill="#d86143" stroke="#fffdf8" stroke-width="1.5"/><circle cx="16" cy="16" r="6.5" fill="#fffdf8"/></svg>`,
+  html: `<svg viewBox="0 0 32 40" width="${big ? 40 : 30}" height="${big ? 50 : 38}"><path d="M16 1C7.7 1 1 7.7 1 16c0 11 15 22.5 15 22.5S31 27 31 16C31 7.7 24.3 1 16 1Z" fill="${color || '#d86143'}" stroke="#fffdf8" stroke-width="1.5"/><circle cx="16" cy="16" r="6.5" fill="#fffdf8"/></svg>`,
   iconSize: [big ? 40 : 30, big ? 50 : 38],
   iconAnchor: [big ? 20 : 15, big ? 50 : 38],
   popupAnchor: [0, big ? -46 : -34]
 });
-function destroyMaps() { activeMaps.forEach(m => { try { m.remove(); } catch {} }); activeMaps.length = 0; }
+const zoneMapState = {};
+function destroyMaps() { activeMaps.forEach(m => { try { m.remove(); } catch {} }); activeMaps.length = 0; Object.keys(zoneMapState).forEach(k => delete zoneMapState[k]); }
 function initMaps() {
   if (!window.L) return;
   document.querySelectorAll('.leaflet-map').forEach(el => {
@@ -157,11 +160,25 @@ function initMaps() {
     const map = L.map(el, { scrollWheelZoom: false });
     L.tileLayer(mapTileUrl, { maxZoom: 19, attribution: mapAttribution }).addTo(map);
     L.tileLayer(mapLabelsUrl, { maxZoom: 19 }).addTo(map);
-    const markers = points.map(p => L.marker([p.lat, p.lon], { icon: pinDivIcon(false) }).bindPopup(`<strong>${p.name}</strong><br/><a href="${p.href}">Ver guía ↗</a>`));
+    const markers = points.map(p => L.marker([p.lat, p.lon], { icon: pinDivIcon(false, p.color) }).bindPopup(`<strong>${p.name}</strong><br/><a href="${p.href}">Ver guía ↗</a>`));
     const group = L.featureGroup(markers).addTo(map);
-    map.fitBounds(group.getBounds().pad(0.2));
+    const fullBounds = group.getBounds().pad(0.2);
+    map.fitBounds(fullBounds);
+    const zoneBounds = {};
+    points.forEach((p, i) => {
+      if (!p.zone) return;
+      if (!zoneBounds[p.zone]) zoneBounds[p.zone] = L.latLngBounds([]);
+      zoneBounds[p.zone].extend(markers[i].getLatLng());
+    });
+    zoneMapState[el.id] = { map, fullBounds, zoneBounds };
     activeMaps.push(map);
   });
+}
+function focusMapZone(mapId, zoneSlug) {
+  const state = zoneMapState[mapId];
+  if (!state) return;
+  if (zoneSlug === 'all' || !state.zoneBounds[zoneSlug]) state.map.flyToBounds(state.fullBounds, { padding: [20, 20] });
+  else state.map.flyToBounds(state.zoneBounds[zoneSlug].pad(0.35), { padding: [20, 20] });
 }
 const activeCharts = [];
 let chartSeq = 0;
@@ -325,7 +342,15 @@ function countryPage(country) {
 function cityPage(city) {
   const country = countryBy(city.country);
   const selected = places.filter(place => place.city === city.slug);
-  return `<main id="contenido"><div class="shell">${breadcrumbs([{label:'Destinos',href:'#/destinos'},{label:country.name,href:countryUrl(country.slug)},{label:city.name}])}</div><section class="city-hero"><div class="city-hero-image"><img src="${city.image}" alt="Vista de ${city.name}"/></div><div class="city-hero-overlay"></div><div class="shell city-hero-content"><span class="hero-location">${country.name} / ${city.region}</span><h1>${city.name}<span>.</span></h1><p>${city.eyebrow}</p><button data-scroll="lugares" class="button button-light">Descubrir lugares <span aria-hidden="true">↓</span></button></div></section><div class="city-facts shell"><div><span>TIEMPO IDEAL</span><strong>${city.days}</strong></div><div><span>MEJOR ÉPOCA</span><strong>${city.best}</strong></div><div><span>CÓMO MOVERSE</span><strong>${city.move}</strong></div><a href="${mapUrl(city.lat,city.lon)}" target="_blank" rel="noopener noreferrer">Abrir mapa ${arrow}</a></div><section class="section city-intro-section"><div class="shell city-intro-grid"><span class="section-kicker">GUÍA DE CIUDAD / ${city.name.toUpperCase()}</span><div><h2>Empieza por <em>sentir la ciudad.</em></h2><p>${city.intro}</p></div></div></section><section class="section place-section" id="lugares"><div class="shell"><div class="section-heading"><div><span class="section-kicker">NO TE LOS PIERDAS</span><h2>Lugares con <em>historia.</em></h2></div><p>${selected.length} ${selected.length === 1 ? 'parada' : 'paradas'} para empezar a conocer ${city.name} de verdad.</p></div><div class="place-grid">${selected.map(placeCard).join('')}</div></div></section><section class="section practical-section"><div class="shell practical-grid"><div><span class="section-kicker">ANOTA ESTO</span><h2>Consejos para <em>el camino.</em></h2><p>Pequeños detalles que pueden hacer que disfrutes mucho más la visita.</p></div><div class="tips-list">${city.tips.map(([title, description], i) => `<article><span>0${i+1}</span><div><h3>${title}</h3><p>${description}</p></div></article>`).join('')}</div></div></section><section class="section map-section"><div class="shell"><div class="section-heading compact"><div><span class="section-kicker">UBÍCATE</span><h2>${city.name} en el <em>mapa.</em></h2></div><a class="text-link" href="${mapUrl(city.lat,city.lon)}" target="_blank" rel="noopener noreferrer">Abrir mapa completo ${arrow}</a></div><div class="map-frame map-frame-tall"><div class="leaflet-multimap" id="map-${city.slug}" data-points='${JSON.stringify(selected.map(p => ({lat:p.lat,lon:p.lon,name:p.name,href:placeUrl(p)}))).replace(/'/g,"&#39;")}'></div></div><p class="map-credit">${selected.length} ${selected.length === 1 ? 'lugar marcado' : 'lugares marcados'} · vista satélite © Esri.</p></div></section></main>`;
+  const mapId = `map-${city.slug}`;
+  const zoneGroups = city.zones ? city.zones.map(z => ({ ...z, places: selected.filter(p => p.zone === z.slug) })).filter(z => z.places.length) : null;
+  const zoneNav = zoneGroups ? `<div class="zone-nav">${zoneGroups.map(z => `<a class="zone-chip" href="#zona-${z.slug}" data-scroll="zona-${z.slug}"><span class="zone-dot" style="background:${zoneColor(city,z.slug)}"></span>${z.name}<span class="zone-chip-count">${z.places.length}</span></a>`).join('')}</div>` : '';
+  const placesMarkup = zoneGroups
+    ? zoneGroups.map(z => `<div class="zone-group" id="zona-${z.slug}"><h3 class="zone-heading"><span class="zone-dot" style="background:${zoneColor(city,z.slug)}"></span>${z.name}</h3><div class="place-grid">${z.places.map(placeCard).join('')}</div></div>`).join('')
+    : `<div class="place-grid">${selected.map(placeCard).join('')}</div>`;
+  const zoneLegend = zoneGroups ? `<div class="zone-legend">${zoneGroups.map(z => `<button type="button" class="zone-legend-item" data-zone-focus="${z.slug}" data-map-target="${mapId}"><span class="zone-dot" style="background:${zoneColor(city,z.slug)}"></span>${z.name}</button>`).join('')}<button type="button" class="zone-legend-item zone-legend-reset" data-zone-focus="all" data-map-target="${mapId}">Ver todas las zonas</button></div>` : '';
+  const points = selected.map(p => ({ lat: p.lat, lon: p.lon, name: p.name, href: placeUrl(p), zone: p.zone, color: p.zone ? zoneColor(city, p.zone) : undefined }));
+  return `<main id="contenido"><div class="shell">${breadcrumbs([{label:'Destinos',href:'#/destinos'},{label:country.name,href:countryUrl(country.slug)},{label:city.name}])}</div><section class="city-hero"><div class="city-hero-image"><img src="${city.image}" alt="Vista de ${city.name}"/></div><div class="city-hero-overlay"></div><div class="shell city-hero-content"><span class="hero-location">${country.name} / ${city.region}</span><h1>${city.name}<span>.</span></h1><p>${city.eyebrow}</p><button data-scroll="lugares" class="button button-light">Descubrir lugares <span aria-hidden="true">↓</span></button></div></section><div class="city-facts shell"><div><span>TIEMPO IDEAL</span><strong>${city.days}</strong></div><div><span>MEJOR ÉPOCA</span><strong>${city.best}</strong></div><div><span>CÓMO MOVERSE</span><strong>${city.move}</strong></div><a href="${mapUrl(city.lat,city.lon)}" target="_blank" rel="noopener noreferrer">Abrir mapa ${arrow}</a></div><section class="section city-intro-section"><div class="shell city-intro-grid"><span class="section-kicker">GUÍA DE CIUDAD / ${city.name.toUpperCase()}</span><div><h2>Empieza por <em>sentir la ciudad.</em></h2><p>${city.intro}</p></div></div></section><section class="section place-section" id="lugares"><div class="shell"><div class="section-heading"><div><span class="section-kicker">NO TE LOS PIERDAS</span><h2>Lugares con <em>historia.</em></h2></div><p>${selected.length} ${selected.length === 1 ? 'parada' : 'paradas'} para empezar a conocer ${city.name} de verdad.</p></div>${zoneNav}${placesMarkup}</div></section><section class="section practical-section"><div class="shell practical-grid"><div><span class="section-kicker">ANOTA ESTO</span><h2>Consejos para <em>el camino.</em></h2><p>Pequeños detalles que pueden hacer que disfrutes mucho más la visita.</p></div><div class="tips-list">${city.tips.map(([title, description], i) => `<article><span>0${i+1}</span><div><h3>${title}</h3><p>${description}</p></div></article>`).join('')}</div></div></section><section class="section map-section"><div class="shell"><div class="section-heading compact"><div><span class="section-kicker">UBÍCATE</span><h2>${city.name} en el <em>mapa.</em></h2></div><a class="text-link" href="${mapUrl(city.lat,city.lon)}" target="_blank" rel="noopener noreferrer">Abrir mapa completo ${arrow}</a></div><div class="map-frame map-frame-tall"><div class="leaflet-multimap" id="${mapId}" data-points='${JSON.stringify(points).replace(/'/g,"&#39;")}'></div></div>${zoneLegend}<p class="map-credit">${selected.length} ${selected.length === 1 ? 'lugar marcado' : 'lugares marcados'} · vista satélite © Esri.</p></div></section></main>`;
 }
 
 function placePage(place) {
@@ -397,6 +422,11 @@ document.addEventListener('click', event => {
   if (scrollButton) {
     event.preventDefault();
     document.getElementById(scrollButton.dataset.scroll)?.scrollIntoView({behavior:'smooth'});
+    return;
+  }
+  const zoneButton = event.target.closest('[data-zone-focus]');
+  if (zoneButton) {
+    focusMapZone(zoneButton.dataset.mapTarget, zoneButton.dataset.zoneFocus);
     return;
   }
   const button = event.target.closest('[data-save]');
