@@ -5,3 +5,4 @@
 .destination-grid{grid-template-columns:repeat(4,minmax(0,1fr))}.destination-image{height:275px}.destination-content{padding:22px;min-height:134px}.destination-content h3{font-size:28px}.place-section{scroll-margin-top:70px}
 @media(max-width:1000px){.destination-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:700px){.destination-grid{grid-template-columns:1fr}.destination-image{height:300px}}
+.story-detail{font-size:17px;line-height:1.85;color:var(--muted);margin:18px 0 0;max-width:64ch}.story-detail+.curiosity{margin-top:28px}
