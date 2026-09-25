@@ -351,7 +351,9 @@ function renderSearchResults(query) {
   if (!matches.length) { panel.innerHTML = `<p class="search-hint">Sin resultados para «${query}».</p>`; return; }
   panel.innerHTML = matches.map(({p,city,country}) => `<a class="search-result" href="${placeUrl(p)}">${picture(p.image, '', {card:true, loading:'lazy'})}<div><strong>${p.name}</strong><span>${p.category} · ${city ? city.name : ''}${country ? ', ' + country.name : ''}</span></div></a>`).join('');
 }
-const route = () => location.hash.replace(/^#\/?/, '').split('/').filter(Boolean);
+const rawHash = () => location.hash.replace(/^#\/?/, '');
+const route = () => rawHash().split('?')[0].split('/').filter(Boolean);
+const routeQuery = () => new URLSearchParams(rawHash().split('?')[1] || '');
 const saved = () => { try { return JSON.parse(localStorage.getItem('viajespaya-saved') || '[]'); } catch { return []; } };
 const save = ids => localStorage.setItem('viajespaya-saved', JSON.stringify(ids));
 
@@ -457,9 +459,31 @@ function placePage(place) {
 }
 
 function savedPage() {
-  const ids = saved();
+  const sharedParam = routeQuery().get('ids');
+  const isShared = sharedParam !== null;
+  const ids = isShared ? sharedParam.split(',').filter(Boolean) : saved();
   const selected = ids.map(id => { const [city,slug] = id.split('/'); return placeBy(city,slug); }).filter(Boolean);
-  return `<main id="contenido" class="page-main"><div class="shell">${breadcrumbs([{label:'Guardados'}])}<div class="page-intro"><span class="section-kicker">TU PEQUEÑA LISTA DE DESEOS</span><h1>Lugares <em>guardados.</em></h1><p>Ten a mano las visitas que quieres hacer durante el viaje.</p></div>${selected.length ? `<div class="place-grid">${selected.map(placeCard).join('')}</div>` : `<div class="empty-state"><span class="empty-spark">✳</span><h2>Todavía no hay lugares guardados.</h2><p>Explora una ciudad y toca el marcador de los lugares que quieras recordar.</p><a class="button button-dark" href="#/destinos">Explorar destinos ${arrow}</a></div>`}</div></main>`;
+  const mapId = 'map-guardados';
+
+  const groups = [];
+  selected.forEach(p => {
+    let group = groups.find(g => g.citySlug === p.city);
+    if (!group) { group = { citySlug: p.city, city: cityBy(p.city), places: [] }; groups.push(group); }
+    group.places.push(p);
+  });
+  const cityColorOf = citySlug => zonePalette[groups.findIndex(g => g.citySlug === citySlug) % zonePalette.length];
+
+  const groupedMarkup = groups.map(g => `<div class="zone-group" id="ciudad-${g.citySlug}"><h3 class="zone-heading"><span class="zone-dot" style="background:${cityColorOf(g.citySlug)}"></span>${g.city.name}<span class="zone-chip-count">${g.places.length}</span></h3><div class="place-grid">${g.places.map(placeCard).join('')}</div></div>`).join('');
+
+  const points = selected.filter(p => typeof p.lat === 'number' && typeof p.lon === 'number').map(p => ({ lat: p.lat, lon: p.lon, name: p.name, href: placeUrl(p), zone: p.city, color: cityColorOf(p.city) }));
+  const mapLegend = groups.length > 1 ? `<div class="zone-legend">${groups.map(g => `<button type="button" class="zone-legend-item" data-zone-focus="${g.citySlug}" data-map-target="${mapId}"><span class="zone-dot" style="background:${cityColorOf(g.citySlug)}"></span>${g.city.name}<span class="zone-chip-count">${g.places.length}</span></button>`).join('')}<button type="button" class="zone-legend-item zone-legend-reset" data-zone-focus="all" data-map-target="${mapId}">Ver todas las ciudades</button></div>` : '';
+  const mapSection = points.length ? `<section class="section map-section"><div class="shell"><div class="section-heading compact"><div><span class="section-kicker">TU MAPA</span><h2>Guardados en el <em>mapa.</em></h2></div></div><div class="map-frame map-frame-tall"><div class="leaflet-multimap" id="${mapId}" data-points='${JSON.stringify(points).replace(/'/g,"&#39;")}'></div></div>${mapLegend}<p class="map-credit">${points.length} ${points.length === 1 ? 'lugar marcado' : 'lugares marcados'} · vista satélite © Esri.</p></div></section>` : '';
+
+  const shareUrl = selected.length ? `${location.origin}${location.pathname}#/guardados?ids=${selected.map(p => `${p.city}/${p.slug}`).join(',')}` : '';
+  const shareRow = selected.length && !isShared ? `<div class="share-row"><button type="button" class="button button-outline" data-share-list="${shareUrl.replace(/"/g,'&quot;')}">Compartir esta lista ${arrow}</button><span class="share-hint" data-share-hint hidden>Enlace copiado al portapapeles</span></div>` : '';
+  const sharedBanner = isShared ? `<div class="curiosity shared-banner"><span>✳ LISTA COMPARTIDA CONTIGO</span><p>${selected.length ? `${selected.length} ${selected.length === 1 ? 'lugar guardado' : 'lugares guardados'} por otra persona.` : 'Este enlace no contiene lugares reconocibles.'}</p>${selected.length ? `<button type="button" class="button button-dark" data-import-shared="${ids.join(',')}">Añadir todos a mis guardados</button>` : ''}</div>` : '';
+
+  return `<main id="contenido" class="page-main"><div class="shell">${breadcrumbs([{label:'Guardados'}])}<div class="page-intro"><span class="section-kicker">${isShared ? 'LISTA COMPARTIDA' : 'TU PEQUEÑA LISTA DE DESEOS'}</span><h1>Lugares <em>guardados.</em></h1><p>${isShared ? 'Alguien te ha compartido esta selección de lugares.' : 'Ten a mano las visitas que quieres hacer durante el viaje.'}</p>${shareRow}</div>${sharedBanner}${selected.length ? groupedMarkup : `<div class="empty-state"><span class="empty-spark">✳</span><h2>Todavía no hay lugares guardados.</h2><p>Explora una ciudad y toca el marcador de los lugares que quieras recordar.</p><a class="button button-dark" href="#/destinos">Explorar destinos ${arrow}</a></div>`}</div>${mapSection}</main>`;
 }
 
 function creditsPage() {
@@ -552,6 +576,24 @@ document.addEventListener('click', event => {
   if (event.target.closest('[data-search-result]') || event.target.closest('.search-result')) { closeSearch(); return; }
   const panel = document.querySelector('[data-search-panel]');
   if (panel && !panel.hidden && !event.target.closest('[data-search-panel]') && !event.target.closest('[data-search-toggle]')) { closeSearch(); return; }
+  const shareButton = event.target.closest('[data-share-list]');
+  if (shareButton) {
+    const url = shareButton.dataset.shareList;
+    const hint = shareButton.parentElement.querySelector('[data-share-hint]');
+    const showHint = () => { if (!hint) return; hint.hidden = false; clearTimeout(shareButton._hintTimer); shareButton._hintTimer = setTimeout(() => { hint.hidden = true; }, 2500); };
+    if (navigator.clipboard?.writeText) navigator.clipboard.writeText(url).then(showHint).catch(() => window.prompt('Copia el enlace:', url));
+    else window.prompt('Copia el enlace:', url);
+    return;
+  }
+  const importButton = event.target.closest('[data-import-shared]');
+  if (importButton) {
+    const incoming = importButton.dataset.importShared.split(',').filter(Boolean);
+    const next = saved();
+    incoming.forEach(id => { if (!next.includes(id)) next.push(id); });
+    save(next);
+    location.hash = '#/guardados';
+    return;
+  }
   const button = event.target.closest('[data-save]');
   if (!button) return;
   const id = button.dataset.save;
