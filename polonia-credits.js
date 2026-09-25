@@ -107,5 +107,95 @@ Object.assign(imageCredits, {
     "artist": "ed_and_don",
     "license": "CC BY-SA 2.0",
     "sourceTitle": "File:Memorial walk at Płaszów concentration camp (1490981767).jpg"
+  },
+  "varsovia-sirena.jpg": {
+    "url": "https://commons.wikimedia.org/wiki/File:Poland-00872_-_Mermaid_of_Warsaw_(31215789645).jpg",
+    "artist": "Dennis G. Jarvis",
+    "license": "CC BY-SA 2.0",
+    "sourceTitle": "File:Poland-00872 - Mermaid of Warsaw (31215789645).jpg"
+  },
+  "varsovia-castillo.jpg": {
+    "url": "https://commons.wikimedia.org/wiki/File:Exterior_of_the_Royal_Castle,_Warsaw_20180816-3.jpg",
+    "artist": "Suicasmo",
+    "license": "CC BY-SA 4.0",
+    "sourceTitle": "File:Exterior of the Royal Castle, Warsaw 20180816-3.jpg"
+  },
+  "varsovia-catedral.jpg": {
+    "url": "https://commons.wikimedia.org/wiki/File:St._John%27s_Archcathedral_(9629601375).jpg",
+    "artist": "Jorge Láscar",
+    "license": "CC BY 2.0",
+    "sourceTitle": "File:St. John's Archcathedral (9629601375).jpg"
+  },
+  "varsovia-barbacana.jpg": {
+    "url": "https://commons.wikimedia.org/wiki/File:Warszawa_-_Barbakan_Warszawski.jpg",
+    "artist": "Fred Romero",
+    "license": "CC BY 2.0",
+    "sourceTitle": "File:Warszawa - Barbakan Warszawski.jpg"
+  },
+  "varsovia-palacio-cultura.jpg": {
+    "url": "https://commons.wikimedia.org/wiki/File:Warsaw_Palace_(32213654511).jpg",
+    "artist": "Alper Çuğun",
+    "license": "CC BY 2.0",
+    "sourceTitle": "File:Warsaw Palace (32213654511).jpg"
+  },
+  "varsovia-tumba-soldado.jpg": {
+    "url": "https://commons.wikimedia.org/wiki/File:09%272019_-_Tomb_of_the_Unknown_Soldier_in_the_autumn.jpg",
+    "artist": "Heshq",
+    "license": "CC BY-SA 4.0",
+    "sourceTitle": "File:09'2019 - Tomb of the Unknown Soldier in the autumn.jpg"
+  },
+  "varsovia-jardin-sajon.jpg": {
+    "url": "https://commons.wikimedia.org/wiki/File:Warsaw_%E2%80%93_Saxon_Fountain_2019a.jpg",
+    "artist": "Cayambe",
+    "license": "CC BY-SA 4.0",
+    "sourceTitle": "File:Warsaw – Saxon Fountain 2019a.jpg"
+  },
+  "varsovia-lazienki.jpg": {
+    "url": "https://commons.wikimedia.org/wiki/File:Palace_on_the_Isle_(21895p).jpg",
+    "artist": "Rhododendrites",
+    "license": "CC BY-SA 4.0",
+    "sourceTitle": "File:Palace on the Isle (21895p).jpg"
+  },
+  "varsovia-wilanow.jpg": {
+    "url": "https://commons.wikimedia.org/wiki/File:Garden_facade_of_the_Wilan%C3%B3w_Palace,_2019,_01.jpg",
+    "artist": "Kgbo",
+    "license": "CC BY-SA 4.0",
+    "sourceTitle": "File:Garden facade of the Wilanów Palace, 2019, 01.jpg"
+  },
+  "varsovia-polin.jpg": {
+    "url": "https://commons.wikimedia.org/wiki/File:Polin_Museum_Warsaw_2018_1.jpg",
+    "artist": "Steven Lek",
+    "license": "CC BY-SA 4.0",
+    "sourceTitle": "File:Polin Museum Warsaw 2018 1.jpg"
+  },
+  "varsovia-nozyk.jpg": {
+    "url": "https://commons.wikimedia.org/wiki/File:20190802_201511_Nozyk_Synagogue,_Warsaw,_August_2019.jpg",
+    "artist": "Rakoon",
+    "license": "CC0",
+    "sourceTitle": "File:20190802 201511 Nozyk Synagogue, Warsaw, August 2019.jpg"
+  },
+  "varsovia-monumento-gueto.jpg": {
+    "url": "https://commons.wikimedia.org/wiki/File:Warsaw_Ghetto_Monument_2021.jpg",
+    "artist": "Adrian Grycuk",
+    "license": "CC BY-SA 3.0 pl",
+    "sourceTitle": "File:Warsaw Ghetto Monument 2021.jpg"
+  },
+  "varsovia-umschlagplatz.jpg": {
+    "url": "https://commons.wikimedia.org/wiki/File:Pomnik_Umschlagplatz_2023.jpg",
+    "artist": "Adrian Grycuk",
+    "license": "CC BY 3.0 pl",
+    "sourceTitle": "File:Pomnik Umschlagplatz 2023.jpg"
+  },
+  "varsovia-zoo.jpg": {
+    "url": "https://commons.wikimedia.org/wiki/File:Warsaw_Zoo_-_Zebra_shaped_gate.jpg",
+    "artist": "Przemek P",
+    "license": "CC BY-SA 3.0",
+    "sourceTitle": "File:Warsaw Zoo - Zebra shaped gate.jpg"
+  },
+  "varsovia-praga.jpg": {
+    "url": "https://commons.wikimedia.org/wiki/File:Warsaw_Praga_DSC_1601.JPG",
+    "artist": "Wistula",
+    "license": "CC BY-SA 3.0",
+    "sourceTitle": "File:Warsaw Praga DSC 1601.JPG"
   }
 });

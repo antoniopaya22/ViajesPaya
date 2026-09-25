@@ -75,7 +75,40 @@ const polandCities = [
       { slug: 'ruta-real', name: 'Ruta Real' },
       { slug: 'muranow', name: 'Muranów' },
       { slug: 'praga', name: 'Praga' }
-    ]
+    ],
+    transport: {
+      title: 'Cómo moverse <em>por Varsovia.</em>',
+      intro: 'Metro, tranvía y autobús forman una red integrada, gestionada por ZTM bajo la marca Warszawski Transport Publiczny.',
+      blocks: [
+        {type: 'heading', text: 'Metro y tranvía', icon: 'footprints'},
+        {type: 'p', text: 'Varsovia tiene 2 líneas de metro: la M1, abierta en 1995, y la M2, de 2015, con unas 39 estaciones en total. La M1 no para directamente en la estación central de tren, Warszawa Centralna.'},
+        {type: 'table', title: 'Billetes (tarifa oficial de ZTM)', columns: ['Billete', 'Precio normal', 'Precio reducido'], rows: [
+          ['20 minutos', '3,40 PLN', '1,70 PLN'],
+          ['75 minutos', '4,40 PLN', '2,20 PLN'],
+          ['90 minutos (zonas 1+2)', '7,00 PLN', '3,50 PLN'],
+          ['24 horas (zona 1)', '15,00 PLN', '7,50 PLN'],
+          ['72 horas (zona 1)', '36,00 PLN', '18,00 PLN']
+        ]},
+        {type: 'callout', label: '¿SABÍAS QUE...?', items: [
+          'El Warsaw Pass, promovido por el portal turístico oficial go2warsaw.pl, es un pase de descuentos en museos y atracciones: no incluye el transporte público, así que no sustituye al billete de ZTM.'
+        ]},
+        {type: 'heading', text: 'Desde los aeropuertos', icon: 'gate'},
+        {type: 'p', text: 'El aeropuerto Chopin no tiene metro directo, pero sí una estación de tren propia con las líneas SKM S2/S3 y la línea RL de Koleje Mazowieckie hasta el centro, además de varias líneas de autobús. El aeropuerto de Modlin, más alejado, todavía no tiene estación de tren propia (prevista para 2027): se llega en autobús lanzadera hasta la estación de Modlin y de ahí en tren, o directamente en autocar hasta el centro de Varsovia.'}
+      ]
+    },
+    food: {
+      title: 'Qué comer <em>en Varsovia.</em>',
+      intro: 'Pierogi, żurek y bigos son platos de toda Polonia, pero los «bares de leche» sí nacieron aquí.',
+      blocks: [
+        {type: 'heading', text: 'Bares de leche (bary mleczne)', icon: 'teacup'},
+        {type: 'p', text: 'El primer bar de leche —una cantina sencilla y barata, heredera de la época comunista— abrió en Varsovia en 1896, en la calle Nowy Świat. Bajo el régimen comunista se multiplicaron gracias a la cooperativa Społem: solo Varsovia llegó a tener 41 en 1972. Hoy siguen subvencionados por el Estado, con el margen de beneficio limitado por ley desde 2015.'},
+        {type: 'heading', text: 'Żurek, bigos y pierogi', icon: 'flame'},
+        {type: 'p', text: 'El żurek es una sopa agria de centeno fermentado, tradicional en Semana Santa. El bigos, un guiso de chucrut y varias carnes que mejora al recalentarlo, aparece ya en el poema nacional Pan Tadeusz de Adam Mickiewicz (1834). Los pierogi, con relleno dulce o salado, son el plato polaco más conocido fuera del país.'},
+        {type: 'callout', label: '¿SABÍAS QUE...?', items: [
+          'El obwarzanek, el pan en forma de anillo, es una especialidad protegida de Cracovia, no de Varsovia: no es una tradición propiamente varsoviana, aunque se venda también aquí.'
+        ]}
+      ]
+    }
   }
 ];
 
