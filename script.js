@@ -343,13 +343,25 @@ function searchPlaces(query) {
     .sort((a,b) => a.score - b.score)
     .slice(0, 8);
 }
+let searchHighlight = -1;
 function renderSearchResults(query) {
   const panel = document.querySelector('[data-search-results]');
   if (!panel) return;
+  searchHighlight = -1;
+  document.querySelector('[data-search-input]')?.removeAttribute('aria-activedescendant');
   if (!query.trim()) { panel.innerHTML = '<p class="search-hint">Escribe para buscar entre todos los lugares, por nombre, ciudad o categoría.</p>'; return; }
   const matches = searchPlaces(query);
   if (!matches.length) { panel.innerHTML = `<p class="search-hint">Sin resultados para «${query}».</p>`; return; }
-  panel.innerHTML = matches.map(({p,city,country}) => `<a class="search-result" href="${placeUrl(p)}">${picture(p.image, '', {card:true, loading:'lazy'})}<div><strong>${p.name}</strong><span>${p.category} · ${city ? city.name : ''}${country ? ', ' + country.name : ''}</span></div></a>`).join('');
+  panel.innerHTML = matches.map(({p,city,country}, i) => `<a class="search-result" id="search-result-${i}" role="option" href="${placeUrl(p)}">${picture(p.image, '', {card:true, loading:'lazy'})}<div><strong>${p.name}</strong><span>${p.category} · ${city ? city.name : ''}${country ? ', ' + country.name : ''}</span></div></a>`).join('');
+}
+function moveSearchHighlight(delta) {
+  const results = document.querySelectorAll('.search-result');
+  if (!results.length) return;
+  searchHighlight = (searchHighlight + delta + results.length) % results.length;
+  results.forEach((el, i) => el.classList.toggle('is-highlighted', i === searchHighlight));
+  const active = results[searchHighlight];
+  active.scrollIntoView({ block: 'nearest' });
+  document.querySelector('[data-search-input]')?.setAttribute('aria-activedescendant', active.id);
 }
 const rawHash = () => location.hash.replace(/^#\/?/, '');
 const route = () => rawHash().split('?')[0].split('/').filter(Boolean);
@@ -364,7 +376,7 @@ function header() {
     <nav class="main-nav" aria-label="Navegación principal"><a href="#/" data-nav="home">Inicio</a><a href="#/destinos" data-nav="destinos">Destinos</a><a href="#/guardados" data-nav="guardados">Guardados <span class="saved-count">${count}</span></a></nav>
     <button type="button" class="search-toggle" data-search-toggle aria-label="Buscar" aria-expanded="false">${searchIcon}</button>
     <a class="header-cta" href="#/destinos">Explorar destinos <span aria-hidden="true">↗</span></a>
-  </div><div class="search-panel" data-search-panel hidden><div class="shell search-panel-inner"><div class="search-input-wrap">${searchIcon}<input type="text" data-search-input placeholder="Busca un lugar, ciudad o categoría..." autocomplete="off" aria-label="Buscar lugares"/><button type="button" class="search-close" data-search-close aria-label="Cerrar búsqueda">${closeIcon}</button></div><div class="search-results" data-search-results><p class="search-hint">Escribe para buscar entre todos los lugares, por nombre, ciudad o categoría.</p></div></div></div></header>`;
+  </div><div class="search-panel" data-search-panel hidden><div class="shell search-panel-inner"><div class="search-input-wrap">${searchIcon}<input type="text" data-search-input placeholder="Busca un lugar, ciudad o categoría..." autocomplete="off" aria-label="Buscar lugares" role="combobox" aria-expanded="true" aria-autocomplete="list" aria-controls="search-results-list"/><button type="button" class="search-close" data-search-close aria-label="Cerrar búsqueda">${closeIcon}</button></div><div class="search-results" id="search-results-list" role="listbox" data-search-results><p class="search-hint">Escribe para buscar entre todos los lugares, por nombre, ciudad o categoría.</p></div></div></div></header>`;
 }
 
 function footer() {
@@ -416,11 +428,11 @@ function cityPage(city) {
   const zoneGroups = city.zones ? city.zones.map(z => ({ ...z, places: selected.filter(p => p.zone === z.slug) })).filter(z => z.places.length) : null;
   const zoneNav = zoneGroups ? `<div class="zone-nav">${zoneGroups.map(z => `<a class="zone-chip" href="#zona-${z.slug}" data-scroll="zona-${z.slug}"><span class="zone-dot" style="background:${zoneColor(city,z.slug)}"></span>${z.name}<span class="zone-chip-count">${z.places.length}</span></a>`).join('')}</div>` : '';
   const categories = [...new Set(selected.map(p => p.category))].sort((a,b) => a.localeCompare(b,'es'));
-  const categoryFilter = categories.length > 1 ? `<div class="category-filter" data-category-filter><button type="button" class="category-chip is-active" data-category="todos">Todos <span class="category-chip-count">${selected.length}</span></button>${categories.map(cat => `<button type="button" class="category-chip" data-category="${cat}">${cat} <span class="category-chip-count">${selected.filter(p=>p.category===cat).length}</span></button>`).join('')}</div>` : '';
+  const categoryFilter = categories.length > 1 ? `<div class="category-filter" data-category-filter role="group" aria-label="Filtrar por categoría"><button type="button" class="category-chip is-active" data-category="todos" aria-pressed="true">Todos <span class="category-chip-count">${selected.length}</span></button>${categories.map(cat => `<button type="button" class="category-chip" data-category="${cat}" aria-pressed="false">${cat} <span class="category-chip-count">${selected.filter(p=>p.category===cat).length}</span></button>`).join('')}</div>` : '';
   const placesMarkup = zoneGroups
     ? zoneGroups.map(z => `<div class="zone-group" id="zona-${z.slug}"><h3 class="zone-heading"><span class="zone-dot" style="background:${zoneColor(city,z.slug)}"></span>${z.name}</h3><div class="place-grid">${z.places.map(placeCard).join('')}</div></div>`).join('')
     : `<div class="place-grid">${selected.map(placeCard).join('')}</div>`;
-  const zoneLegend = zoneGroups ? `<div class="zone-legend">${zoneGroups.map(z => `<button type="button" class="zone-legend-item" data-zone-focus="${z.slug}" data-map-target="${mapId}"><span class="zone-dot" style="background:${zoneColor(city,z.slug)}"></span>${z.name}</button>`).join('')}<button type="button" class="zone-legend-item zone-legend-reset" data-zone-focus="all" data-map-target="${mapId}">Ver todas las zonas</button></div>` : '';
+  const zoneLegend = zoneGroups ? `<div class="zone-legend" role="group" aria-label="Enfocar el mapa por zona">${zoneGroups.map(z => `<button type="button" class="zone-legend-item" data-zone-focus="${z.slug}" data-map-target="${mapId}" aria-current="false"><span class="zone-dot" style="background:${zoneColor(city,z.slug)}"></span>${z.name}</button>`).join('')}<button type="button" class="zone-legend-item zone-legend-reset" data-zone-focus="all" data-map-target="${mapId}" aria-current="true">Ver todas las zonas</button></div>` : '';
   const points = selected.map(p => ({ lat: p.lat, lon: p.lon, name: p.name, href: placeUrl(p), zone: p.zone, color: p.zone ? zoneColor(city, p.zone) : undefined }));
   const transport = city.transport;
   const transportHeadings = transport ? transport.blocks.filter(b => b.type === 'heading') : [];
@@ -476,7 +488,7 @@ function savedPage() {
   const groupedMarkup = groups.map(g => `<div class="zone-group" id="ciudad-${g.citySlug}"><h3 class="zone-heading"><span class="zone-dot" style="background:${cityColorOf(g.citySlug)}"></span>${g.city.name}<span class="zone-chip-count">${g.places.length}</span></h3><div class="place-grid">${g.places.map(placeCard).join('')}</div></div>`).join('');
 
   const points = selected.filter(p => typeof p.lat === 'number' && typeof p.lon === 'number').map(p => ({ lat: p.lat, lon: p.lon, name: p.name, href: placeUrl(p), zone: p.city, color: cityColorOf(p.city) }));
-  const mapLegend = groups.length > 1 ? `<div class="zone-legend">${groups.map(g => `<button type="button" class="zone-legend-item" data-zone-focus="${g.citySlug}" data-map-target="${mapId}"><span class="zone-dot" style="background:${cityColorOf(g.citySlug)}"></span>${g.city.name}<span class="zone-chip-count">${g.places.length}</span></button>`).join('')}<button type="button" class="zone-legend-item zone-legend-reset" data-zone-focus="all" data-map-target="${mapId}">Ver todas las ciudades</button></div>` : '';
+  const mapLegend = groups.length > 1 ? `<div class="zone-legend" role="group" aria-label="Enfocar el mapa por ciudad">${groups.map(g => `<button type="button" class="zone-legend-item" data-zone-focus="${g.citySlug}" data-map-target="${mapId}" aria-current="false"><span class="zone-dot" style="background:${cityColorOf(g.citySlug)}"></span>${g.city.name}<span class="zone-chip-count">${g.places.length}</span></button>`).join('')}<button type="button" class="zone-legend-item zone-legend-reset" data-zone-focus="all" data-map-target="${mapId}" aria-current="true">Ver todas las ciudades</button></div>` : '';
   const mapSection = points.length ? `<section class="section map-section"><div class="shell"><div class="section-heading compact"><div><span class="section-kicker">TU MAPA</span><h2>Guardados en el <em>mapa.</em></h2></div></div><div class="map-frame map-frame-tall"><div class="leaflet-multimap" id="${mapId}" data-points='${JSON.stringify(points).replace(/'/g,"&#39;")}'></div></div>${mapLegend}<p class="map-credit">${points.length} ${points.length === 1 ? 'lugar marcado' : 'lugares marcados'} · vista satélite © Esri.</p></div></section>` : '';
 
   const shareUrl = selected.length ? `${location.origin}${location.pathname}#/guardados?ids=${selected.map(p => `${p.city}/${p.slug}`).join(',')}` : '';
@@ -551,6 +563,7 @@ document.addEventListener('click', event => {
   const zoneButton = event.target.closest('[data-zone-focus]');
   if (zoneButton) {
     focusMapZone(zoneButton.dataset.mapTarget, zoneButton.dataset.zoneFocus);
+    zoneButton.closest('.zone-legend')?.querySelectorAll('[data-zone-focus]').forEach(btn => btn.setAttribute('aria-current', String(btn === zoneButton)));
     return;
   }
   if (event.target.closest('[data-search-toggle]')) {
@@ -562,7 +575,7 @@ document.addEventListener('click', event => {
   const categoryChip = event.target.closest('[data-category]');
   if (categoryChip) {
     const filterRow = categoryChip.closest('[data-category-filter]');
-    filterRow.querySelectorAll('[data-category]').forEach(chip => chip.classList.toggle('is-active', chip === categoryChip));
+    filterRow.querySelectorAll('[data-category]').forEach(chip => { const isActive = chip === categoryChip; chip.classList.toggle('is-active', isActive); chip.setAttribute('aria-pressed', isActive); });
     const wanted = categoryChip.dataset.category;
     document.querySelectorAll('.place-card').forEach(card => {
       card.style.display = (wanted === 'todos' || card.dataset.category === wanted) ? '' : 'none';
@@ -608,9 +621,13 @@ document.addEventListener('input', event => {
 });
 document.addEventListener('keydown', event => {
   if (event.key === 'Escape') closeSearch();
-  if (event.key === 'Enter' && event.target.matches('[data-search-input]')) {
-    const first = document.querySelector('.search-result');
-    if (first) { location.hash = first.getAttribute('href'); closeSearch(); }
+  if (!event.target.matches('[data-search-input]')) return;
+  if (event.key === 'ArrowDown') { event.preventDefault(); moveSearchHighlight(1); }
+  else if (event.key === 'ArrowUp') { event.preventDefault(); moveSearchHighlight(-1); }
+  else if (event.key === 'Enter') {
+    const results = document.querySelectorAll('.search-result');
+    const chosen = searchHighlight >= 0 ? results[searchHighlight] : results[0];
+    if (chosen) { location.hash = chosen.getAttribute('href'); closeSearch(); }
   }
 });
 window.addEventListener('hashchange', () => render());
