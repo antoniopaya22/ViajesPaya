@@ -147,5 +147,29 @@ Object.assign(imageCredits, {
     "url": "https://commons.wikimedia.org/wiki/File%3AView_of_Tokyo_Skytree_from_Asakusa_20190420_1.jpg",
     "artist": "DXR",
     "license": "CC BY-SA 4.0"
-  }
+  },
+  "japon-kiyomizu-dera.jpg": {
+    "url": "https://commons.wikimedia.org/wiki/File:Kiyomizu-dera,_Kyoto,_November_2016_-01.jpg",
+    "artist": "Martin Falbisoner",
+    "license": "CC BY-SA 4.0",
+    "sourceTitle": "File:Kiyomizu-dera, Kyoto, November 2016 -01.jpg"
+  },
+  "japon-shibuya.jpg": { "url": "https://commons.wikimedia.org/wiki/File:Shibuya_Scramble_crossing.jpg", "artist": "Syced", "license": "CC0", "sourceTitle": "File:Shibuya Scramble crossing.jpg" },
+  "japon-shinjuku.jpg": { "url": "https://commons.wikimedia.org/wiki/File:Kabukicho_red_gate_and_colorful_neon_street_signs_at_night,_Shinjuku,_Tokyo,_Japan.jpg", "artist": "Basile Morin", "license": "CC BY-SA 4.0", "sourceTitle": "File:Kabukicho red gate and colorful neon street signs at night, Shinjuku, Tokyo, Japan.jpg" },
+  "japon-ueno-ameyoko.jpg": { "url": "https://commons.wikimedia.org/wiki/File:Ameya-Yokoch%C5%8D_Entrance.jpg", "artist": "AugustGresh", "license": "CC BY-SA 4.0", "sourceTitle": "File:Ameya-Yokochō Entrance.jpg" },
+  "japon-akihabara.jpg": { "url": "https://commons.wikimedia.org/wiki/File:Akihabara_Night.jpg", "artist": "ElHeineken", "license": "CC BY 4.0", "sourceTitle": "File:Akihabara Night.jpg" },
+  "japon-harajuku-omotesando.jpg": { "url": "https://commons.wikimedia.org/wiki/File:Takeshita_Street.jpg", "artist": "Syced", "license": "CC0", "sourceTitle": "File:Takeshita Street.jpg" },
+  "japon-parque-yoyogi.jpg": { "url": "https://commons.wikimedia.org/wiki/File:Yoyogi_Park_@_Tokyo_(13406878405).jpg", "artist": "Guilhem Vellut", "license": "CC BY 2.0", "sourceTitle": "File:Yoyogi Park @ Tokyo (13406878405).jpg" },
+  "japon-torre-tokio.jpg": { "url": "https://commons.wikimedia.org/wiki/File:Tokyo_Z%C5%8Dj%C5%8D-ji_Main_Hall_and_Tokyo_Tower.jpg", "artist": "Ymblanter", "license": "CC BY-SA 4.0", "sourceTitle": "File:Tokyo Zōjō-ji Main Hall and Tokyo Tower.jpg" },
+  "japon-hase-dera.jpg": { "url": "https://commons.wikimedia.org/wiki/File:Hase-dera_Kamakura_02.jpg", "artist": "U-Kane", "license": "CC BY-SA 4.0", "sourceTitle": "File:Hase-dera Kamakura 02.jpg" },
+  "japon-tsurugaoka-hachimangu.jpg": { "url": "https://commons.wikimedia.org/wiki/File:Tsurugaoka_Hachimangu_001.jpg", "artist": "Ocdp", "license": "CC0", "sourceTitle": "File:Tsurugaoka Hachimangu 001.jpg" },
+  "japon-komachi-dori.jpg": { "url": "https://commons.wikimedia.org/wiki/File:Komachi_Dori-Kamakura.jpg", "artist": "Urashimataro", "license": "Public domain", "sourceTitle": "File:Komachi Dori-Kamakura.jpg" },
+  "japon-enoshima.jpg": { "url": "https://commons.wikimedia.org/wiki/File:Enoshima_Island.jpg", "artist": "Dandy1022", "license": "CC BY-SA 4.0", "sourceTitle": "File:Enoshima Island.jpg" }
+,
+  "fushimi/romon.jpg": { "url": "https://commons.wikimedia.org/wiki/File:Romon,_Fushimi_Inari-taisha,_Kyoto,_West_view_20190416_1.jpg", "artist": "DXR", "license": "CC BY-SA 4.0", "sourceTitle": "File:Romon, Fushimi Inari-taisha, Kyoto, West view 20190416 1.jpg" },
+  "fushimi/honden.jpg": { "url": "https://commons.wikimedia.org/wiki/File:Honden_of_Fushimi_Inari_Grand_Shrine.JPG", "artist": "そらみみ", "license": "CC BY-SA 3.0", "sourceTitle": "File:Honden of Fushimi Inari Grand Shrine.JPG" },
+  "fushimi/senbon-torii.jpg": { "url": "https://commons.wikimedia.org/wiki/File:FUS_-_Senbon_torii_path_at_Fushimi_Inari-taisha,_Kyoto,_Japan,_2015.jpg", "artist": "Josep M. Gracia", "license": "CC BY-SA 4.0", "sourceTitle": "File:FUS - Senbon torii path at Fushimi Inari-taisha, Kyoto, Japan, 2015.jpg" },
+  "fushimi/okuno-in.jpg": { "url": "https://commons.wikimedia.org/wiki/File:Okusha-Hohaijo_of_Fushimi_Inari_Grand_Shrine.JPG", "artist": "そらみみ", "license": "CC BY-SA 3.0", "sourceTitle": "File:Okusha-Hohaijo of Fushimi Inari Grand Shrine.JPG" },
+  "fushimi/shin-ike.jpg": { "url": "https://commons.wikimedia.org/wiki/File:Kodamagaike_Pond_of_Fushimi_Inari_Grand_Shrine.jpg", "artist": "そらみみ", "license": "CC BY-SA 3.0", "sourceTitle": "File:Kodamagaike Pond of Fushimi Inari Grand Shrine.jpg" },
+  "fushimi/yotsu-tsuji.jpg": { "url": "https://commons.wikimedia.org/wiki/File:View_on_Fushimi_on_Fushimi_Inari-taisha.jpg", "artist": "Sarah Stierch", "license": "CC BY-SA 3.0", "sourceTitle": "File:View on Fushimi on Fushimi Inari-taisha.jpg" },
 });
