@@ -15,6 +15,19 @@ addJapanPlace({
   blocks: [
     {type:'lead', text:'Fundado en el año 778 junto a la cascada Otowa —«agua pura», que da nombre al templo—, Kiyomizu-dera es Patrimonio de la Humanidad desde 1994 y una de las 33 paradas de la peregrinación Saigoku Kannon. A pesar de su origen en el periodo Heian, los edificios que se ven hoy datan casi todos de la reconstrucción de 1631-1633, después de sucesivos incendios a lo largo de su historia.'},
     {type:'p', text:'El recinto es en realidad un conjunto de más de veinte templos, puertas y salones repartidos por la ladera, y merece la pena recorrerlo entero: hay bastante más que el famoso balcón sobre la ciudad.'},
+    {type:'table', title:'Cómo llegar desde el centro de Kioto', columns:['Método','Tiempo','Coste'], rows:[
+      ['Autobús urbano (100 / 206)','~15 min + 10 min a pie','230 ¥'],
+      ['Línea Keihan a Kiyomizu-Gojō','~20–25 min a pie desde la estación','~210 ¥'],
+      ['Taxi','~15 min','≈1.500 ¥']
+    ]},
+    {type:'timeline', title:'Casi todo se reconstruyó en el mismo par de años', items:[
+      {label:'Niō-mon (puerta roja)', year:1495, yearLabel:'~1495'},
+      {label:'Torre de la campana', year:1607, yearLabel:'1607'},
+      {label:'Amida-dō', year:1631, yearLabel:'1631'},
+      {label:'Sanjū-no-tō (pagoda)', year:1633, yearLabel:'1633'},
+      {label:'Hondō (salón y balcón)', year:1633, yearLabel:'1633'},
+      {label:'Zuigu-dō', year:1718, yearLabel:'1718'}
+    ]},
     {type:'heading', text:'Entrada y torre de la campana', icon:'bell'},
     {type:'stop', title:'Puerta Niō-mon', image:{src:'assets/kiyomizu/nio-mon.jpg', alt:'Puerta Niō-mon de Kiyomizu-dera'}, text:[
       'La gran puerta roja de acceso, de unos 10 metros de ancho y madera de ciprés, se reconstruyó a finales del siglo XV tras un incendio. Guarda dos estatuas de reyes Deva de 3,65 metros —de ahí su nombre— y dos leones-perros koma-inu que protegen la entrada; por su color también se la conoce como la puerta Aka-mon, «la puerta roja».'
@@ -55,6 +68,10 @@ addJapanPlace({
     {type:'stop', title:'El santuario del amor, dentro del templo', text:[
       'Justo detrás del salón principal, el santuario Jishu lleva más de 1.300 años recibiendo a quienes buscan pareja: la tradición es caminar con los ojos cerrados entre dos piedras del amor separadas seis metros; conseguirlo augura encontrar el amor pronto. El recinto estuvo cerrado por obras de restauración entre 2022 y el 2025 anunciado por el templo — conviene confirmar en la web oficial si ya ha reabierto antes de planear la visita en torno a él.',
       'En sus escaleras de acceso está la estatua de Ōkuninushi junto a una liebre, en referencia a un episodio del Kojiki en el que el dios ayuda a una liebre tramposa a la que estaban despellejando como castigo. Por todo el recinto se reparten además tablillas ema en forma de corazón, muñecos de papel hitogata para «disolver» problemas en el agua, la estatua de Daikoku (a la que se toca la cabeza para pedir prosperidad) y puestos de omikuji especializados en predicciones de amor.'
+    ]},
+    {type:'cards', title:'Leyendas grabadas en el templo', items:[
+      {icon:'scroll', title:'El salto de la fe', text:'Entre 1694 y 1864 se documentaron 234 saltos desde el balcón: quien sobrevivía veía su deseo cumplido. El 85,4% lo consiguió. Hoy está terminantemente prohibido.'},
+      {icon:'heart', title:'Las piedras del amor', text:'Caminar seis metros con los ojos cerrados entre las dos piedras del santuario Jishu augura, según la tradición, encontrar pareja pronto.'}
     ]},
     {type:'heading', text:'Cascada Otowa y santuarios interiores', icon:'droplet'},
     {type:'stop', title:'Salones Nishimukijizō-dō y Shaka-dō', text:[

@@ -190,6 +190,13 @@ function renderBlocks(blocks) {
     if (block.type === 'image') return `<figure class="block-image"><img src="${block.src}" alt="${block.alt || ''}" loading="lazy"/>${block.caption ? `<figcaption>${block.caption}</figcaption>` : ''}</figure>`;
     if (block.type === 'list') return `<div class="block-list">${block.title ? `<h4>${block.title}</h4>` : ''}<ul>${toList(block.items).map(i => `<li>${i}</li>`).join('')}</ul></div>`;
     if (block.type === 'cards') return `<div class="card-block">${block.title ? `<h4>${block.title}</h4>` : ''}${block.intro ? `<p>${block.intro}</p>` : ''}<div class="mini-card-grid">${toList(block.items).map(c => `<article class="mini-card">${c.icon && topicIcons[c.icon] ? `<span class="mini-card-icon">${topicIcons[c.icon]}</span>` : ''}<h5>${c.title}</h5><p>${c.text}</p></article>`).join('')}</div></div>`;
+    if (block.type === 'table') return `<div class="table-block">${block.title ? `<h4>${block.title}</h4>` : ''}<div class="mini-table-wrap"><table class="mini-table"><thead><tr>${block.columns.map(c => `<th>${c}</th>`).join('')}</tr></thead><tbody>${block.rows.map(r => `<tr>${r.map(cell => `<td>${cell}</td>`).join('')}</tr>`).join('')}</tbody></table></div></div>`;
+    if (block.type === 'timeline') {
+      const years = block.items.map(i => i.year);
+      const min = Math.min(...years), max = Math.max(...years);
+      const span = Math.max(max - min, 1);
+      return `<div class="timeline-block">${block.title ? `<h4>${block.title}</h4>` : ''}${toList(block.items).map(i => `<div class="timeline-row"><span class="timeline-label">${i.label}</span><div class="timeline-track"><span class="timeline-dot" style="left:${((i.year - min) / span * 100).toFixed(1)}%"></span></div><span class="timeline-year">${i.yearLabel || i.year}</span></div>`).join('')}</div>`;
+    }
     if (block.type === 'stop') {
       stop += 1;
       return `<div class="walk-stop"><span class="walk-stop-number">${stop}</span><div class="walk-stop-body"><h4>${block.title}</h4>${toList(block.text).map(p => `<p>${p}</p>`).join('')}${block.image ? `<div class="walk-stop-image"><img src="${block.image.src}" alt="${block.image.alt || block.title}" loading="lazy"/></div>` : ''}</div></div>`;
