@@ -66,12 +66,12 @@ addJapanPlace({
     ]},
     {type:'heading', text:'Santuario Jishu, dedicado al amor', icon:'heart'},
     {type:'stop', title:'El santuario del amor, dentro del templo', text:[
-      'Justo detrás del salón principal, el santuario Jishu lleva más de 1.300 años recibiendo a quienes buscan pareja: la tradición es caminar con los ojos cerrados entre dos piedras del amor separadas seis metros; conseguirlo augura encontrar el amor pronto. El recinto estuvo cerrado por obras de restauración entre 2022 y el 2025 anunciado por el templo — conviene confirmar en la web oficial si ya ha reabierto antes de planear la visita en torno a él.',
+      'Justo detrás del salón principal, el santuario Jishu lleva más de 1.300 años recibiendo a quienes buscan pareja: la tradición es caminar con los ojos cerrados entre dos piedras del amor separadas unos 18 metros; conseguirlo augura encontrar el amor pronto. El recinto estuvo cerrado por obras de restauración entre 2022 y el 2025 anunciado por el templo — conviene confirmar en la web oficial si ya ha reabierto antes de planear la visita en torno a él.',
       'En sus escaleras de acceso está la estatua de Ōkuninushi junto a una liebre, en referencia a un episodio del Kojiki en el que el dios ayuda a una liebre tramposa a la que estaban despellejando como castigo. Por todo el recinto se reparten además tablillas ema en forma de corazón, muñecos de papel hitogata para «disolver» problemas en el agua, la estatua de Daikoku (a la que se toca la cabeza para pedir prosperidad) y puestos de omikuji especializados en predicciones de amor.'
     ]},
     {type:'cards', title:'Leyendas grabadas en el templo', items:[
       {icon:'scroll', title:'El salto de la fe', text:'Entre 1694 y 1864 se documentaron 234 saltos desde el balcón: quien sobrevivía veía su deseo cumplido. El 85,4% lo consiguió. Hoy está terminantemente prohibido.'},
-      {icon:'heart', title:'Las piedras del amor', text:'Caminar seis metros con los ojos cerrados entre las dos piedras del santuario Jishu augura, según la tradición, encontrar pareja pronto.'}
+      {icon:'heart', title:'Las piedras del amor', text:'Caminar unos 18 metros con los ojos cerrados entre las dos piedras del santuario Jishu augura, según la tradición, encontrar pareja pronto.'}
     ]},
     {type:'heading', text:'Cascada Otowa y santuarios interiores', icon:'droplet'},
     {type:'stop', title:'Salones Nishimukijizō-dō y Shaka-dō', text:[
@@ -93,9 +93,16 @@ addJapanPlace({
       'La cascada que da nombre al templo (Kiyomizu, «agua pura») cae a los pies del balcón dividida en tres chorros independientes. Elige uno: beber de los tres seguidos se considera un gesto de avaricia que anula el efecto. Suele haber cola, pero merece la pena acercarse a probar el agua.'
     ]},
     {type:'cards', title:'Elige tu chorro', items:[
-      {icon:'heart', title:'Salud y longevidad', text:'El chorro de la izquierda, el más asociado tradicionalmente a una vida larga y sin enfermedades.'},
-      {icon:'book', title:'Éxito en los estudios', text:'El chorro central se vincula al buen rendimiento académico y a superar exámenes.'},
-      {icon:'droplet', title:'Éxito en el amor', text:'El chorro de la derecha, el que se dice que favorece encontrar pareja o fortalecer una relación.'}
+      {icon:'heart', title:'Salud y longevidad', text:'Uno de los tres chorros se asocia tradicionalmente a una vida larga y sin enfermedades.'},
+      {icon:'book', title:'Éxito en los estudios', text:'Otro se vincula al buen rendimiento académico y a superar exámenes.'},
+      {icon:'droplet', title:'Éxito en el amor', text:'El tercero se dice que favorece encontrar pareja o fortalecer una relación. Qué chorro corresponde a cada cosa varía según la fuente, así que elige el que más te apetezca.'}
+    ]},
+    {type:'heading', text:'Sabores de las colinas de Higashiyama', icon:'teacup'},
+    {type:'p', text:'La cuesta de bajada hacia Sannenzaka y Ninenzaka está llena de puestos y tiendas centenarias: un buen momento para probar algunos de los dulces más típicos de Kioto.'},
+    {type:'cards', title:'Sabores de Higashiyama', items:[
+      {icon:'blossom', title:'Yatsuhashi', text:'El dulce más típico de Kioto: fino y ligeramente crujiente en su versión horneada, o suave y envolviendo relleno de canela o matcha en su versión fresca (nama-yatsuhashi).'},
+      {icon:'droplet', title:'Helado de matcha', text:'El té verde de Uji, cerca de Kioto, es de los más apreciados de Japón; su helado, intenso y ligeramente amargo, es uno de los favoritos entre quienes recorren la zona.'},
+      {icon:'teacup', title:'Yudōfu', text:'Tofu hervido a fuego lento en un caldo suave de konbu, servido con salsa de soja, jengibre y cebolleta: un plato sencillo y muy propio de la tradición budista de los templos de Kioto.'}
     ]},
     {type:'heading', text:'Zona norte y salida', icon:'gate'},
     {type:'stop', title:'Pagoda Koyasu y templo Taisan-ji', text:[

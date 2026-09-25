@@ -130,25 +130,90 @@ const mapUrl = (lat, lon) => `https://www.google.com/maps/search/?api=1&query=${
 const directionsUrl = (lat, lon) => `https://www.google.com/maps/dir/?api=1&destination=${lat},${lon}`;
 const mapEmbed = (lat, lon, title, id) => `<div class="leaflet-map" id="${id}" data-lat="${lat}" data-lon="${lon}" data-title="${(title || '').replace(/"/g,'&quot;')}" role="img" aria-label="Mapa de ${title || ''}"></div>`;
 const activeMaps = [];
+const mapTileUrl = 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}';
+const mapLabelsUrl = 'https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}';
+const mapAttribution = 'Tiles © <a href="https://www.esri.com" target="_blank" rel="noopener">Esri</a> — Esri, Maxar, Earthstar Geographics';
+const pinDivIcon = (big) => L.divIcon({
+  className: 'map-pin',
+  html: `<svg viewBox="0 0 32 40" width="${big ? 40 : 30}" height="${big ? 50 : 38}"><path d="M16 1C7.7 1 1 7.7 1 16c0 11 15 22.5 15 22.5S31 27 31 16C31 7.7 24.3 1 16 1Z" fill="#d86143" stroke="#fffdf8" stroke-width="1.5"/><circle cx="16" cy="16" r="6.5" fill="#fffdf8"/></svg>`,
+  iconSize: [big ? 40 : 30, big ? 50 : 38],
+  iconAnchor: [big ? 20 : 15, big ? 50 : 38],
+  popupAnchor: [0, big ? -46 : -34]
+});
 function destroyMaps() { activeMaps.forEach(m => { try { m.remove(); } catch {} }); activeMaps.length = 0; }
 function initMaps() {
   if (!window.L) return;
   document.querySelectorAll('.leaflet-map').forEach(el => {
     const lat = Number(el.dataset.lat), lon = Number(el.dataset.lon);
-    const map = L.map(el, { scrollWheelZoom: false }).setView([lat, lon], 15);
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19, attribution: '© colaboradores de OpenStreetMap' }).addTo(map);
-    L.marker([lat, lon]).addTo(map).bindPopup(el.dataset.title || '');
+    const map = L.map(el, { scrollWheelZoom: false }).setView([lat, lon], 16);
+    L.tileLayer(mapTileUrl, { maxZoom: 19, attribution: mapAttribution }).addTo(map);
+    L.tileLayer(mapLabelsUrl, { maxZoom: 19 }).addTo(map);
+    L.marker([lat, lon], { icon: pinDivIcon(true) }).addTo(map).bindPopup(el.dataset.title || '');
     activeMaps.push(map);
   });
   document.querySelectorAll('.leaflet-multimap').forEach(el => {
     const points = JSON.parse(el.dataset.points || '[]');
     if (!points.length) return;
     const map = L.map(el, { scrollWheelZoom: false });
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19, attribution: '© colaboradores de OpenStreetMap' }).addTo(map);
-    const markers = points.map(p => L.marker([p.lat, p.lon]).bindPopup(`<strong>${p.name}</strong><br/><a href="${p.href}">Ver guía ↗</a>`));
+    L.tileLayer(mapTileUrl, { maxZoom: 19, attribution: mapAttribution }).addTo(map);
+    L.tileLayer(mapLabelsUrl, { maxZoom: 19 }).addTo(map);
+    const markers = points.map(p => L.marker([p.lat, p.lon], { icon: pinDivIcon(false) }).bindPopup(`<strong>${p.name}</strong><br/><a href="${p.href}">Ver guía ↗</a>`));
     const group = L.featureGroup(markers).addTo(map);
     map.fitBounds(group.getBounds().pad(0.2));
     activeMaps.push(map);
+  });
+}
+const activeCharts = [];
+let chartSeq = 0;
+function destroyCharts() { activeCharts.forEach(c => { try { c.destroy(); } catch {} }); activeCharts.length = 0; }
+function initCharts() {
+  if (!window.Chart) return;
+  document.querySelectorAll('.timeline-canvas').forEach(canvas => {
+    const items = JSON.parse(canvas.dataset.items || '[]');
+    if (!items.length) return;
+    const labels = items.map(i => i.label);
+    const chart = new Chart(canvas, {
+      type: 'scatter',
+      data: { datasets: [{
+        data: items.map((it, idx) => ({ x: it.year, y: idx })),
+        backgroundColor: '#d86143',
+        borderColor: '#d86143',
+        pointRadius: 7,
+        pointHoverRadius: 9,
+        pointBorderColor: '#fffdf8',
+        pointBorderWidth: 2
+      }] },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        animation: { duration: 900, easing: 'easeOutQuart' },
+        layout: { padding: { left: 4, right: 20 } },
+        scales: {
+          x: {
+            title: { display: true, text: 'Año', color: '#66716b', font: { family: 'DM Sans', size: 11 } },
+            grid: { color: '#eeeae0' },
+            ticks: { color: '#66716b', font: { family: 'DM Sans', size: 11 } }
+          },
+          y: {
+            reverse: true,
+            min: -0.5, max: items.length - 0.5,
+            afterBuildTicks: axis => { axis.ticks = items.map((_, i) => ({ value: i })); },
+            ticks: { color: '#1c2925', font: { family: 'DM Sans', size: 12, weight: '700' }, callback: v => labels[v] ?? '', autoSkip: false },
+            grid: { color: '#f0ede4' }
+          }
+        },
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            backgroundColor: '#1c2925',
+            titleFont: { family: 'DM Sans' },
+            bodyFont: { family: 'DM Sans' },
+            callbacks: { title: () => '', label: ctx => `${labels[ctx.parsed.y]}: ${items[ctx.parsed.y].yearLabel || items[ctx.parsed.y].year}` }
+          }
+        }
+      }
+    });
+    activeCharts.push(chart);
   });
 }
 const arrow = '<span aria-hidden="true">↗</span>';
@@ -159,7 +224,7 @@ const svgIcon = path => `<svg viewBox="0 0 24 24" fill="none" stroke="currentCol
 const topicIcons = {
   gate: svgIcon('<path d="M2 7.5c3-1.6 17-1.6 20 0M4.5 10.5h15M7.5 10.5V19M16.5 10.5V19"/>'),
   peak: svgIcon('<path d="M3 18h18M4 18l6.2-11L15 15l2.3-3.6L20 18"/>'),
-  footprints: svgIcon('<path d="M3.5 17.5c2-5.5 4.5 3 7.5-2s4.5 3 7.5-2"/><path d="M16.5 9.3l2.3-1.8-.6 2.8"/>'),
+  footprints: svgIcon('<g fill="currentColor" stroke="none"><path d="M6.5 21c-1.6 0-2.8-1.3-2.4-2.9l.6-2.4c.3-1.1.3-2.3 0-3.4l-.6-2.4C3.7 8.3 4.9 7 6.5 7c1.5 0 2.7 1.2 2.5 2.7l-.3 2.6c-.1 1.1-.1 2.2 0 3.3l.3 2.7c.2 1.5-1 2.7-2.5 2.7z"/><circle cx="4.7" cy="5.6" r=".9"/><circle cx="6.4" cy="4.8" r="1"/><circle cx="8.1" cy="5.5" r=".85"/><g transform="translate(11,-0.2) scale(0.55)"><path d="M6.5 21c-1.6 0-2.8-1.3-2.4-2.9l.6-2.4c.3-1.1.3-2.3 0-3.4l-.6-2.4C3.7 8.3 4.9 7 6.5 7c1.5 0 2.7 1.2 2.5 2.7l-.3 2.6c-.1 1.1-.1 2.2 0 3.3l.3 2.7c.2 1.5-1 2.7-2.5 2.7z"/><circle cx="4.7" cy="5.6" r=".9"/><circle cx="6.4" cy="4.8" r="1"/><circle cx="8.1" cy="5.5" r=".85"/></g></g>'),
   clock: svgIcon('<circle cx="12" cy="12" r="8.3"/><path d="M12 7.7V12l3.3 1.9"/>'),
   pagoda: svgIcon('<path d="M12 2.5l2 2.4H10zM7 6.9h10M5.5 10.6h13M4 14.3h16M2.5 18h19"/>'),
   bell: svgIcon('<path d="M7 15.5c0-4 1-8.2 5-8.2s5 4.2 5 8.2H7z"/><path d="M6 15.5h12M10.3 18.4a1.8 1.8 0 0 0 3.4 0M12 4.8v1.5"/>'),
@@ -173,9 +238,9 @@ const topicIcons = {
   teacup: svgIcon('<path d="M4 9h13v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5z"/><path d="M17 10.5h1.3a2.3 2.3 0 0 1 0 4.6H17M7 4.6c.5 1 1.5 1 2 0M11 4.6c.5 1 1.5 1 2 0"/>'),
   lantern: svgIcon('<path d="M12 2.5v2M9 4.5h6M7.5 6.5c0-1 2-1 4.5-1s4.5 0 4.5 1c1 2 1 9 0 11-.6 1-2.4 1.3-4.5 1.3s-3.9-.3-4.5-1.3c-1-2-1-9 0-11z"/><path d="M7 12h10M9 19.5h6v2H9z"/>'),
   tree: svgIcon('<path d="M12 3l4 6h-2.5l3 5H14l2.5 4h-9L10 14H7.5l3-5H8z"/><path d="M12 18v3"/>'),
-  rock: svgIcon('<path d="M3 17c0-3 2-5 4-6-1-2 .5-4 3-4 1.5 0 2.5.7 3 1.7 2-1 4.5.2 5 2.3 2 .3 3 2 3 4 0 1.2-.5 2-1.5 2z"/>'),
+  rock: svgIcon('<path d="M3 19 4 12 7 13 9 6 12 11 16 5 19 12 21 19Z" stroke-linejoin="miter"/>'),
   eye: svgIcon('<path d="M2 12s3.5-6.5 10-6.5S22 12 22 12s-3.5 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="2.6"/>'),
-  tower: svgIcon('<path d="M12 3l2 3h-4z"/><path d="M9.5 6h5l1 12H8.5z"/><path d="M9.8 18.2h4.4"/>'),
+  tower: svgIcon('<path d="M12 3v2M8 9l4-4 4 4"/><path d="M9.5 12V9h5v3M8 16v-4h8v4M6 21v-5h12v5"/>'),
   wood: svgIcon('<rect x="3.5" y="6" width="17" height="3" rx="1"/><rect x="3.5" y="11" width="17" height="3" rx="1"/><rect x="3.5" y="16" width="17" height="3" rx="1"/>'),
   bag: svgIcon('<path d="M7 8V6a5 5 0 0 1 10 0v2"/><path d="M4.5 8h15l-1 12h-13z"/>'),
   book: svgIcon('<path d="M4 5.5a2 2 0 0 1 2-2h4v15H6a2 2 0 0 0-2 2z"/><path d="M20 5.5a2 2 0 0 0-2-2h-4v15h4a2 2 0 0 1 2 2z"/>')
@@ -192,10 +257,10 @@ function renderBlocks(blocks) {
     if (block.type === 'cards') return `<div class="card-block">${block.title ? `<h4>${block.title}</h4>` : ''}${block.intro ? `<p>${block.intro}</p>` : ''}<div class="mini-card-grid">${toList(block.items).map(c => `<article class="mini-card">${c.icon && topicIcons[c.icon] ? `<span class="mini-card-icon">${topicIcons[c.icon]}</span>` : ''}<h5>${c.title}</h5><p>${c.text}</p></article>`).join('')}</div></div>`;
     if (block.type === 'table') return `<div class="table-block">${block.title ? `<h4>${block.title}</h4>` : ''}<div class="mini-table-wrap"><table class="mini-table"><thead><tr>${block.columns.map(c => `<th>${c}</th>`).join('')}</tr></thead><tbody>${block.rows.map(r => `<tr>${r.map(cell => `<td>${cell}</td>`).join('')}</tr>`).join('')}</tbody></table></div></div>`;
     if (block.type === 'timeline') {
-      const years = block.items.map(i => i.year);
-      const min = Math.min(...years), max = Math.max(...years);
-      const span = Math.max(max - min, 1);
-      return `<div class="timeline-block">${block.title ? `<h4>${block.title}</h4>` : ''}${toList(block.items).map(i => `<div class="timeline-row"><span class="timeline-label">${i.label}</span><div class="timeline-track"><span class="timeline-dot" style="left:${((i.year - min) / span * 100).toFixed(1)}%"></span></div><span class="timeline-year">${i.yearLabel || i.year}</span></div>`).join('')}</div>`;
+      chartSeq += 1;
+      const items = toList(block.items);
+      const height = items.length * 44 + 50;
+      return `<div class="timeline-block">${block.title ? `<h4>${block.title}</h4>` : ''}<div class="timeline-canvas-wrap" style="height:${height}px"><canvas class="timeline-canvas" id="timeline-chart-${chartSeq}" data-items='${JSON.stringify(items).replace(/'/g,"&#39;")}'></canvas></div></div>`;
     }
     if (block.type === 'stop') {
       stop += 1;
@@ -260,22 +325,25 @@ function countryPage(country) {
 function cityPage(city) {
   const country = countryBy(city.country);
   const selected = places.filter(place => place.city === city.slug);
-  return `<main id="contenido"><div class="shell">${breadcrumbs([{label:'Destinos',href:'#/destinos'},{label:country.name,href:countryUrl(country.slug)},{label:city.name}])}</div><section class="city-hero"><div class="city-hero-image"><img src="${city.image}" alt="Vista de ${city.name}"/></div><div class="city-hero-overlay"></div><div class="shell city-hero-content"><span class="hero-location">${country.name} / ${city.region}</span><h1>${city.name}<span>.</span></h1><p>${city.eyebrow}</p><button data-scroll="lugares" class="button button-light">Descubrir lugares <span aria-hidden="true">↓</span></button></div></section><div class="city-facts shell"><div><span>TIEMPO IDEAL</span><strong>${city.days}</strong></div><div><span>MEJOR ÉPOCA</span><strong>${city.best}</strong></div><div><span>CÓMO MOVERSE</span><strong>${city.move}</strong></div><a href="${mapUrl(city.lat,city.lon)}" target="_blank" rel="noopener noreferrer">Abrir mapa ${arrow}</a></div><section class="section city-intro-section"><div class="shell city-intro-grid"><span class="section-kicker">GUÍA DE CIUDAD / ${city.name.toUpperCase()}</span><div><h2>Empieza por <em>sentir la ciudad.</em></h2><p>${city.intro}</p></div></div></section><section class="section place-section" id="lugares"><div class="shell"><div class="section-heading"><div><span class="section-kicker">NO TE LOS PIERDAS</span><h2>Lugares con <em>historia.</em></h2></div><p>${selected.length} ${selected.length === 1 ? 'parada' : 'paradas'} para empezar a conocer ${city.name} de verdad.</p></div><div class="place-grid">${selected.map(placeCard).join('')}</div></div></section><section class="section practical-section"><div class="shell practical-grid"><div><span class="section-kicker">ANOTA ESTO</span><h2>Consejos para <em>el camino.</em></h2><p>Pequeños detalles que pueden hacer que disfrutes mucho más la visita.</p></div><div class="tips-list">${city.tips.map(([title, description], i) => `<article><span>0${i+1}</span><div><h3>${title}</h3><p>${description}</p></div></article>`).join('')}</div></div></section><section class="section map-section"><div class="shell"><div class="section-heading compact"><div><span class="section-kicker">UBÍCATE</span><h2>${city.name} en el <em>mapa.</em></h2></div><a class="text-link" href="${mapUrl(city.lat,city.lon)}" target="_blank" rel="noopener noreferrer">Abrir mapa completo ${arrow}</a></div><div class="map-frame map-frame-tall"><div class="leaflet-multimap" id="map-${city.slug}" data-points='${JSON.stringify(selected.map(p => ({lat:p.lat,lon:p.lon,name:p.name,href:placeUrl(p)}))).replace(/'/g,"&#39;")}'></div></div><p class="map-credit">${selected.length} ${selected.length === 1 ? 'lugar marcado' : 'lugares marcados'} · mapa de © colaboradores de OpenStreetMap.</p></div></section></main>`;
+  return `<main id="contenido"><div class="shell">${breadcrumbs([{label:'Destinos',href:'#/destinos'},{label:country.name,href:countryUrl(country.slug)},{label:city.name}])}</div><section class="city-hero"><div class="city-hero-image"><img src="${city.image}" alt="Vista de ${city.name}"/></div><div class="city-hero-overlay"></div><div class="shell city-hero-content"><span class="hero-location">${country.name} / ${city.region}</span><h1>${city.name}<span>.</span></h1><p>${city.eyebrow}</p><button data-scroll="lugares" class="button button-light">Descubrir lugares <span aria-hidden="true">↓</span></button></div></section><div class="city-facts shell"><div><span>TIEMPO IDEAL</span><strong>${city.days}</strong></div><div><span>MEJOR ÉPOCA</span><strong>${city.best}</strong></div><div><span>CÓMO MOVERSE</span><strong>${city.move}</strong></div><a href="${mapUrl(city.lat,city.lon)}" target="_blank" rel="noopener noreferrer">Abrir mapa ${arrow}</a></div><section class="section city-intro-section"><div class="shell city-intro-grid"><span class="section-kicker">GUÍA DE CIUDAD / ${city.name.toUpperCase()}</span><div><h2>Empieza por <em>sentir la ciudad.</em></h2><p>${city.intro}</p></div></div></section><section class="section place-section" id="lugares"><div class="shell"><div class="section-heading"><div><span class="section-kicker">NO TE LOS PIERDAS</span><h2>Lugares con <em>historia.</em></h2></div><p>${selected.length} ${selected.length === 1 ? 'parada' : 'paradas'} para empezar a conocer ${city.name} de verdad.</p></div><div class="place-grid">${selected.map(placeCard).join('')}</div></div></section><section class="section practical-section"><div class="shell practical-grid"><div><span class="section-kicker">ANOTA ESTO</span><h2>Consejos para <em>el camino.</em></h2><p>Pequeños detalles que pueden hacer que disfrutes mucho más la visita.</p></div><div class="tips-list">${city.tips.map(([title, description], i) => `<article><span>0${i+1}</span><div><h3>${title}</h3><p>${description}</p></div></article>`).join('')}</div></div></section><section class="section map-section"><div class="shell"><div class="section-heading compact"><div><span class="section-kicker">UBÍCATE</span><h2>${city.name} en el <em>mapa.</em></h2></div><a class="text-link" href="${mapUrl(city.lat,city.lon)}" target="_blank" rel="noopener noreferrer">Abrir mapa completo ${arrow}</a></div><div class="map-frame map-frame-tall"><div class="leaflet-multimap" id="map-${city.slug}" data-points='${JSON.stringify(selected.map(p => ({lat:p.lat,lon:p.lon,name:p.name,href:placeUrl(p)}))).replace(/'/g,"&#39;")}'></div></div><p class="map-credit">${selected.length} ${selected.length === 1 ? 'lugar marcado' : 'lugares marcados'} · vista satélite © Esri.</p></div></section></main>`;
 }
 
 function placePage(place) {
   const curiosities = toList(place.curiosities || place.curiosity);
   const tips = toList(place.tips || place.tip);
-  const headings = place.blocks ? place.blocks.filter(b => b.type === 'heading') : [];
-  const storyBody = place.blocks
-    ? `${renderBlocks(place.blocks)}`
+  const fullWidthBlocks = place.blocks ? place.blocks.filter(b => b.type === 'table' || b.type === 'timeline') : [];
+  const narrativeBlocks = place.blocks ? place.blocks.filter(b => b.type !== 'table' && b.type !== 'timeline') : place.blocks;
+  const headings = narrativeBlocks ? narrativeBlocks.filter(b => b.type === 'heading') : [];
+  const introData = fullWidthBlocks.length ? `<div class="shell intro-data">${renderBlocks(fullWidthBlocks)}</div>` : '';
+  const storyBody = narrativeBlocks
+    ? `${renderBlocks(narrativeBlocks)}`
     : `<p class="story-text">${place.story}</p>${(place.history || []).map(paragraph => `<p class="story-detail">${paragraph}</p>`).join('')}${curiosities.length ? `<div class="curiosity"><span>✳ ¿SABÍAS QUE...?</span><ul>${curiosities.map(c => `<li>${c}</li>`).join('')}</ul></div>` : ''}`;
   const storyToc = headings.length ? `<div class="story-toc"><span>En este recorrido</span>${headings.map(h => `<a href="#${slugify(h.text)}" data-scroll="${slugify(h.text)}">${h.text}</a>`).join('')}</div>` : '';
   const statsBlock = place.stats?.length ? `<section class="section stats-section"><div class="shell"><div class="stats-grid">${place.stats.map(s => `<div class="stat-card">${s.icon && topicIcons[s.icon] ? `<span class="stat-icon">${topicIcons[s.icon]}</span>` : ''}<strong>${s.value}</strong><span>${s.label}</span></div>`).join('')}</div>${headings.length ? `<div class="highlights-row">${headings.map((h,i) => `<a class="highlight-chip" href="#${slugify(h.text)}" data-scroll="${slugify(h.text)}"><span class="chip-num">${i+1}</span>${h.icon && topicIcons[h.icon] ? `<span class="chip-icon">${topicIcons[h.icon]}</span>` : ''}${h.text}</a>`).join('')}</div>` : ''}</div></section>` : '';
   const city = cityBy(place.city), country = countryBy(city.country);
   const active = saved().includes(`${place.city}/${place.slug}`);
   const related = places.filter(p => p.city === city.slug && p.slug !== place.slug);
-  return `<main id="contenido"><div class="shell">${breadcrumbs([{label:'Destinos',href:'#/destinos'},{label:country.name,href:countryUrl(country.slug)},{label:city.name,href:cityUrl(city.slug)},{label:place.name}])}</div><section class="place-hero"><div class="shell place-hero-grid"><div class="place-hero-copy"><span class="section-kicker">${city.name.toUpperCase()} / ${place.category.toUpperCase()}</span><h1>${place.name}<span class="hero-period">.</span></h1><p>${place.lead}</p><div class="place-hero-actions"><a class="button button-dark" href="${directionsUrl(place.lat,place.lon)}" target="_blank" rel="noopener noreferrer">Cómo llegar ${arrow}</a><button class="button button-outline save-main ${active ? 'is-saved' : ''}" data-save="${place.city}/${place.slug}" aria-pressed="${active}">${bookmarkIcon}<span>${active ? 'Guardado' : 'Guardar lugar'}</span></button></div></div><div class="place-hero-image"><img src="${place.image}" alt="${place.name}"/></div></div></section><div class="shell place-quick-facts"><div><span>TIPO DE VISITA</span><strong>${place.category}</strong></div><div><span>TIEMPO ESTIMADO</span><strong>${place.duration}</strong></div><div><span>PRECIO ORIENTATIVO</span><strong>${place.price}</strong></div></div>${statsBlock}<section class="section place-story"><div class="shell story-grid"><div><span class="section-kicker">01 / DESCUBRE</span><h2>La historia detrás <em>del lugar.</em></h2>${storyToc}</div><div>${storyBody}</div></div></section><section class="section visit-section"><div class="shell"><div class="section-heading"><div><span class="section-kicker">02 / PREPARA TU VISITA</span><h2>Todo lo que necesitas <em>saber.</em></h2></div><p>Información revisada en septiembre de 2026. Los datos pueden cambiar.</p></div><div class="visit-grid"><article><span class="visit-icon">◷</span><span class="visit-label">HORARIOS</span><h3>¿Cuándo ir?</h3><p>${place.hours}</p><a href="${place.hoursSource}" target="_blank" rel="noopener noreferrer">Confirmar horario oficial ${arrow}</a></article><article><span class="visit-icon">€</span><span class="visit-label">ENTRADAS</span><h3>¿Cuánto cuesta?</h3><p>${place.price}. ${place.tickets || place.ticket || ''}</p><a href="${place.official}" target="_blank" rel="noopener noreferrer">Consultar web oficial ${arrow}</a></article><article><span class="visit-icon">✳</span><span class="visit-label">CONSEJO VIAJERO</span><h3>Antes de salir</h3><ul class="visit-list">${tips.map(t => `<li>${t}</li>`).join('')}</ul></article>${place.access ? `<article><span class="visit-icon">➤</span><span class="visit-label">CÓMO LLEGAR</span><h3>Acceso al lugar</h3><p>${place.access}</p><a href="${directionsUrl(place.lat,place.lon)}" target="_blank" rel="noopener noreferrer">Cómo llegar en Google Maps ${arrow}</a></article>` : ''}</div></div></section><section class="section map-section"><div class="shell"><div class="section-heading compact"><div><span class="section-kicker">03 / ENCUÉNTRALO</span><h2>Ya casi estás <em>allí.</em></h2></div><a class="text-link" href="${mapUrl(place.lat,place.lon)}" target="_blank" rel="noopener noreferrer">Abrir mapa ${arrow}</a></div><div class="map-frame">${mapEmbed(place.lat,place.lon,place.name,`map-${place.slug}`)}</div><p class="map-credit">Mapa de © colaboradores de OpenStreetMap.</p></div></section>${place.gallery?.length ? `<section class="section gallery-section"><div class="shell"><div class="section-heading compact"><div><span class="section-kicker">FOTOGRAFÍAS DE LA VISITA</span><h2>El recorrido en <em>imágenes.</em></h2></div></div><div class="gallery-grid">${place.gallery.map(photo => `<figure><img src="${photo.src}" alt="${photo.alt}" loading="lazy"/><figcaption>${photo.alt}</figcaption></figure>`).join('')}</div></div></section>` : ''}${related.length ? `<section class="section related-section"><div class="shell"><div class="section-heading compact"><div><span class="section-kicker">SIGUE EXPLORANDO</span><h2>Más lugares en <em>${city.name}.</em></h2></div><a class="text-link" href="${cityUrl(city.slug)}">Ver guía de ciudad ${arrow}</a></div><div class="place-grid">${related.map(placeCard).join('')}</div></div></section>` : ''}</main>`;
+  return `<main id="contenido"><div class="shell">${breadcrumbs([{label:'Destinos',href:'#/destinos'},{label:country.name,href:countryUrl(country.slug)},{label:city.name,href:cityUrl(city.slug)},{label:place.name}])}</div><section class="place-hero"><div class="shell place-hero-grid"><div class="place-hero-copy"><span class="section-kicker">${city.name.toUpperCase()} / ${place.category.toUpperCase()}</span><h1>${place.name}<span class="hero-period">.</span></h1><p>${place.lead}</p><div class="place-hero-actions"><a class="button button-dark" href="${directionsUrl(place.lat,place.lon)}" target="_blank" rel="noopener noreferrer">Cómo llegar ${arrow}</a><button class="button button-outline save-main ${active ? 'is-saved' : ''}" data-save="${place.city}/${place.slug}" aria-pressed="${active}">${bookmarkIcon}<span>${active ? 'Guardado' : 'Guardar lugar'}</span></button></div></div><div class="place-hero-image"><img src="${place.image}" alt="${place.name}"/></div></div></section><div class="shell place-quick-facts"><div><span>TIPO DE VISITA</span><strong>${place.category}</strong></div><div><span>TIEMPO ESTIMADO</span><strong>${place.duration}</strong></div><div><span>PRECIO ORIENTATIVO</span><strong>${place.price}</strong></div></div>${statsBlock}${introData}<section class="section place-story"><div class="shell story-grid"><div><span class="section-kicker">01 / DESCUBRE</span><h2>La historia detrás <em>del lugar.</em></h2>${storyToc}</div><div>${storyBody}</div></div></section><section class="section visit-section"><div class="shell"><div class="section-heading"><div><span class="section-kicker">02 / PREPARA TU VISITA</span><h2>Todo lo que necesitas <em>saber.</em></h2></div><p>Información revisada en septiembre de 2026. Los datos pueden cambiar.</p></div><div class="visit-grid"><article><span class="visit-icon">◷</span><span class="visit-label">HORARIOS</span><h3>¿Cuándo ir?</h3><p>${place.hours}</p><a href="${place.hoursSource}" target="_blank" rel="noopener noreferrer">Confirmar horario oficial ${arrow}</a></article><article><span class="visit-icon">€</span><span class="visit-label">ENTRADAS</span><h3>¿Cuánto cuesta?</h3><p>${place.price}. ${place.tickets || place.ticket || ''}</p><a href="${place.official}" target="_blank" rel="noopener noreferrer">Consultar web oficial ${arrow}</a></article><article><span class="visit-icon">✳</span><span class="visit-label">CONSEJO VIAJERO</span><h3>Antes de salir</h3><ul class="visit-list">${tips.map(t => `<li>${t}</li>`).join('')}</ul></article>${place.access ? `<article><span class="visit-icon">➤</span><span class="visit-label">CÓMO LLEGAR</span><h3>Acceso al lugar</h3><p>${place.access}</p><a href="${directionsUrl(place.lat,place.lon)}" target="_blank" rel="noopener noreferrer">Cómo llegar en Google Maps ${arrow}</a></article>` : ''}</div></div></section><section class="section map-section"><div class="shell"><div class="section-heading compact"><div><span class="section-kicker">03 / ENCUÉNTRALO</span><h2>Ya casi estás <em>allí.</em></h2></div><a class="text-link" href="${mapUrl(place.lat,place.lon)}" target="_blank" rel="noopener noreferrer">Abrir mapa ${arrow}</a></div><div class="map-frame">${mapEmbed(place.lat,place.lon,place.name,`map-${place.slug}`)}</div><p class="map-credit">Vista satélite © Esri, Maxar, Earthstar Geographics.</p></div></section>${place.gallery?.length ? `<section class="section gallery-section"><div class="shell"><div class="section-heading compact"><div><span class="section-kicker">FOTOGRAFÍAS DE LA VISITA</span><h2>El recorrido en <em>imágenes.</em></h2></div></div><div class="gallery-grid">${place.gallery.map(photo => `<figure><img src="${photo.src}" alt="${photo.alt}" loading="lazy"/><figcaption>${photo.alt}</figcaption></figure>`).join('')}</div></div></section>` : ''}${related.length ? `<section class="section related-section"><div class="shell"><div class="section-heading compact"><div><span class="section-kicker">SIGUE EXPLORANDO</span><h2>Más lugares en <em>${city.name}.</em></h2></div><a class="text-link" href="${cityUrl(city.slug)}">Ver guía de ciudad ${arrow}</a></div><div class="place-grid">${related.map(placeCard).join('')}</div></div></section>` : ''}</main>`;
 }
 
 function savedPage() {
@@ -313,6 +381,7 @@ function render(preserveScroll = false) {
     }
   }
   destroyMaps();
+  destroyCharts();
   app.innerHTML = header() + (content || notFound()) + footer();
   document.querySelectorAll('[data-nav]').forEach(link => {
     if ((segments.length === 0 && link.dataset.nav === 'home') || (segments[0] === link.dataset.nav)) link.setAttribute('aria-current','page');
@@ -320,6 +389,7 @@ function render(preserveScroll = false) {
   document.title = `${document.querySelector('main h1')?.textContent.trim() || 'ViajesPaya'} — ViajesPaya`;
   if (!preserveScroll) window.scrollTo({top:0,behavior:'instant'});
   initMaps();
+  initCharts();
 }
 
 document.addEventListener('click', event => {
