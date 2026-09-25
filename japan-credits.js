@@ -1,0 +1,151 @@
+// Créditos de fotografías específicas de las fichas de Japón.
+Object.assign(imageCredits, {
+  "japon-nishiki.jpg": {
+    "url": "https://commons.wikimedia.org/wiki/File%3ANishiki_Ichiba%2C_la_cocina_de_Kioto_(14702738483).jpg",
+    "artist": "Lorena a.k.a. Loretahur",
+    "license": "CC BY-SA 2.0",
+    "sourceTitle": "File:Nishiki Ichiba, la cocina de Kioto (14702738483).jpg"
+  },
+  "japon-pontocho.jpg": {
+    "url": "https://commons.wikimedia.org/wiki/File%3APontocho_by_Wolfiewolf_in_Nabeyacho%2C_Kyoto.jpg",
+    "artist": "Wolfiewolf from Pontocho street in Nakagyo, Kyoto",
+    "license": "CC BY 2.0",
+    "sourceTitle": "File:Pontocho by Wolfiewolf in Nabeyacho, Kyoto.jpg"
+  },
+  "japon-yasaka-jinja.jpg": {
+    "url": "https://commons.wikimedia.org/wiki/File%3ANishiromon_Gate%2C_Yasaka_Shrine%2C_Kyoto%2C_West_view_20190416_1.jpg",
+    "artist": "DXR",
+    "license": "CC BY-SA 4.0",
+    "sourceTitle": "File:Nishiromon Gate, Yasaka Shrine, Kyoto, West view 20190416 1.jpg"
+  },
+  "japon-ginkaku-ji.jpg": {
+    "url": "https://commons.wikimedia.org/wiki/File%3ASunlight_through_clouds_and_view_of_Ginkaku-ji_Temple_from_above%2C_Kyoto%2C_Japan.jpg",
+    "artist": "Basile Morin",
+    "license": "CC BY-SA 4.0",
+    "sourceTitle": "File:Sunlight through clouds and view of Ginkaku-ji Temple from above, Kyoto, Japan.jpg"
+  },
+  "japon-nanzen-ji.jpg": {
+    "url": "https://commons.wikimedia.org/wiki/File%3ANanzen-ji%2C_Saky%C5%8D-ku%2C_Pr%C3%A4fektur_Ky%C5%8Dto%2C_Japan_-_panoramio_(1).jpg",
+    "artist": "josef knecht",
+    "license": "CC BY 3.0",
+    "sourceTitle": "File:Nanzen-ji, Sakyō-ku, Präfektur Kyōto, Japan - panoramio (1).jpg"
+  },
+  "japon-castillo-nijo.jpg": {
+    "url": "https://commons.wikimedia.org/wiki/File%3ANijojoGarden3317.jpg",
+    "artist": "Fg2",
+    "license": "Public domain",
+    "sourceTitle": "File:NijojoGarden3317.jpg"
+  },
+  "japon-ryoan-ji.jpg": {
+    "url": "https://commons.wikimedia.org/wiki/File%3ARyoanJi-Dry_garden.jpg",
+    "artist": "Stephane D'Alu",
+    "license": "CC BY-SA 3.0",
+    "sourceTitle": "File:RyoanJi-Dry garden.jpg"
+  },
+  "japon-ninna-ji.jpg": {
+    "url": "https://commons.wikimedia.org/wiki/File%3ANinnaji_Kyoto07n4500.jpg",
+    "artist": "663highland",
+    "license": "CC BY 2.5",
+    "sourceTitle": "File:Ninnaji Kyoto07n4500.jpg"
+  },
+  "japon-gion-miyagawacho.jpg": {
+    "url": "https://commons.wikimedia.org/wiki/File%3AGeisha_Kyoto_Gion.jpg",
+    "artist": "Photograph taken by Todd Laracuenta",
+    "license": "CC BY-SA 3.0"
+  },
+  "japon-sannenzaka-ninenzaka.jpg": {
+    "url": "https://commons.wikimedia.org/wiki/File%3APedestrian_road_with_pavements%2C_paper_umbrellas_and_people_in_yukata%2C_Higashiyama-ku%2C_Kyoto%2C_Japan.jpg",
+    "artist": "Basile Morin",
+    "license": "CC BY-SA 4.0"
+  },
+  "japon-chion-in-maruyama.jpg": {
+    "url": "https://commons.wikimedia.org/wiki/File%3AInterior_view_of_the_Buddhist_temple_Hounen_Jonin_Gobyo_with_red_wooden_chest_and_round_straw_carpets_Chion-in_Kyoto_Japan.jpg",
+    "artist": "Basile Morin",
+    "license": "CC BY-SA 4.0"
+  },
+  "japon-heian-jingu.jpg": {
+    "url": "https://commons.wikimedia.org/wiki/File%3AHeian_Shrine_Garden%2C_Kyoto%2C_Japan%2C_20240820_0946_4932.jpg",
+    "artist": "Jakub Hałun",
+    "license": "CC BY 4.0"
+  },
+  "japon-parque-nara.jpg": {
+    "url": "https://commons.wikimedia.org/wiki/File%3ANara_Park_-_panoramio_(2).jpg",
+    "artist": "Feri88",
+    "license": "CC BY 3.0"
+  },
+  "japon-kasuga-taisha.jpg": {
+    "url": "https://commons.wikimedia.org/wiki/File%3ATreasure_House_of_Kasuga-taisha_1.jpg",
+    "artist": "Immanuelle",
+    "license": "CC BY 4.0"
+  },
+  "japon-kofuku-ji.jpg": {
+    "url": "https://commons.wikimedia.org/wiki/File%3AKofukuji_Hokuendo_Seshin_Unkei_(detail).jpg",
+    "artist": "今泉篤男 et al.",
+    "license": "Public domain"
+  },
+  "japon-ukimido.jpg": {
+    "url": "https://commons.wikimedia.org/wiki/File%3AUkimido_in_Nara_To-kae_festival_Nara.jpg",
+    "artist": "excl-zoo",
+    "license": "Public domain"
+  },
+  "japon-ujigami-jinja.jpg": {
+    "url": "https://commons.wikimedia.org/wiki/File%3ADSC21854%2C_Ujigami_Shrine%2C_Uji_City%2C_Japan.jpg",
+    "artist": "Jim G",
+    "license": "CC BY 2.0"
+  },
+  "japon-calle-te-uji.jpg": {
+    "url": "https://commons.wikimedia.org/wiki/File%3AJP_%E6%97%A5%E6%9C%AC_Japan_%E4%BA%AC%E9%83%BD_Kyoto_%E5%AE%87%E6%B2%BB%E5%9F%8E_Uji-shi_Uji_Myouraku_shop_Nakamura_Tokichi_Honten_Tea_House_cafe_%E7%B6%A0%E8%8C%B6%E7%94%9C%E5%93%81_Matcha_cream_June_2026_N13P_02.jpg",
+    "artist": "HAGAT hOMSZE",
+    "license": "CC0"
+  },
+  "japon-momijidani.jpg": {
+    "url": "https://commons.wikimedia.org/wiki/File%3AMomijidani_park2.jpg",
+    "artist": "耕太郎",
+    "license": "CC BY-SA 4.0"
+  },
+  "japon-monte-misen.jpg": {
+    "url": "https://commons.wikimedia.org/wiki/File%3AJapan_-_Miyajima_-_Mount_Misen_-_Jizo.jpg",
+    "artist": "Vanvelthem Cédric",
+    "license": "CC BY-SA 4.0"
+  },
+  "japon-senjokaku.jpg": {
+    "url": "https://commons.wikimedia.org/wiki/File%3ASenjokaku_2011.JPG",
+    "artist": "Taisyo",
+    "license": "CC BY 3.0"
+  },
+  "japon-jardin-koko-en.jpg": {
+    "url": "https://commons.wikimedia.org/wiki/File%3AHimeji_Koukoen32n4592.jpg",
+    "artist": "663highland",
+    "license": "CC BY 2.5"
+  },
+  "japon-shinsekai.jpg": {
+    "url": "https://commons.wikimedia.org/wiki/File%3ATsutenkaku_Tower_%40_Shinsekai_%40_Osaka_(13382524693).jpg",
+    "artist": "Guilhem Vellut from Annecy, France",
+    "license": "CC BY 2.0"
+  },
+  "japon-nipponbashi.jpg": {
+    "url": "https://commons.wikimedia.org/wiki/File%3AMelonbooks_Osaka_Nipponbashi_2009.JPG",
+    "artist": "ja:User:Sanjo",
+    "license": "CC BY-SA 3.0"
+  },
+  "japon-shitenno-ji.jpg": {
+    "url": "https://commons.wikimedia.org/wiki/File%3AShitennoji-mae_Yuhigaoka_Station_(02)_IMG_5918_20141005.JPG",
+    "artist": "Ogiyoshisan",
+    "license": "CC BY 4.0"
+  },
+  "japon-isshin-ji.jpg": {
+    "url": "https://commons.wikimedia.org/wiki/File%3AIsshinji-hondo1.jpg",
+    "artist": "KENPEI",
+    "license": "CC BY-SA 3.0"
+  },
+  "japon-namba.jpg": {
+    "url": "https://commons.wikimedia.org/wiki/File%3ANamba_parks04s3872.jpg",
+    "artist": "663highland",
+    "license": "CC BY 2.5"
+  },
+  "japon-asakusa.jpg": {
+    "url": "https://commons.wikimedia.org/wiki/File%3AView_of_Tokyo_Skytree_from_Asakusa_20190420_1.jpg",
+    "artist": "DXR",
+    "license": "CC BY-SA 4.0"
+  }
+});

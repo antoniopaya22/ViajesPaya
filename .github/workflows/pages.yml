@@ -26,7 +26,7 @@ jobs:
       - name: Preparar archivos públicos
         run: |
           mkdir _site
-          cp index.html styles.css script.js japan.js credits.js favicon.svg .nojekyll _site/
+          cp index.html styles.css script.js japan.js credits.js japan-credits.js favicon.svg .nojekyll _site/
           cp -R data _site/
           cp -R assets _site/
       - uses: actions/upload-pages-artifact@v3

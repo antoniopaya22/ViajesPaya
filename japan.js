@@ -35,8 +35,15 @@ const japanPlaces = [
 
 // Las fichas ampliadas viven en data/japon/, agrupadas por ciudad.
 const japanCityImage = Object.fromEntries(japanCities.map(city => [city.slug, city.image]));
+const japanPlaceImages = new Set([
+  'nishiki','pontocho','gion-miyagawacho','yasaka-jinja','sannenzaka-ninenzaka','ginkaku-ji','nanzen-ji','castillo-nijo','ryoan-ji','ninna-ji','chion-in-maruyama','heian-jingu',
+  'parque-nara','kasuga-taisha','kofuku-ji','ukimido','ujigami-jinja','calle-te-uji',
+  'momijidani','monte-misen','senjokaku','jardin-koko-en',
+  'shinsekai','nipponbashi','shitenno-ji','isshin-ji','namba','asakusa'
+]);
 function addJapanPlace(city, slug, name, category, lat, lon, lead, story, curiosity, official, duration = '45–90 min', hours = 'Consulta los horarios de cada recinto en la web oficial.', price = 'Consulta la tarifa actual', ticket = 'Consulta la venta y las reservas en la web oficial.', tip = 'Comprueba el acceso antes de desplazarte.') {
-  japanPlaces.push({slug, city, name, category, lat, lon, image:japanCityImage[city], lead, story, curiosity, official, hoursSource:official, duration, hours, price, ticket, tip});
+  const image = japanPlaceImages.has(slug) ? `assets/japon-${slug}.jpg` : japanCityImage[city];
+  japanPlaces.push({slug, city, name, category, lat, lon, image, lead, story, curiosity, official, hoursSource:official, duration, hours, price, ticket, tip});
 }
 function addJapanHistory(entries) {
   for (const place of japanPlaces) if (entries[place.slug]) place.history = entries[place.slug];

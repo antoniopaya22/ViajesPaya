@@ -100,3 +100,14 @@ const imageCredits = {
     "license": "CC BY-SA 3.0"
   }
 };
+
+Object.assign(imageCredits, {
+  'japon-nishiki.jpg': {url:'https://commons.wikimedia.org/wiki/File%3ANishiki_Ichiba%2C_la_cocina_de_Kioto_(14702738483).jpg',artist:'Lorena a.k.a. Loretahur',license:'CC BY-SA 2.0'},
+  'japon-pontocho.jpg': {url:'https://commons.wikimedia.org/wiki/File%3APontocho_by_Wolfiewolf_in_Nabeyacho%2C_Kyoto.jpg',artist:'Wolfiewolf',license:'CC BY 2.0'},
+  'japon-yasaka-jinja.jpg': {url:'https://commons.wikimedia.org/wiki/File%3ANishiromon_Gate%2C_Yasaka_Shrine%2C_Kyoto%2C_West_view_20190416_1.jpg',artist:'DXR',license:'CC BY-SA 4.0'},
+  'japon-ginkaku-ji.jpg': {url:'https://commons.wikimedia.org/wiki/File%3ASunlight_through_clouds_and_view_of_Ginkaku-ji_Temple_from_above%2C_Kyoto%2C_Japan.jpg',artist:'Basile Morin',license:'CC BY-SA 4.0'},
+  'japon-nanzen-ji.jpg': {url:'https://commons.wikimedia.org/wiki/File%3ANanzen-ji%2C_Saky%C5%8D-ku%2C_Pr%C3%A4fektur_Ky%C5%8Dto%2C_Japan_-_panoramio_(1).jpg',artist:'josef knecht',license:'CC BY 3.0'},
+  'japon-castillo-nijo.jpg': {url:'https://commons.wikimedia.org/wiki/File%3ANijojoGarden3317.jpg',artist:'Fg2',license:'Public domain'},
+  'japon-ryoan-ji.jpg': {url:'https://commons.wikimedia.org/wiki/File%3ARyoanJi-Dry_garden.jpg',artist:"Stephane D'Alu",license:'CC BY-SA 3.0'},
+  'japon-ninna-ji.jpg': {url:'https://commons.wikimedia.org/wiki/File%3ANinnaji_Kyoto07n4500.jpg',artist:'663highland',license:'CC BY 2.5'}
+});
