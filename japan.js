@@ -62,6 +62,29 @@ const japanCountry = {
         {icon:'teacup', title:'No comer caminando', text:'Se considera de mala educación; lo habitual es comer de pie junto al puesto donde has comprado, sin avanzar.'},
         {icon:'bag', title:'Lleva tu basura contigo', text:'Hay muy pocas papeleras en la calle: es normal guardar el envoltorio hasta encontrar una o volver al alojamiento.'},
         {icon:'eye', title:'Pide permiso para fotos', text:'Evita fotografiar a geishas, maiko o desconocidos de cerca sin preguntar antes, sobre todo en barrios como Gion.'}
+      ]},
+      {type:'heading', text:'Calendario de temporadas', icon:'blossom'},
+      {type:'p', text:'Japón cambia mucho según el mes: la floración de los cerezos, las hortensias de la temporada de lluvias y las hojas rojas del otoño marcan tanto la mejor época para ver cada lugar como la más complicada para encontrar alojamiento barato. Esto es lo que puedes esperar mes a mes, con los lugares de esta guía donde se ve mejor cada temporada.'},
+      {type:'cards', title:'Las tres grandes temporadas', items:[
+        {icon:'blossom', title:'Sakura — finales de marzo a comienzos de abril', text:'La floración de los cerezos dura solo una o dos semanas y varía cada año. Los más de 600 cerezos del <a href="#/pais/japon/ciudad/osaka/lugar/castillo-de-osaka">Castillo de Osaka</a>, el Dankazura del <a href="#/pais/japon/ciudad/kamakura/lugar/tsurugaoka-hachimangu">Tsurugaoka Hachimangū</a> y los cerezos junto al torii de <a href="#/pais/japon/ciudad/kioto/lugar/heian-jingu">Heian Jingū</a> están entre los mejores puntos.'},
+        {icon:'blossom', title:'Ajisai — junio', text:'Las hortensias cubren de azul los caminos de <a href="#/pais/japon/ciudad/kamakura/lugar/meigetsu-in">Meigetsu-in</a> («Ajisai-dera») y de <a href="#/pais/japon/ciudad/kamakura/lugar/hase-dera">Hase-dera</a>, en Kamakura, durante la temporada de lluvias, cuando hay menos turistas que en primavera u otoño.'},
+        {icon:'flame', title:'Momiji — segunda mitad de noviembre', text:'Los arces se tiñen de rojo en <a href="#/pais/japon/ciudad/kioto/lugar/eikando">Eikan-dō</a>, <a href="#/pais/japon/ciudad/kioto/lugar/tenryu-ji">Tenryū-ji</a>, <a href="#/pais/japon/ciudad/kioto/lugar/kodai-ji">Kōdai-ji</a> y <a href="#/pais/japon/ciudad/kioto/lugar/nanzen-ji">Nanzen-ji</a> en Kioto, en <a href="#/pais/japon/ciudad/miyajima/lugar/momijidani">Momijidani</a> en Miyajima y en <a href="#/pais/japon/ciudad/uji/lugar/koshoji">Kōshō-ji</a> en Uji; varios templos amplían el horario por la noche para ver los arces iluminados.'}
+      ]},
+      {type:'table', title:'Qué ver mes a mes', columns:['Mes','Qué buscar','Dónde'], rows:[
+        ['Finales de febrero','Ciruelos (ume) en flor y farolillos Setsubun Mantoro','<a href="#/pais/japon/ciudad/osaka/lugar/castillo-de-osaka">Castillo de Osaka</a> (~1.300 ciruelos) · <a href="#/pais/japon/ciudad/nara/lugar/kasuga-taisha">Kasuga Taisha</a>, Nara'],
+        ['Comienzos de marzo','Melocotoneros en flor, Hina Matsuri (3 de marzo) y ceremonia del fuego Omizutori','<a href="#/pais/japon/ciudad/osaka/lugar/castillo-de-osaka">Castillo de Osaka</a> · <a href="#/pais/japon/ciudad/nara/lugar/isui-en">Isui-en</a> y <a href="#/pais/japon/ciudad/nara/lugar/todai-ji">Tōdai-ji</a> (Nigatsu-dō), Nara'],
+        ['Finales de marzo – comienzos de abril','Floración de los cerezos (sakura)','<a href="#/pais/japon/ciudad/osaka/lugar/castillo-de-osaka">Castillo de Osaka</a> · <a href="#/pais/japon/ciudad/kioto/lugar/heian-jingu">Heian Jingū</a>, Kioto'],
+        ['Mediados-finales de abril','Cerezos tardíos Omuro Zakura','<a href="#/pais/japon/ciudad/kioto/lugar/ninna-ji">Ninna-ji</a>, Kioto'],
+        ['Mediados de mayo','Sanja Matsuri, festival sintoísta muy multitudinario','<a href="#/pais/japon/ciudad/tokio/lugar/asakusa">Asakusa</a>, Tokio'],
+        ['Junio','Hortensias (ajisai) y lirios en flor','<a href="#/pais/japon/ciudad/kamakura/lugar/meigetsu-in">Meigetsu-in</a>, Kamakura'],
+        ['Julio','Gion Matsuri (todo el mes, procesiones a mediados)','Santuario Yasaka, Kioto'],
+        ['14-15 de agosto','Obon Mantoro: miles de farolillos encendidos a la vez','<a href="#/pais/japon/ciudad/nara/lugar/kasuga-taisha">Kasuga Taisha</a>, Nara'],
+        ['22 de octubre','Jidai Matsuri, procesión histórica por la ciudad','<a href="#/pais/japon/ciudad/kioto/lugar/heian-jingu">Heian Jingū</a>, Kioto'],
+        ['Segunda mitad de noviembre','Hojas rojas de los arces (momiji), con iluminaciones nocturnas en varios templos','<a href="#/pais/japon/ciudad/kioto/lugar/eikando">Eikan-dō</a>, Kioto · <a href="#/pais/japon/ciudad/miyajima/lugar/momijidani">Momijidani</a>, Miyajima']
+      ]},
+      {type:'callout', label:'¿SABÍAS QUE...?', items:[
+        'Las fechas de floración de los cerezos y del momiji varían cada año según la temperatura: conviene revisar una previsión de floración (sakura/momiji forecast) unas semanas antes del viaje en vez de fiarse solo del mes.',
+        'Los templos que iluminan sus arces o cerezos por la noche suelen vender la entrada nocturna aparte de la diurna, y no siempre se puede permanecer dentro de un turno a otro: conviene decidir de antemano si ir de día, de noche, o ambas veces.'
       ]}
     ]
   }
