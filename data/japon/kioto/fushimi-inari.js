@@ -6,6 +6,12 @@ addJapanPlace({
   lead: 'Miles de torii bermellón que ascienden por el monte Inari, uno detrás de otro, por cuatro kilómetros de senderos.',
   duration: '1,5–4 horas según se recorra solo la base o toda la montaña',
   price: 'Entrada gratuita',
+  stats: [
+    {value:'32.000+', label:'santuarios Inari en todo Japón'},
+    {value:'4 km', label:'de senderos con torii hasta la cumbre'},
+    {value:'233 m', label:'altura de la cumbre Ichi-no-mine'},
+    {value:'24 h', label:'abierto todos los días del año'}
+  ],
   blocks: [
     {type:'lead', text:'Fushimi Inari es la sede principal de una red de más de 32.000 santuarios japoneses dedicados a Inari, deidad del arroz y, por extensión, de la prosperidad en los negocios. El zorro o kitsune, mensajero de Inari, aparece por todo el recinto —a menudo con una llave en la boca que representa el almacén del arroz— y los comerciantes donan torii con su nombre para pedir que el dios les sea propicio, una costumbre que ha ido formando el pasadizo de puertas rojas que hace célebre al lugar.'},
     {type:'p', text:'El itinerario empieza en la estación de JR Inari: 200 metros después del primer gran torii bermellón aparece la puerta Rōmon, inicio real de la visita. A partir de ahí el camino solo sube, así que conviene llevar agua y algo de comer si se piensa completar la montaña entera.'},

@@ -6,6 +6,12 @@ addJapanPlace({
   lead: 'Un templo del siglo VIII sobre la ladera de Higashiyama, con un gran balcón de madera sin un solo clavo.',
   duration: '1,5–2,5 horas',
   price: '400 ¥ adulto',
+  stats: [
+    {value:'778', label:'año de fundación del templo'},
+    {value:'0', label:'clavos usados en el balcón principal'},
+    {value:'1994', label:'declarado Patrimonio de la Humanidad'},
+    {value:'13 m', label:'altura del balcón sobre la ladera'}
+  ],
   blocks: [
     {type:'lead', text:'Fundado en el año 778 junto a la cascada Otowa —«agua pura», que da nombre al templo—, Kiyomizu-dera es Patrimonio de la Humanidad desde 1994 y una de las 33 paradas de la peregrinación Saigoku Kannon. A pesar de su origen en el periodo Heian, los edificios que se ven hoy datan casi todos de la reconstrucción de 1631-1633, después de sucesivos incendios a lo largo de su historia.'},
     {type:'p', text:'El recinto es en realidad un conjunto de más de veinte templos, puertas y salones repartidos por la ladera, y merece la pena recorrerlo entero: hay bastante más que el famoso balcón sobre la ciudad.'},
