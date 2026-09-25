@@ -83,7 +83,7 @@ const isImagePath = p => typeof p === 'string' && /\.(jpe?g|png)$/i.test(p);
 const JPEG_MAGIC = Buffer.from([0xff, 0xd8, 0xff]);
 const PNG_MAGIC = Buffer.from([0x89, 0x50, 0x4e, 0x47]);
 
-function checkImageFile(relImagePath, contextLabel) {
+function checkImageFile(relImagePath, contextLabel, { cardContext = false } = {}) {
   if (!isImagePath(relImagePath)) { fail(`${contextLabel}: image path doesn't look like a .jpg/.jpeg/.png — "${relImagePath}"`); return; }
   const full = path.join(ROOT, relImagePath);
   if (!fs.existsSync(full)) { fail(`${contextLabel}: image file does not exist on disk — ${relImagePath}`); return; }
@@ -99,6 +99,14 @@ function checkImageFile(relImagePath, contextLabel) {
   const creditKey = relImagePath.replace(/^assets\//, '');
   if (!(creditKey in credits)) {
     warn(`${contextLabel}: ${relImagePath} has no credit entry (expected key "${creditKey}" in credits.js or japan-credits.js).`);
+  }
+  const dot = full.lastIndexOf('.');
+  const base = full.slice(0, dot), ext = full.slice(dot);
+  if (!fs.existsSync(`${base}.webp`)) {
+    warn(`${contextLabel}: ${relImagePath} has no .webp sibling — run node scripts/generate-image-variants.js`);
+  }
+  if (cardContext && (!fs.existsSync(`${base}-card${ext}`) || !fs.existsSync(`${base}-card.webp`))) {
+    warn(`${contextLabel}: ${relImagePath} is used as a card/thumbnail but has no -card variant — run node scripts/generate-image-variants.js`);
   }
 }
 
@@ -124,7 +132,7 @@ for (const place of places) {
 
   if (!place.lead) fail(`${label}: missing "lead"`);
   if (!place.image) fail(`${label}: missing "image"`);
-  else checkImageFile(place.image, label);
+  else checkImageFile(place.image, label, { cardContext: true });
 
   if (place.gallery) {
     for (const photo of place.gallery) {
@@ -154,8 +162,10 @@ for (const place of places) {
 vm.runInContext('this.__country = japanCountry;', ctx);
 const japanCountry = ctx.__country;
 if (japanCountry && japanCountry.guide) walkBlocksForIcons(japanCountry.guide.blocks, 'japanCountry.guide');
+if (japanCountry && japanCountry.image) checkImageFile(japanCountry.image, 'japanCountry', { cardContext: true });
 for (const city of cities) {
   if (city.transport) walkBlocksForIcons(city.transport.blocks, `${city.slug}.transport`);
+  if (city.image) checkImageFile(city.image, `city ${city.slug}`, { cardContext: true });
 }
 
 // ---- 6. styles.css brace balance ----
