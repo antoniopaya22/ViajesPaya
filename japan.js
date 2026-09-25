@@ -77,7 +77,25 @@ const japanCities = [
     {slug:'centro',name:'Centro'},
     {slug:'estacion',name:'Estación de Kioto'},
     {slug:'fushimi',name:'Fushimi'}
-  ]},
+  ],
+  transport: {
+    title: 'Cómo moverse <em>por Kioto.</em>',
+    intro: 'Kioto se recorre sobre todo en autobús urbano y a pie; el metro cubre menos zonas turísticas de lo que parece.',
+    blocks: [
+      {type:'heading', text:'Autobús urbano', icon:'footprints'},
+      {type:'p', text:'Es el transporte más útil para llegar a Higashiyama, Arashiyama o el norte de la ciudad. La tarifa es plana dentro de la zona central: 230 ¥ por trayecto. Se sube por la puerta trasera y se paga —o se pasa la tarjeta IC— al bajar por la puerta delantera, junto al conductor; no hace falta tocar la tarjeta al subir.'},
+      {type:'heading', text:'Pases de un día', icon:'ruler'},
+      {type:'table', title:'Pases frente a pago por trayecto', columns:['Pase','Precio','Cubre'], rows:[
+        ['Metro 1 día','800 ¥','Solo las líneas de metro Karasuma y Tōzai'],
+        ['Bus + Metro 1 día','1.100 ¥','Autobuses urbanos y las dos líneas de metro']
+      ]},
+      {type:'callout', label:'¿SABÍAS QUE...?', items:[
+        'Kioto retiró en 2023 el antiguo pase de autobús de un día (700 ¥) por la saturación que generaba en las rutas más turísticas; el pase combinado de 1.100 ¥ es su sustituto oficial.',
+        'Los autobuses 101 y 205, que paran en Kinkaku-ji, no aceptan el pase de un día entre las 9:00 y las 17:00 de marzo a diciembre: en esas rutas y horario hay que pagar cada trayecto por separado.',
+        'El pase combinado solo compensa a partir de unos 5 trayectos en el día; para 2 o 3 paradas suele salir más barato pagar con una tarjeta IC (Suica, Pasmo, ICOCA).'
+      ]}
+    ]
+  }},
   {slug:'nara',country:'japon',name:'Nara',region:'Kansai',image:'assets/nara.jpg',eyebrow:'El Gran Buda y los ciervos del parque',intro:'Nara fue una de las primeras capitales de Japón. Sus grandes templos se encuentran junto a un parque donde los ciervos forman parte del paisaje.',days:'1–2 días',best:'Primavera y otoño',move:'A pie',lat:34.6851,lon:135.8048,tips:[['Respeta a los ciervos','Son animales salvajes; aliméntalos solo con las galletas autorizadas y guarda papeles y comida.'],['Camina entre templos','El parque conecta varias visitas importantes.'],['Reserva tiempo','El recinto de Tōdai-ji merece algo más que una foto rápida.']]},
   {slug:'uji',country:'japon',name:'Uji',region:'Prefectura de Kioto',image:'assets/uji.jpg',eyebrow:'Té, río y patrimonio Heian',intro:'A orillas del río Uji, esta pequeña ciudad reúne casas de té, calles tranquilas y el célebre Salón del Fénix de Byōdō-in.',days:'Medio día–1 día',best:'Primavera y otoño',move:'A pie',lat:34.8845,lon:135.7997,tips:[['Prueba el té local','Uji es una de las zonas más conocidas por su té verde.'],['Cruza el río','Las dos orillas ofrecen paseos y vistas diferentes.'],['Consulta el Salón del Fénix','La visita interior puede tener cupo y horario propios.']]},
   {slug:'osaka',country:'japon',name:'Osaka',region:'Kansai',image:'assets/osaka.jpg',eyebrow:'Neones, castillo y cultura de calle',intro:'Osaka mezcla el legado de su castillo con barrios comerciales muy vivos. Dōtonbori y Namba muestran su cara más luminosa.',days:'2–3 días',best:'Primavera y otoño',move:'Metro + a pie',lat:34.6937,lon:135.5023,tips:[['Ve con hambre','Dōtonbori es una zona popular para probar comida callejera.'],['Distingue parque y museo','Pasear por el parque del castillo es diferente a entrar en el museo de la torre.'],['Explora a pie','Namba, Nipponbashi y Dōtonbori se disfrutan caminando.']],
@@ -85,7 +103,25 @@ const japanCities = [
     {slug:'castillo',name:'Castillo de Osaka'},
     {slug:'tennoji',name:'Tennōji y Shinsekai'},
     {slug:'namba',name:'Namba y Dōtonbori'}
-  ]},
+  ],
+  transport: {
+    title: 'Cómo moverse <em>por Osaka.</em>',
+    intro: 'El metro conecta directamente las tres zonas de la ciudad; para varias paradas al día, el Osaka Amazing Pass suele compensar.',
+    blocks: [
+      {type:'heading', text:'Metro y autobús', icon:'footprints'},
+      {type:'p', text:'La tarifa del metro depende de la distancia, entre 190 y 420 ¥ por trayecto. Si vas a hacer varios trayectos solo en metro y autobús, sin entradas incluidas, la tarjeta Enjoy Eco Card (820 ¥ entre semana, 620 ¥ en fin de semana y festivos) da acceso ilimitado a ambos durante el día.'},
+      {type:'heading', text:'Osaka Amazing Pass', icon:'ruler'},
+      {type:'table', title:'Qué incluye el pase', columns:['Pase','Precio','Incluye'], rows:[
+        ['1 día','3.500 ¥','Metro y bus ilimitados + entrada gratis o con descuento a unos 40 lugares'],
+        ['2 días','5.000 ¥','Lo mismo, con un segundo día para repartir las visitas']
+      ]},
+      {type:'callout', label:'¿SABÍAS QUE...?', items:[
+        'Entre los cerca de 40 lugares con entrada incluida están la torre principal del castillo de Osaka, el mirador del Umeda Sky Building, la Torre Tsutenkaku, la noria de HEP FIVE y el Museo de Historia de Osaka.',
+        'Solo con la entrada al castillo de Osaka y un mirador ya se recupera buena parte del precio del pase de un día: compensa claramente si vas a entrar en 2 o más atracciones de pago el mismo día.',
+        'Si no piensas entrar en museos o miradores, el metro y el bus sueltos —o la Enjoy Eco Card— salen más baratos que el Amazing Pass.'
+      ]}
+    ]
+  }},
   {slug:'miyajima',country:'japon',name:'Miyajima',region:'Prefectura de Hiroshima',image:'assets/miyajima.jpg',eyebrow:'La isla del torii sobre el mar',intro:'La isla de Itsukushima combina santuarios, montaña y el ritmo de las mareas. Su gran torii cambia de aspecto a lo largo del día.',days:'1 día',best:'Primavera y otoño',move:'Ferri + a pie',lat:34.2959,lon:132.3199,tips:[['Mira las mareas','La experiencia del torii cambia mucho con marea alta y baja.'],['Cuida a los ciervos','No les des comida ni dejes bolsas a su alcance.'],['Atiende al último ferri','Consulta los horarios de regreso antes de alejarte del muelle.']]},
   {slug:'himeji',country:'japon',name:'Himeji',region:'Prefectura de Hyōgo',image:'assets/himeji.jpg',eyebrow:'Un castillo blanco que parece flotar',intro:'Himeji es conocido por uno de los castillos históricos mejor conservados de Japón, rodeado por un complejo sistema de puertas y murallas.',days:'Medio día–1 día',best:'Primavera y otoño',move:'A pie',lat:34.8151,lon:134.6853,tips:[['Lleva calcetines','En el interior del castillo se camina sin zapatos.'],['Sube con calma','Hay escaleras de madera empinadas.'],['Añade el jardín','Kōko-en está cerca del castillo y se puede visitar por separado.']]},
   {slug:'tokio',country:'japon',name:'Tokio',region:'Kantō',image:'assets/tokio.jpg',eyebrow:'Barrios, templos y mil maneras de mirar',intro:'Tokio cambia de carácter en cada barrio: Asakusa, Ueno, Akihabara, Shibuya, Harajuku y Shinjuku ofrecen mundos distintos dentro de la misma ciudad.',days:'4–6 días',best:'Primavera y otoño',move:'Tren + metro',lat:35.6762,lon:139.6503,tips:[['Elige barrios cercanos','Los trayectos pueden llevar más tiempo de lo que parecen en el mapa.'],['Lleva una tarjeta de transporte','Facilita los cambios entre redes de tren y metro.'],['Alterna ritmos','Combina calles concurridas con parques y santuarios.']],
@@ -94,8 +130,47 @@ const japanCities = [
     {slug:'harajuku-shibuya',name:'Harajuku y Shibuya'},
     {slug:'shinjuku',name:'Shinjuku'},
     {slug:'minato',name:'Torre de Tokio y Minato'}
-  ]},
-  {slug:'kamakura',country:'japon',name:'Kamakura',region:'Prefectura de Kanagawa',image:'assets/kamakura.jpg',eyebrow:'El Gran Buda junto al mar',intro:'Antigua sede del poder samurái, Kamakura reúne templos, santuarios y senderos entre colinas a poca distancia de la costa.',days:'1 día',best:'Primavera y otoño',move:'Tren local + a pie',lat:35.3192,lon:139.5467,tips:[['Camina entre visitas','El Gran Buda y Hase-dera están relativamente cerca.'],['Mira el tiempo','Los senderos y jardines se disfrutan más con buen tiempo.'],['Deja margen para volver','La zona recibe muchas excursiones de un día desde Tokio.']]}
+  ],
+  transport: {
+    title: 'Cómo moverse <em>por Tokio.</em>',
+    intro: 'Tres redes conviven en Tokio —Tokyo Metro, Toei y la línea JR Yamanote— y ningún pase las cubre todas a la vez.',
+    blocks: [
+      {type:'heading', text:'Tokyo Metro, Toei y la línea Yamanote', icon:'footprints'},
+      {type:'p', text:'Tokyo Metro y Toei Subway son dos compañías de metro distintas, y ninguna de las dos incluye la línea JR Yamanote, el anillo de tren que conecta Shinjuku, Shibuya, Ueno o Tokio Central: esa línea se paga aparte o con tarjeta IC, tanto si tienes un pase de metro como si no. Un trayecto suelto de metro cuesta entre 180 y 330 ¥ según la distancia.'},
+      {type:'heading', text:'Pases de metro', icon:'ruler'},
+      {type:'table', title:'Qué cubre cada pase', columns:['Pase','Precio','Cubre'], rows:[
+        ['Tokyo Subway Ticket 24h','1.000 ¥','Tokyo Metro + Toei, sin límite de trayectos'],
+        ['Tokyo Subway Ticket 48h','1.500 ¥','Tokyo Metro + Toei, 2 días'],
+        ['Tokyo Subway Ticket 72h','2.000 ¥','Tokyo Metro + Toei, 3 días'],
+        ['Metro 24h (solo Tokyo Metro)','700 ¥','Solo las 9 líneas de Tokyo Metro, sin Toei']
+      ]},
+      {type:'callout', label:'¿SABÍAS QUE...?', items:[
+        'Ninguno de estos pases incluye la línea Yamanote (JR): si tu día combina templos del este de Tokio con Shibuya o Shinjuku, es fácil acabar pagando el Yamanote aparte aunque lleves el pase.',
+        'El pase de 24 horas compensa a partir de unos 5 trayectos en metro; el más barato, solo de Tokyo Metro, a partir de 4.',
+        'Para un día suelto con pocos trayectos, suele salir más simple pagar cada uno con una tarjeta IC que calcular si el pase compensa.'
+      ]}
+    ]
+  }},
+  {slug:'kamakura',country:'japon',name:'Kamakura',region:'Prefectura de Kanagawa',image:'assets/kamakura.jpg',eyebrow:'El Gran Buda junto al mar',intro:'Antigua sede del poder samurái, Kamakura reúne templos, santuarios y senderos entre colinas a poca distancia de la costa.',days:'1 día',best:'Primavera y otoño',move:'Tren local + a pie',lat:35.3192,lon:139.5467,tips:[['Camina entre visitas','El Gran Buda y Hase-dera están relativamente cerca.'],['Mira el tiempo','Los senderos y jardines se disfrutan más con buen tiempo.'],['Deja margen para volver','La zona recibe muchas excursiones de un día desde Tokio.']],
+  transport: {
+    title: 'Cómo moverse <em>por Kamakura.</em>',
+    intro: 'El tren Enoden es la forma más práctica de encadenar el Gran Buda, Hase-dera y Enoshima en el mismo día.',
+    blocks: [
+      {type:'heading', text:'El tren Enoden', icon:'footprints'},
+      {type:'p', text:'La línea Enoden conecta la estación de Kamakura con Hase (Gran Buda y Hase-dera) y con Enoshima, con un trayecto suelto entre 190 y 300 ¥ según la distancia.'},
+      {type:'heading', text:'Pases de un día', icon:'ruler'},
+      {type:'table', title:'Qué compensa según tu punto de partida', columns:['Pase','Precio','Cubre'], rows:[
+        ['Noriorikun (solo Enoden)','800 ¥','Enoden ilimitado entre Kamakura y Fujisawa, con descuentos en Enoshima y Hase-dera'],
+        ['Enoshima-Kamakura Freepass, desde Fujisawa','810 ¥','Lo mismo que el Noriorikun, para quien ya está en la zona'],
+        ['Enoshima-Kamakura Freepass, desde Shinjuku','1.640 ¥','Ida y vuelta en tren Odakyu desde Shinjuku + Enoden ilimitado']
+      ]},
+      {type:'callout', label:'¿SABÍAS QUE...?', items:[
+        'Si solo vas a hacer 2 o 3 paradas —por ejemplo Kamakura, Hase y vuelta— pagar cada trayecto con tarjeta IC suele salir más barato que el pase de 800 ¥.',
+        'El pase compensa claramente si vas a completar un día entero saltando entre el Gran Buda, Hase-dera y Enoshima, sumando 4 trayectos o más.',
+        'La versión desde Shinjuku solo tiene sentido si llegas a Kamakura en tren Odakyu ese mismo día; si ya estás en la zona por JR, la versión desde Fujisawa es la que corresponde.'
+      ]}
+    ]
+  }}
 ];
 
 const japanPlaces = [];
