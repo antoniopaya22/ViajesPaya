@@ -1,43 +1,5 @@
-// Lugares de Kioto. Añade las nuevas fichas de esta ciudad aquí.
-
-addJapanPlace({
-  slug: 'fushimi-inari', city: 'kioto', name: 'Fushimi Inari Taisha', category: 'Santuario',
-  lat: 34.9671, lon: 135.7727,
-  lead: 'Miles de torii bermellón que ascienden por el monte Inari, uno detrás de otro, por cuatro kilómetros de senderos.',
-  story: 'Fushimi Inari es la sede principal de una red de más de 32.000 santuarios japoneses dedicados a Inari, deidad del arroz y, por extensión, de la prosperidad en los negocios. Los comerciantes donan torii con su nombre y el de su empresa para pedir que el dios les sea propicio, y esa costumbre ha ido formando el pasadizo de puertas rojas que hace célebre al lugar.',
-  history: [
-    'Tras la puerta Rōmon, construida en 1589 por orden de Toyotomi Hideyoshi como agradecimiento por la curación de su madre, se llega al Honden, el salón principal reconstruido en 1499 tras los daños de la guerra Ōnin, donde están consagradas las cinco deidades del monte Inari. El zorro o kitsune, mensajero de Inari, aparece por todo el recinto, a menudo con una llave en la boca que simboliza el almacén del arroz.',
-    'Después del salón principal empiezan los Senbon Torii, «las mil puertas», donadas desde el periodo Edo por particulares y negocios; en el reverso de cada una figura el nombre del donante y la fecha. El camino conduce al Okusha Hōhaisho u Okuno-in, el santuario de plegarias construido en 1499, alineado para ver los tres picos del monte Inari, y junto a él las lámparas Omokaru-ishi: se pide un deseo y se levanta la parte superior de la lámpara, y si pesa menos de lo esperado, el deseo se cumplirá.',
-    'Más arriba, la intersección Yotsu-tsuji ofrece la primera vista abierta sobre Kioto y dos posibles desvíos: el mirador Kojin-mine y el santuario Miyuki Hōhaisho, rodeado de bambú negro. Quien complete el circuito de la montaña pasa por las tres cimas de culto —San-no-mine, Ai-no-mine y Ni-no-mine— hasta la cumbre Ichi-no-mine, a 233 metros, y por la zona de plegarias de Gozendani, donde cada 5 de enero se celebra el festival Oyama-sai.',
-    'La ruta completa de montaña ronda los cuatro kilómetros y las tres o cuatro horas de caminata, con cuestas continuas y poca sombra; no hace falta completarla para disfrutar del santuario, pero hacerlo permite entender que los torii no son un decorado, sino que enlazan altares, estanques y cimas de culto reales.'
-  ],
-  curiosities: [
-    'Existen unos 32.000 santuarios dedicados a Inari en todo Japón, y Fushimi Inari es la sede principal de todos ellos.',
-    'En la parte trasera de cada torii de los Senbon Torii figura el nombre de quien lo donó y la fecha de la donación.',
-    'El santuario Suehiro, más allá de Gozendani, tiene como guardianas ranas de piedra en vez de los tradicionales zorros o komainu, con un juego de palabras que las asocia a la suerte que «vuelve» (fuku kaeru).'
-  ],
-  duration: '1,5–4 horas según se recorra solo la base o toda la montaña',
-  hours: 'Acceso libre las 24 horas; oficinas y edificios del santuario tienen horario propio.',
-  hoursSource: 'https://inari.jp/en/',
-  price: 'Entrada gratuita',
-  tickets: 'No hace falta entrada ni reserva para recorrer los torii.',
-  official: 'https://inari.jp/en/',
-  tips: [
-    'Sube más allá de los primeros tramos de Senbon Torii si buscas un paseo con menos gente.',
-    'Lleva agua y calzado cómodo: la ruta completa a la cumbre son cuestas continuas de tres a cuatro horas.',
-    'Ve a primera hora de la mañana para disfrutar del tramo inicial de torii casi en soledad.'
-  ],
-  access: 'La estación de JR Inari (línea JR Nara) queda justo enfrente del acceso principal; también se llega a pie desde la estación de Fushimi-Inari de la línea Keihan, un poco más lejos.',
-  gallery: [
-    {src:'assets/fushimi/romon.jpg',alt:'Puerta Romon de Fushimi Inari'},
-    {src:'assets/fushimi/honden.jpg',alt:'Salón principal Honden'},
-    {src:'assets/fushimi/senbon-torii.jpg',alt:'Camino Senbon Torii'},
-    {src:'assets/fushimi/okuno-in.jpg',alt:'Salón de plegarias Okuno-in'},
-    {src:'assets/fushimi/shin-ike.jpg',alt:'Estanque Shin-ike'},
-    {src:'assets/fushimi/yotsu-tsuji.jpg',alt:'Intersección Yotsu-tsuji'}
-  ],
-  image: 'assets/fushimi-inari.jpg'
-});
+// Lugares de Kioto. Fushimi Inari y Kiyomizu-dera viven en su propio archivo
+// (data/japon/kioto/fushimi-inari.js y kiyomizu-dera.js) con estructura de bloques.
 
 addJapanPlace({
   slug: 'nishiki', city: 'kioto', name: 'Mercado Nishiki', category: 'Mercado',
@@ -151,36 +113,6 @@ addJapanPlace({
   ],
   access: 'Está al final de la calle Shijō, a pie desde la estación de Gion-Shijō (línea Keihan) o desde el barrio de Gion.',
   image: 'assets/japon-yasaka-jinja.jpg'
-});
-
-addJapanPlace({
-  slug: 'kiyomizu-dera', city: 'kioto', name: 'Kiyomizu-dera', category: 'Templo',
-  lat: 34.9948, lon: 135.785,
-  lead: 'Un templo levantado sobre la ladera de Higashiyama, con un gran balcón de madera sin un solo clavo.',
-  story: 'Fundado en el año 778 junto a la cascada Otowa —«agua pura», que da nombre al templo—, Kiyomizu-dera es Patrimonio de la Humanidad desde 1994 y una de las 33 paradas de la peregrinación Saigoku Kannon. A pesar de su origen en el periodo Heian, los edificios actuales datan de la reconstrucción de 1633, tras sucesivos incendios.',
-  history: [
-    'La puerta roja Niō-mon, de unos 10 metros de ancho, da paso al establo Umatodome del siglo XV y a la puerta oeste Sai-mon, con decoraciones de estilo Momoyama; junto a ella, la pagoda de tres pisos Sanjū-no-tō, de 31 metros, es la más alta de Japón en su tipo. La torre de la campana de 1596 sostiene una campana de 1478 que pesa más de dos toneladas.',
-    'El salón principal Hondō es célebre por su balcón de 13 metros de alto, sostenido por cientos de pilares de madera de zelkova sin un solo clavo, siguiendo el estilo Heian del templo original; durante el periodo Edo se creía que sobrevivir a un salto desde él concedía un deseo, una práctica hoy prohibida. Tras el salón principal está el santuario Jishu, dedicado al amor, donde desde hace más de 1.300 años se camina con los ojos cerrados entre dos piedras separadas seis metros para «encontrar el amor» (actualmente cerrado por obras de restauración).',
-    'A los pies del balcón cae la cascada Otowa, dividida en tres chorros asociados a la salud, la longevidad y el éxito; beber de los tres se considera signo de avaricia. El recinto se completa con el salón interior Okuno-in, el más sagrado, donde el monje Enchin se encontró con el ermitaño que dio origen al templo, y con la zona de los Mil Jizō, cubiertos de musgo junto al camino de salida norte.'
-  ],
-  curiosities: [
-    'El gran balcón del salón principal se sostiene sin un solo clavo, con la técnica tradicional de ensamblaje japonesa.',
-    'Durante el periodo Edo se registraron 234 saltos desde el balcón por creencia popular; el 85,4% de quienes saltaron sobrevivieron.',
-    'El templo reúne, sin plan aparente, un santuario sintoísta dedicado al amor (Jishu) dentro de un recinto budista, un ejemplo típico del sincretismo religioso japonés.'
-  ],
-  duration: '1,5–2 horas',
-  hours: 'Todos los días de 6:00 a 18:00 (hasta las 18:30 en algunos días de verano, y hasta las 21:00 durante iluminaciones nocturnas puntuales).',
-  hoursSource: 'https://www.kiyomizudera.or.jp/en/',
-  price: '400 ¥ adulto',
-  tickets: 'La entrada se compra en el acceso al templo.',
-  official: 'https://www.kiyomizudera.or.jp/en/',
-  tips: [
-    'Entra por la mañana temprano y continúa a pie por Sannenzaka y Ninenzaka antes de que lleguen los grupos.',
-    'Prueba solo uno de los tres chorros de la cascada Otowa: beber de los tres se considera de avariciosos.',
-    'El santuario Jishu está cerrado por obras hasta 2025; comprueba el estado antes de ir si es tu motivo principal de visita.'
-  ],
-  access: 'No tiene estación de tren propia: se llega a pie subiendo por las cuestas de Higashiyama (Kiyomizuzaka, Sannenzaka y Ninenzaka) desde la parada de autobús Gojō-zaka o Kiyomizu-michi.',
-  image: 'assets/japon-kiyomizu-dera.jpg'
 });
 
 addJapanPlace({

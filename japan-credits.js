@@ -172,4 +172,7 @@ Object.assign(imageCredits, {
   "fushimi/okuno-in.jpg": { "url": "https://commons.wikimedia.org/wiki/File:Okusha-Hohaijo_of_Fushimi_Inari_Grand_Shrine.JPG", "artist": "そらみみ", "license": "CC BY-SA 3.0", "sourceTitle": "File:Okusha-Hohaijo of Fushimi Inari Grand Shrine.JPG" },
   "fushimi/shin-ike.jpg": { "url": "https://commons.wikimedia.org/wiki/File:Kodamagaike_Pond_of_Fushimi_Inari_Grand_Shrine.jpg", "artist": "そらみみ", "license": "CC BY-SA 3.0", "sourceTitle": "File:Kodamagaike Pond of Fushimi Inari Grand Shrine.jpg" },
   "fushimi/yotsu-tsuji.jpg": { "url": "https://commons.wikimedia.org/wiki/File:View_on_Fushimi_on_Fushimi_Inari-taisha.jpg", "artist": "Sarah Stierch", "license": "CC BY-SA 3.0", "sourceTitle": "File:View on Fushimi on Fushimi Inari-taisha.jpg" },
+  "kiyomizu/nio-mon.jpg": { "url": "https://commons.wikimedia.org/wiki/File:Nio-mon,_Kiyomizu-dera_Temple,_Kyoto,_West_view_20190416_1.jpg", "artist": "DXR", "license": "CC BY-SA 4.0", "sourceTitle": "File:Nio-mon, Kiyomizu-dera Temple, Kyoto, West view 20190416 1.jpg" },
+  "kiyomizu/otowa.jpg": { "url": "https://commons.wikimedia.org/wiki/File:Otowa_waterfall_at_Kiyomizu-dera.jpg", "artist": "Hu Totya", "license": "CC BY-SA 3.0", "sourceTitle": "File:Otowa waterfall at Kiyomizu-dera.jpg" },
+  "kiyomizu/pagoda.jpg": { "url": "https://commons.wikimedia.org/wiki/File:Kiyomizu-dera,_Kyoto,_November_2016_-02.jpg", "artist": "Martin Falbisoner", "license": "CC BY-SA 4.0", "sourceTitle": "File:Kiyomizu-dera, Kyoto, November 2016 -02.jpg" }
 });
