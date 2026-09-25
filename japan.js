@@ -46,5 +46,5 @@ function addJapanPlace(city, slug, name, category, lat, lon, lead, story, curios
   japanPlaces.push({slug, city, name, category, lat, lon, image, lead, story, curiosity, official, hoursSource:official, duration, hours, price, ticket, tip});
 }
 function addJapanHistory(entries) {
-  for (const place of japanPlaces) if (entries[place.slug]) place.history = entries[place.slug];
+  for (const place of japanPlaces) if (entries[place.slug]) place.history = [...(place.history || []), ...entries[place.slug]];
 }
