@@ -7,6 +7,7 @@
 const fs = require('fs');
 const path = require('path');
 const vm = require('vm');
+const COUNTRIES = require('./countries-config');
 
 const ROOT = path.join(__dirname, '..');
 const errors = [];
@@ -45,17 +46,18 @@ function loadInSandbox(relPath) {
     fail(`Failed to load ${relPath}: ${e.message}`);
   }
 }
-const cityDirs = ['kioto', 'nara', 'uji', 'miyajima', 'himeji', 'osaka', 'tokio', 'kamakura'];
-loadInSandbox('japan.js');
-for (const dir of cityDirs) {
-  const dirPath = path.join(ROOT, 'data', 'japon', dir);
-  if (!fs.existsSync(dirPath)) { fail(`Missing expected city data directory: data/japon/${dir}`); continue; }
-  for (const f of fs.readdirSync(dirPath)) {
-    if (f.endsWith('.js')) loadInSandbox(path.join('data', 'japon', dir, f));
-  }
-}
 loadInSandbox('credits.js');
-loadInSandbox('japan-credits.js');
+for (const country of COUNTRIES) {
+  loadInSandbox(country.countryFile);
+  for (const city of country.cityDirs) {
+    const dirPath = path.join(ROOT, 'data', country.slug, city);
+    if (!fs.existsSync(dirPath)) { fail(`Missing expected city data directory: data/${country.slug}/${city}`); continue; }
+    for (const f of fs.readdirSync(dirPath)) {
+      if (f.endsWith('.js')) loadInSandbox(path.join('data', country.slug, city, f));
+    }
+  }
+  loadInSandbox(country.creditsFile);
+}
 
 if (errors.length) {
   // If loading failed, nothing below is trustworthy — report and stop here.
@@ -63,9 +65,16 @@ if (errors.length) {
   process.exit(1);
 }
 
-vm.runInContext('this.__places = japanPlaces; this.__cities = japanCities; this.__credits = imageCredits;', ctx);
-const places = ctx.__places || [];
-const cities = ctx.__cities || [];
+const countries = [];
+const cities = [];
+const places = [];
+for (const country of COUNTRIES) {
+  vm.runInContext(`this.__c = ${country.countryVar}; this.__ci = ${country.citiesVar}; this.__p = ${country.placesVar};`, ctx);
+  countries.push({ ...ctx.__c, __configSlug: country.slug });
+  cities.push(...ctx.__ci);
+  places.push(...ctx.__p);
+}
+vm.runInContext('this.__credits = imageCredits;', ctx);
 const credits = ctx.__credits || {};
 
 // ---- 3. Extract the allowed icon set directly from script.js (single source of truth) ----
@@ -162,10 +171,10 @@ for (const place of places) {
 }
 
 // ---- 5. Country guide + per-city transport blocks (same icon/image rules) ----
-vm.runInContext('this.__country = japanCountry;', ctx);
-const japanCountry = ctx.__country;
-if (japanCountry && japanCountry.guide) walkBlocksForIcons(japanCountry.guide.blocks, 'japanCountry.guide');
-if (japanCountry && japanCountry.image) checkImageFile(japanCountry.image, 'japanCountry', { cardContext: true });
+for (const country of countries) {
+  if (country.guide) walkBlocksForIcons(country.guide.blocks, `${country.__configSlug}.guide`);
+  if (country.image) checkImageFile(country.image, `country ${country.__configSlug}`, { cardContext: true });
+}
 for (const city of cities) {
   if (city.transport) walkBlocksForIcons(city.transport.blocks, `${city.slug}.transport`);
   if (city.food) walkBlocksForIcons(city.food.blocks, `${city.slug}.food`);

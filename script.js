@@ -118,6 +118,9 @@ const places = [
 countries.push(japanCountry);
 cities.push(...japanCities);
 places.push(...japanPlaces);
+countries.push(polandCountry, hungaryCountry);
+cities.push(...polandCities, ...hungaryCities);
+places.push(...polandPlaces, ...hungaryPlaces);
 
 const app = document.querySelector('#app');
 const countryBy = slug => countries.find(item => item.slug === slug);

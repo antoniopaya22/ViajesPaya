@@ -14,6 +14,7 @@
 const fs = require('fs');
 const path = require('path');
 const vm = require('vm');
+const COUNTRIES = require('./countries-config');
 
 const ROOT = path.join(__dirname, '..');
 const OUT_DIR = path.join(ROOT, 'og-pages');
@@ -26,19 +27,21 @@ function loadInSandbox(relPath) {
   vm.runInContext(fs.readFileSync(path.join(ROOT, relPath), 'utf8'), ctx, { filename: relPath });
 }
 
-const cityDirs = ['kioto', 'nara', 'uji', 'miyajima', 'himeji', 'osaka', 'tokio', 'kamakura'];
-loadInSandbox('japan.js');
-for (const dir of cityDirs) {
-  const dirPath = path.join(ROOT, 'data', 'japon', dir);
-  for (const f of fs.readdirSync(dirPath)) {
-    if (f.endsWith('.js')) loadInSandbox(path.join('data', 'japon', dir, f));
+for (const country of COUNTRIES) {
+  loadInSandbox(country.countryFile);
+  for (const city of country.cityDirs) {
+    const dirPath = path.join(ROOT, 'data', country.slug, city);
+    if (!fs.existsSync(dirPath)) continue;
+    for (const f of fs.readdirSync(dirPath)) {
+      if (f.endsWith('.js')) loadInSandbox(path.join('data', country.slug, city, f));
+    }
   }
 }
 
-// script.js's data section (base countries/cities/places + the japan.js merge) ends right after
-// this exact line; everything after it is browser-only DOM/event code that can't run in a vm.
+// script.js's data section (base countries/cities/places + the per-country merges) ends right
+// after this exact line; everything after it is browser-only DOM/event code that can't run in a vm.
 const scriptSrc = fs.readFileSync(path.join(ROOT, 'script.js'), 'utf8');
-const marker = 'places.push(...japanPlaces);';
+const marker = 'places.push(...polandPlaces, ...hungaryPlaces);';
 const markerIdx = scriptSrc.indexOf(marker);
 if (markerIdx === -1) throw new Error(`Expected marker "${marker}" not found in script.js — did it move?`);
 vm.runInContext(scriptSrc.slice(0, markerIdx + marker.length), ctx, { filename: 'script.js (data section)' });

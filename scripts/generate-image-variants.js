@@ -15,6 +15,7 @@
 const fs = require('fs');
 const path = require('path');
 const { execFileSync } = require('child_process');
+const COUNTRIES = require('./countries-config');
 
 const ROOT = path.join(__dirname, '..');
 const ASSETS = path.join(ROOT, 'assets');
@@ -38,19 +39,23 @@ function newerThanSource(target, source) {
 }
 
 function loadCardImageList() {
-  // Derive the same way validate.js does: walk the Japan data graph plus script.js's
-  // own hardcoded Spain/Italy/France image fields.
+  // Derive the same way validate.js does: walk every configured country's data graph plus
+  // script.js's own hardcoded Spain/Italy/France image fields.
   const vm = require('vm');
   const ctx = { console };
   vm.createContext(ctx);
-  const dirs = ['kioto', 'nara', 'uji', 'miyajima', 'himeji', 'osaka', 'tokio', 'kamakura'];
-  const files = ['japan.js', ...dirs.flatMap(d => fs.readdirSync(path.join(ROOT, 'data', 'japon', d)).filter(f => f.endsWith('.js')).map(f => path.join('data', 'japon', d, f)))];
-  for (const f of files) vm.runInContext(fs.readFileSync(path.join(ROOT, f), 'utf8'), ctx, { filename: f });
-  vm.runInContext('this.__places=japanPlaces; this.__cities=japanCities; this.__country=japanCountry;', ctx);
   const set = new Set();
-  ctx.__places.forEach(p => set.add(p.image));
-  ctx.__cities.forEach(c => set.add(c.image));
-  set.add(ctx.__country.image);
+  for (const country of COUNTRIES) {
+    const files = [country.countryFile, ...country.cityDirs.flatMap(d => {
+      const dirPath = path.join(ROOT, 'data', country.slug, d);
+      return fs.existsSync(dirPath) ? fs.readdirSync(dirPath).filter(f => f.endsWith('.js')).map(f => path.join('data', country.slug, d, f)) : [];
+    })];
+    for (const f of files) vm.runInContext(fs.readFileSync(path.join(ROOT, f), 'utf8'), ctx, { filename: f });
+    vm.runInContext(`this.__places=${country.placesVar}; this.__cities=${country.citiesVar}; this.__country=${country.countryVar};`, ctx);
+    ctx.__places.forEach(p => set.add(p.image));
+    ctx.__cities.forEach(c => set.add(c.image));
+    set.add(ctx.__country.image);
+  }
   const scriptSrc = fs.readFileSync(path.join(ROOT, 'script.js'), 'utf8');
   for (const m of scriptSrc.matchAll(/image:\s*'([^']+)'/g)) set.add(m[1]);
   return set;
