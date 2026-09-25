@@ -572,7 +572,7 @@ document.addEventListener('click', event => {
     return;
   }
   if (event.target.closest('[data-search-close]')) { closeSearch(); return; }
-  const categoryChip = event.target.closest('[data-category]');
+  const categoryChip = event.target.closest('.category-chip[data-category]');
   if (categoryChip) {
     const filterRow = categoryChip.closest('[data-category-filter]');
     filterRow.querySelectorAll('[data-category]').forEach(chip => { const isActive = chip === categoryChip; chip.classList.toggle('is-active', isActive); chip.setAttribute('aria-pressed', isActive); });
