@@ -159,7 +159,7 @@ function renderBlocks(blocks) {
   return blocks.map(block => {
     if (block.type === 'lead') return `<p class="story-text">${block.text}</p>`;
     if (block.type === 'p') return `<p class="story-detail">${block.text}</p>`;
-    if (block.type === 'heading') return `<div class="block-heading" id="${slugify(block.text)}"><h3>${block.text}</h3></div>`;
+    if (block.type === 'heading') return `<div class="block-heading" id="${slugify(block.text)}"><h3>${block.icon ? `<span class="heading-icon">${block.icon}</span> ` : ''}${block.text}</h3></div>`;
     if (block.type === 'callout') return `<div class="curiosity"><span>✳ ${block.label || '¿SABÍAS QUE...?'}</span><ul>${toList(block.items).map(i => `<li>${i}</li>`).join('')}</ul></div>`;
     if (block.type === 'image') return `<figure class="block-image"><img src="${block.src}" alt="${block.alt || ''}" loading="lazy"/>${block.caption ? `<figcaption>${block.caption}</figcaption>` : ''}</figure>`;
     if (block.type === 'list') return `<div class="block-list">${block.title ? `<h4>${block.title}</h4>` : ''}<ul>${toList(block.items).map(i => `<li>${i}</li>`).join('')}</ul></div>`;
@@ -236,8 +236,8 @@ function placePage(place) {
   const storyBody = place.blocks
     ? `${renderBlocks(place.blocks)}`
     : `<p class="story-text">${place.story}</p>${(place.history || []).map(paragraph => `<p class="story-detail">${paragraph}</p>`).join('')}${curiosities.length ? `<div class="curiosity"><span>✳ ¿SABÍAS QUE...?</span><ul>${curiosities.map(c => `<li>${c}</li>`).join('')}</ul></div>` : ''}`;
-  const storyToc = headings.length ? `<div class="story-toc"><span>En este recorrido</span>${headings.map(h => `<a href="#${slugify(h.text)}">${h.text}</a>`).join('')}</div>` : '';
-  const statsBlock = place.stats?.length ? `<section class="section stats-section"><div class="shell"><div class="stats-grid">${place.stats.map(s => `<div class="stat-card"><strong>${s.value}</strong><span>${s.label}</span></div>`).join('')}</div>${headings.length ? `<div class="highlights-row">${headings.map((h,i) => `<a class="highlight-chip" href="#${slugify(h.text)}"><span>${i+1}</span>${h.text}</a>`).join('')}</div>` : ''}</div></section>` : '';
+  const storyToc = headings.length ? `<div class="story-toc"><span>En este recorrido</span>${headings.map(h => `<a href="#${slugify(h.text)}" data-scroll="${slugify(h.text)}">${h.icon ? `${h.icon} ` : ''}${h.text}</a>`).join('')}</div>` : '';
+  const statsBlock = place.stats?.length ? `<section class="section stats-section"><div class="shell"><div class="stats-grid">${place.stats.map(s => `<div class="stat-card">${s.icon ? `<span class="stat-icon">${s.icon}</span>` : ''}<strong>${s.value}</strong><span>${s.label}</span></div>`).join('')}</div>${headings.length ? `<div class="highlights-row">${headings.map((h,i) => `<a class="highlight-chip" href="#${slugify(h.text)}" data-scroll="${slugify(h.text)}"><span>${i+1}</span>${h.icon ? `${h.icon} ` : ''}${h.text}</a>`).join('')}</div>` : ''}</div></section>` : '';
   const city = cityBy(place.city), country = countryBy(city.country);
   const active = saved().includes(`${place.city}/${place.slug}`);
   const related = places.filter(p => p.city === city.slug && p.slug !== place.slug);
@@ -291,6 +291,7 @@ function render(preserveScroll = false) {
 document.addEventListener('click', event => {
   const scrollButton = event.target.closest('[data-scroll]');
   if (scrollButton) {
+    event.preventDefault();
     document.getElementById(scrollButton.dataset.scroll)?.scrollIntoView({behavior:'smooth'});
     return;
   }

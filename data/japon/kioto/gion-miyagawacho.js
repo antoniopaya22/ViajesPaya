@@ -6,9 +6,14 @@ addJapanPlace({
   lead: 'Los barrios de geishas más conocidos de Kioto, de callejuelas empedradas y casas de té centenarias.',
   duration: '1,5–2,5 horas',
   price: 'Paseo gratuito',
+  stats: [
+    {value:'80', label:'casas de té en Gion Kōbu', icon:'🍵'},
+    {value:'1881', label:'división de Gion en dos hanamachi', icon:'📜'},
+    {value:'300', label:'años de la casa de té Ichiriki-tei', icon:'🏮'}
+  ],
   blocks: [
     {type:'lead', text:'Gion es, probablemente, el barrio de geishas más popular de Japón y en realidad agrupa dos hanamachi distintos desde que la zona se dividió en 1881: el pequeño Gion Higashi y el mucho mayor Gion Kōbu, con unas 80 casas de té frente a las 12 de Higashi, lo que hace más probable cruzarse con una maiko en Kōbu. Al sur, separado por el teatro Minamiza, Miyagawa-chō ofrece la misma arquitectura tradicional con bastante menos turismo.'},
-    {type:'heading', text:'Un paseo por Gion'},
+    {type:'heading', text:'Un paseo por Gion', icon:'🚶'},
     {type:'stop', title:'Shirakawa', text:[
       'El distrito de Shirakawa, junto al riachuelo del mismo nombre, reúne algunas de las casas de té más fotogénicas de Gion, como la okiya Ninben o las ochaya Okakai, Fusanoya y Masanoya. Los farolillos de papel que cuelgan de sus puertas llevan el blasón de Gion Kōbu: un círculo hecho con un dango, la bola dulce de pasta de arroz. Cerca está el memorial al poeta Yoshii Isamu y el ryokan Shiraume, antigua ochaya desde 1949.'
     ]},
@@ -21,7 +26,7 @@ addJapanPlace({
     {type:'stop', title:'Tiendas tradicionales de Gion', text:[
       'Cerca del santuario Yasaka, la tienda Kintakedo vende kanzashi (adornos de pelo) muy elaborados, popular entre las propias geishas. Yoshiya, especializada en maquillaje tradicional, y Kanshindo, una confitería centenaria conocida por su mizu-yokan, completan un paseo por el comercio más auténtico del barrio.'
     ]},
-    {type:'heading', text:'Miyagawa-chō, la joya con menos turismo'},
+    {type:'heading', text:'Miyagawa-chō, la joya con menos turismo', icon:'💎'},
     {type:'stop', title:'Un hanamachi más tranquilo', text:[
       'Situado al sur del teatro Minamiza y del templo Kennin-ji, Miyagawa-chō cuenta con unas 40 geishas y 30 maikos y ofrece un ambiente mucho más sereno que Pontochō o Gion Kōbu. Sus profesionales suelen pararse a saludar y posar con más naturalidad, lejos de las aglomeraciones de turistas. La mejor hora para pasear es entre las 16:00 y las 17:00, cuando maikos y geishas salen hacia sus banquetes nocturnos.'
     ]}

@@ -7,9 +7,9 @@ addJapanPlace({
   duration: '1 hora',
   price: 'Consulta la tarifa vigente en la web oficial',
   stats: [
-    {value:'15', label:'rocas en el jardín seco'},
-    {value:'0', label:'ángulos desde los que se ven las 15 a la vez'},
-    {value:'1450', label:'año en que Hosokawa Katsumoto fundó el templo'}
+    {value:'15', label:'rocas en el jardín seco', icon:'🪨'},
+    {value:'0', label:'ángulos desde los que se ven las 15 a la vez', icon:'👁️'},
+    {value:'1450', label:'año en que Hosokawa Katsumoto fundó el templo', icon:'📜'}
   ],
   blocks: [
     {type:'lead', text:'Antigua residencia aristocrática del clan Tokudaiji, el terreno pasó en 1450 a manos de Hosokawa Katsumoto, quien lo convirtió en templo zen de la secta Rinzai. Destruido en las guerras Ōnin (1467-1477) y reconstruido por su hijo en 1499, llegó a albergar 23 subtemplos en su momento de mayor esplendor, antes de un incendio en 1797 del que nunca recuperó aquel nivel.'},

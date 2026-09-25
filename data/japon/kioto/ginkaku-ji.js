@@ -7,9 +7,9 @@ addJapanPlace({
   duration: '1–1,5 horas',
   price: '500 ¥ adulto',
   stats: [
-    {value:'1474', label:'año de construcción, como retiro del shōgun'},
-    {value:'0', label:'láminas de plata: nunca se llegaron a instalar'},
-    {value:'2', label:'edificios originales que sobreviven intactos'}
+    {value:'1474', label:'año de construcción, como retiro del shōgun', icon:'🏯'},
+    {value:'0', label:'láminas de plata: nunca se llegaron a instalar', icon:'🥈'},
+    {value:'2', label:'edificios originales que sobreviven intactos', icon:'🏛️'}
   ],
   blocks: [
     {type:'lead', text:'Construido en 1474 como retiro del shōgun Ashikaga Yoshimasa, que quiso emular el Pabellón Dorado que su abuelo había levantado años antes, Ginkaku-ji nunca llegó a recubrirse de láminas de plata como se planeó, pero el apodo quedó fijado por su parecido con el Kinkaku-ji. Su nombre oficial es Jishō-ji, aunque nadie lo usa.'},

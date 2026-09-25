@@ -7,9 +7,9 @@ addJapanPlace({
   duration: '1–1,5 horas',
   price: 'Santuario gratuito; jardines de pago',
   stats: [
-    {value:'1895', label:'construido para el 1.100 aniversario de Kioto'},
-    {value:'24,2 m', label:'altura del gran torii de acceso'},
-    {value:'33.000 m²', label:'superficie de los jardines Shin-en'}
+    {value:'1895', label:'construido para el 1.100 aniversario de Kioto', icon:'📜'},
+    {value:'24,2 m', label:'altura del gran torii de acceso', icon:'⛩️'},
+    {value:'33.000 m²', label:'superficie de los jardines Shin-en', icon:'🌳'}
   ],
   blocks: [
     {type:'lead', text:'Heian Jingū se construyó entre 1893 y 1895 para conmemorar el 1.100 aniversario de la fundación de Heian-kyō, la antigua Kioto, y está dedicado a los emperadores Kammu, fundador de la ciudad, y Kōmei, el último antes de la restauración Meiji: dos figuras que marcan el principio y el fin de Kioto como capital de Japón.'},

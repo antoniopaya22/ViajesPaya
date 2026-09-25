@@ -7,9 +7,9 @@ addJapanPlace({
   duration: '3–5 horas para una visita completa de la zona',
   price: 'Paseo por el bosque de bambú gratuito; templos con entrada propia',
   stats: [
-    {value:'32', label:'patrones de tela en el Kimono Forest'},
-    {value:'1339', label:'año de fundación del templo Tenryū-ji'},
-    {value:'8.000', label:'estatuas de piedra en el Adashino Nenbutsu-ji'}
+    {value:'32', label:'patrones de tela en el Kimono Forest', icon:'👘'},
+    {value:'1339', label:'año de fundación del templo Tenryū-ji', icon:'🏯'},
+    {value:'8.000', label:'estatuas de piedra en el Adashino Nenbutsu-ji', icon:'🪨'}
   ],
   blocks: [
     {type:'lead', text:'Arashiyama es un distrito al oeste de Kioto conocido sobre todo por su bosque de bambú de Sagano, pero que ofrece mucho más: templos zen de primer nivel, un puente clásico sobre el río Katsura, un parque de macacos y calles de casas tradicionales reconvertidas en tiendas y museos.'},

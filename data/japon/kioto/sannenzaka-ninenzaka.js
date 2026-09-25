@@ -7,9 +7,9 @@ addJapanPlace({
   duration: '1–2 horas',
   price: 'Paseo gratuito',
   stats: [
-    {value:'2', label:'cuestas escalonadas del periodo Edo'},
-    {value:'24 m', label:'de altura de la pagoda Yasaka, al fondo'},
-    {value:'1', label:'Starbucks dentro de una casa tradicional'}
+    {value:'2', label:'cuestas escalonadas del periodo Edo', icon:'🥾'},
+    {value:'24 m', label:'de altura de la pagoda Yasaka, al fondo', icon:'🏯'},
+    {value:'1', label:'Starbucks dentro de una casa tradicional', icon:'☕'}
   ],
   blocks: [
     {type:'lead', text:'Al bajar de Kiyomizu-dera, la cuesta Kiyomizuzaka —la calle principal de tiendas y restaurantes que sale del templo— conduce hasta las escalinatas de Sannenzaka y Ninenzaka, el acceso histórico de peregrinación al templo y una de las postales más reconocibles de Higashiyama.'},

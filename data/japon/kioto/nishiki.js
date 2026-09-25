@@ -6,10 +6,15 @@ addJapanPlace({
   lead: '«La cocina de Kioto»: una calle techada con más de 130 puestos de producto fresco y elaboraciones típicas.',
   duration: '1–2 horas',
   price: 'Paseo gratuito; cada elaboración se paga por separado, normalmente entre 200 y 800 ¥',
+  stats: [
+    {value:'130+', label:'puestos de alimentación', icon:'🏮'},
+    {value:'400+', label:'años de historia como mercado', icon:'📜'},
+    {value:'1', label:'única calle techada en pleno centro', icon:'🛍️'}
+  ],
   blocks: [
     {type:'lead', text:'El mercado Nishiki ocupa una estrecha calle peatonal techada en pleno centro de Kioto y reúne más de 130 puestos de alimentación. Los primeros puestos de comida aparecieron aquí a comienzos del siglo XIV, y ya en el periodo Edo se convirtió en un gran mercado especializado en pescado y marisco; desde hace más de 400 años combina la compra diaria de los vecinos con la curiosidad de los visitantes.'},
     {type:'p', text:'Es de mala educación comer mientras se camina por el mercado: lo habitual es apartarse junto al puesto donde se ha comprado y disfrutar la elaboración de pie, sin avanzar.'},
-    {type:'heading', text:'Qué comer en el mercado'},
+    {type:'heading', text:'Qué comer en el mercado', icon:'🍢'},
     {type:'stop', title:'Yuba y tofu', text:[
       'La yuba es la fina película que se forma al hervir leche de soja, uno de los productos más representativos de la cocina de Kioto. Yubakichi la vende fresca y seca desde el siglo XVIII, y Hanayori-Kiyoe prepara una croqueta de yuba crujiente por fuera y cremosa por dentro. Konna Monja añade donuts de soja en sabores como azúcar moreno, chocolate o caramelo.'
     ]},
@@ -22,7 +27,7 @@ addJapanPlace({
     {type:'stop', title:'Dulces y postres', text:[
       'Kofukudo reúne mochi de todo tipo, pero los favoritos suelen ser el ichigo daifuku de Fuka —un mochi con una fresa entera dentro— y el warabimochi de matcha de Uji de Sawawa. El ichigo sando, un sándwich de pan de leche con nata y fresas frescas, y las brochetas de senbei y dango de Terakoya Honpo completan la ronda dulce. En Snoopy Cha-Ya se preparan gofres rellenos con forma del personaje.'
     ]},
-    {type:'heading', text:'Qué comprar'},
+    {type:'heading', text:'Qué comprar', icon:'🛍️'},
     {type:'stop', title:'Para llevar a la cocina de casa', text:[
       'Barricas de tsukemono (verduras encurtidas, incluida la berenjena Kamo, exclusiva de Kioto), alga konbu seca o en tsukudani, pescado seco como niboshi o sakura ebi, y paquetes de furikake para el arroz blanco son los clásicos que más se llevan los visitantes.'
     ]},

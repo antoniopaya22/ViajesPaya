@@ -7,9 +7,9 @@ addJapanPlace({
   duration: '45–75 min',
   price: 'Consulta la tarifa vigente en la web oficial',
   stats: [
-    {value:'1397', label:'año de construcción, como villa de retiro'},
-    {value:'1955', label:'reconstrucción tras el incendio de 1950'},
-    {value:'3', label:'estilos arquitectónicos, uno por planta'}
+    {value:'1397', label:'año de construcción, como villa de retiro', icon:'🏯'},
+    {value:'1955', label:'reconstrucción tras el incendio de 1950', icon:'🔥'},
+    {value:'3', label:'estilos arquitectónicos, uno por planta', icon:'🏛️'}
   ],
   blocks: [
     {type:'lead', text:'Construido en 1397 como villa de retiro del shōgun Ashikaga Yoshimitsu, el pabellón se convirtió en templo zen en 1408 tras su muerte, según su propia voluntad, y pasó a funcionar como shariden, relicario de las reliquias de Buda. Su nombre oficial es Rokuon-ji, y fue declarado Patrimonio de la Humanidad por la Unesco en 1994.'},
