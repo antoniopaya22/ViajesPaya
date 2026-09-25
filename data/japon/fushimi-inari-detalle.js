@@ -17,3 +17,14 @@ addJapanHistory({
     'Entra temprano y continúa a pie por Sannenzaka y Ninenzaka. Las calles son parte de la visita: conservan la escala de un acceso histórico al templo y se disfrutan mucho más antes de que abran todos los grupos turísticos.'
   ]
 });
+
+Object.assign(japanPlaces.find(place => place.slug === 'fushimi-inari'), {
+  gallery: [
+    {src:'assets/fushimi/romon.jpg',alt:'Puerta Romon de Fushimi Inari'},
+    {src:'assets/fushimi/honden.jpg',alt:'Salón principal Honden'},
+    {src:'assets/fushimi/senbon-torii.jpg',alt:'Camino Senbon Torii'},
+    {src:'assets/fushimi/okuno-in.jpg',alt:'Salón de plegarias Okuno-in'},
+    {src:'assets/fushimi/shin-ike.jpg',alt:'Estanque Shin-ike'},
+    {src:'assets/fushimi/yotsu-tsuji.jpg',alt:'Intersección Yotsu-tsuji'}
+  ]
+});
