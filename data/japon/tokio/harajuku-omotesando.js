@@ -1,6 +1,6 @@
 // Harajuku y Omotesandō — ficha con estructura de bloques (ver japan.js: renderBlocks).
 addJapanPlace({
-  slug: 'harajuku-omotesando', city: 'tokio', zone: 'harajuku-shibuya', name: 'Harajuku y Omotesandō', category: 'Barrios',
+  slug: 'harajuku-omotesando', city: 'tokio', zone: 'harajuku-shibuya', name: 'Harajuku y Omotesandō', category: 'Barrio',
   image: 'assets/japon-harajuku-omotesando.jpg',
   lat: 35.6702, lon: 139.7026,
   lead: 'La calle Takeshita, meca de la moda callejera, y la elegante avenida Omotesandō, antiguo camino de acceso al santuario Meiji.',
