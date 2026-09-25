@@ -1,6 +1,6 @@
 // Calle Komachi y templos zen de Kamakura — ficha propia con estructura de bloques (ver japan.js: renderBlocks).
 addJapanPlace({
-  slug: 'komachi-dori', city: 'kamakura', name: 'Calle Komachi y templos zen de Kamakura', category: 'Calle comercial',
+  slug: 'komachi-dori', city: 'kamakura', name: 'Calle Komachi y templos zen de Kamakura', category: 'Calle comercial', reviewed: '2026-09',
   image: 'assets/japon-komachi-dori.jpg',
   lat: 35.3193, lon: 139.5507,
   lead: 'La calle comercial de Kamakura y, tierra adentro, el resto de templos zen y santuarios que completan la ciudad.',

@@ -1,6 +1,6 @@
 // Meigetsu-in — ficha propia con estructura de bloques (ver japan.js: renderBlocks).
 addJapanPlace({
-  slug: 'meigetsu-in', city: 'kamakura', name: 'Meigetsu-in', category: 'Templo zen',
+  slug: 'meigetsu-in', city: 'kamakura', name: 'Meigetsu-in', category: 'Templo zen', reviewed: '2026-09',
   image: 'assets/japon-meigetsu-in.jpg',
   lat: 35.3297, lon: 139.5472,
   lead: 'Conocido como Ajisai-dera, «el templo de las hortensias», y famoso por su ventana circular que enmarca el jardín como un cuadro.',

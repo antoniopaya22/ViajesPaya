@@ -1,6 +1,6 @@
 // Gion y Miyagawa-chō — ficha con estructura de bloques.
 addJapanPlace({
-  slug: 'gion-miyagawacho', city: 'kioto', zone: 'higashiyama-sur', name: 'Gion y Miyagawa-chō', category: 'Barrio histórico',
+  slug: 'gion-miyagawacho', city: 'kioto', zone: 'higashiyama-sur', name: 'Gion y Miyagawa-chō', category: 'Barrio histórico', reviewed: '2026-09',
   image: 'assets/japon-gion-miyagawacho.jpg',
   lat: 35.003, lon: 135.775,
   lead: 'Los barrios de geishas más conocidos de Kioto, de callejuelas empedradas y casas de té centenarias.',

@@ -1,6 +1,6 @@
 // Nipponbashi (Den Den Town) — ficha propia con estructura de bloques (ver japan.js: renderBlocks).
 addJapanPlace({
-  slug: 'nipponbashi', city: 'osaka', zone: 'tennoji', name: 'Nipponbashi (Den Den Town)', category: 'Barrio comercial',
+  slug: 'nipponbashi', city: 'osaka', zone: 'tennoji', name: 'Nipponbashi (Den Den Town)', category: 'Barrio comercial', reviewed: '2026-09',
   image: 'assets/japon-nipponbashi.jpg',
   lat: 34.6626, lon: 135.5064,
   lead: 'El «Akihabara de Osaka»: electrónica, manga, anime y cultura otaku en un barrio mucho más pequeño y manejable que su equivalente de Tokio.',

@@ -1,6 +1,6 @@
 // Jardín Isui-en — ficha propia con estructura de bloques (ver japan.js: renderBlocks).
 addJapanPlace({
-  slug: 'isui-en', city: 'nara', name: 'Jardín Isui-en', category: 'Jardín',
+  slug: 'isui-en', city: 'nara', name: 'Jardín Isui-en', category: 'Jardín', reviewed: '2026-09',
   image: 'assets/japon-isui-en.jpg',
   lat: 34.685466, lon: 135.837919,
   lead: 'Un jardín de paseo construido en dos tiempos, cuya vista principal «toma prestados» la puerta Nandaimon de Tōdai-ji y el monte Wakakusa como si fueran parte del propio jardín.',

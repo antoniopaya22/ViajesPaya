@@ -1,6 +1,6 @@
 // Hōkoku-ji — ficha propia con estructura de bloques (ver japan.js: renderBlocks).
 addJapanPlace({
-  slug: 'hokoku-ji', city: 'kamakura', name: 'Hōkoku-ji', category: 'Templo zen',
+  slug: 'hokoku-ji', city: 'kamakura', name: 'Hōkoku-ji', category: 'Templo zen', reviewed: '2026-09',
   image: 'assets/japon-hokoku-ji.jpg',
   lat: 35.3140, lon: 139.5628,
   lead: '«El templo del bambú»: un bosque de cañas altísimas y un pequeño pabellón de té, mucho más tranquilo que Arashiyama.',

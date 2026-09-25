@@ -1,6 +1,6 @@
 // Santuario Namba Yasaka — ficha propia con estructura de bloques (ver japan.js: renderBlocks).
 addJapanPlace({
-  slug: 'namba-yasaka', city: 'osaka', zone: 'namba', name: 'Santuario Namba Yasaka', category: 'Santuario',
+  slug: 'namba-yasaka', city: 'osaka', zone: 'namba', name: 'Santuario Namba Yasaka', category: 'Santuario', reviewed: '2026-09',
   image: 'assets/japon-namba-yasaka.jpg',
   lat: 34.6614, lon: 135.4971,
   lead: 'Un remanso de paz a pocos minutos de Dōtonbori, con un escenario en forma de cabeza de león de doce metros que «se come» a los malos espíritus.',

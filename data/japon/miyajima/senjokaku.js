@@ -1,6 +1,6 @@
 // Senjokaku y pagoda de cinco pisos — ficha propia con estructura de bloques (ver japan.js: renderBlocks).
 addJapanPlace({
-  slug: 'senjokaku', city: 'miyajima', name: 'Senjokaku y pagoda de cinco pisos', category: 'Templo y arquitectura',
+  slug: 'senjokaku', city: 'miyajima', name: 'Senjokaku y pagoda de cinco pisos', category: 'Templo y arquitectura', reviewed: '2026-09',
   image: 'assets/japon-senjokaku.jpg',
   lat: 34.2985, lon: 132.3213,
   lead: 'Un enorme salón de madera sin paredes y una pagoda bermellón, una de las estampas más reconocibles de la isla.',

@@ -1,6 +1,6 @@
 // Kasuga Taisha — ficha propia con estructura de bloques (ver japan.js: renderBlocks).
 addJapanPlace({
-  slug: 'kasuga-taisha', city: 'nara', name: 'Kasuga Taisha', category: 'Santuario',
+  slug: 'kasuga-taisha', city: 'nara', name: 'Kasuga Taisha', category: 'Santuario', reviewed: '2026-09',
   image: 'assets/japon-kasuga-taisha.jpg',
   lat: 34.6814, lon: 135.8481,
   lead: 'Fundado en el año 768 como santuario tutelar del poderoso clan Fujiwara, Kasuga Taisha es famoso por sus miles de farolillos de piedra y bronce (tōrō) donados a lo largo de los siglos, repartidos por sus caminos y edificios.',

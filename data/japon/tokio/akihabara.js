@@ -1,6 +1,6 @@
 // Akihabara — ficha con estructura de bloques (ver japan.js: renderBlocks).
 addJapanPlace({
-  slug: 'akihabara', city: 'tokio', zone: 'este', name: 'Akihabara', category: 'Barrio comercial',
+  slug: 'akihabara', city: 'tokio', zone: 'este', name: 'Akihabara', category: 'Barrio comercial', reviewed: '2026-09',
   image: 'assets/japon-akihabara.jpg',
   lat: 35.6984, lon: 139.7731,
   lead: 'El barrio de la electrónica que se convirtió en meca del manga, el anime y la cultura otaku.',

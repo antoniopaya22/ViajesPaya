@@ -1,6 +1,6 @@
 // Calle Omotesandō — ficha propia con estructura de bloques (ver japan.js: renderBlocks).
 addJapanPlace({
-  slug: 'omotesando', city: 'miyajima', name: 'Calle Omotesandō', category: 'Calle y gastronomía',
+  slug: 'omotesando', city: 'miyajima', name: 'Calle Omotesandō', category: 'Calle y gastronomía', reviewed: '2026-09',
   image: 'assets/japon-omotesando.jpg',
   lat: 34.2965, lon: 132.3182,
   lead: 'La calle comercial cubierta que lleva del muelle al gran torii, con más de un siglo de historia como escaparate de los sabores de Miyajima.',

@@ -1,6 +1,6 @@
 // Naramachi — ficha propia con estructura de bloques (ver japan.js: renderBlocks).
 addJapanPlace({
-  slug: 'naramachi', city: 'nara', name: 'Naramachi', category: 'Barrio histórico',
+  slug: 'naramachi', city: 'nara', name: 'Naramachi', category: 'Barrio histórico', reviewed: '2026-09',
   image: 'assets/japon-naramachi.jpg',
   lat: 34.675024, lon: 135.830667,
   lead: 'Un laberinto de callejuelas con casas de comerciantes de madera, al sur de Kōfuku-ji, construido sobre los antiguos terrenos del templo Gangō-ji.',

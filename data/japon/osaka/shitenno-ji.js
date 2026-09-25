@@ -1,6 +1,6 @@
 // Shitennō-ji — ficha propia con estructura de bloques (ver japan.js: renderBlocks).
 addJapanPlace({
-  slug: 'shitenno-ji', city: 'osaka', zone: 'tennoji', name: 'Shitennō-ji', category: 'Templo',
+  slug: 'shitenno-ji', city: 'osaka', zone: 'tennoji', name: 'Shitennō-ji', category: 'Templo', reviewed: '2026-09',
   image: 'assets/japon-shitenno-ji.jpg',
   lat: 34.6540, lon: 135.5164,
   lead: 'Uno de los templos budistas más antiguos de Japón, fundado en 592 por el príncipe Shōtoku tras vencer a un clan opuesto al budismo.',

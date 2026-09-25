@@ -1,6 +1,6 @@
 // Nanzen-ji — ficha con estructura de bloques.
 addJapanPlace({
-  slug: 'nanzen-ji', city: 'kioto', zone: 'higashiyama-norte', name: 'Nanzen-ji', category: 'Templo zen',
+  slug: 'nanzen-ji', city: 'kioto', zone: 'higashiyama-norte', name: 'Nanzen-ji', category: 'Templo zen', reviewed: '2026-09',
   image: 'assets/japon-nanzen-ji.jpg',
   lat: 35.0114, lon: 135.793,
   lead: 'La gran puerta zen más alta de Kioto y un acueducto de ladrillo del periodo Meiji entre los arces.',

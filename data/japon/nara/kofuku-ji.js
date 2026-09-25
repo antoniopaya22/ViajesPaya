@@ -1,6 +1,6 @@
 // Kōfuku-ji — ficha propia con estructura de bloques (ver japan.js: renderBlocks).
 addJapanPlace({
-  slug: 'kofuku-ji', city: 'nara', name: 'Kōfuku-ji', category: 'Templo',
+  slug: 'kofuku-ji', city: 'nara', name: 'Kōfuku-ji', category: 'Templo', reviewed: '2026-09',
   image: 'assets/japon-kofuku-ji.jpg',
   lat: 34.6837, lon: 135.8318,
   lead: 'Trasladado a Nara en el año 710, Kōfuku-ji fue durante siglos el templo familiar del poderoso clan Fujiwara y uno de los siete grandes templos de la antigua capital; su esbelta pagoda de cinco pisos es hoy uno de los símbolos de la ciudad.',

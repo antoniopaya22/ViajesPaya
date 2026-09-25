@@ -1,6 +1,6 @@
 // Museo Nacional de Nara — ficha propia con estructura de bloques (ver japan.js: renderBlocks).
 addJapanPlace({
-  slug: 'museo-nacional-nara', city: 'nara', name: 'Museo Nacional de Nara', category: 'Museo',
+  slug: 'museo-nacional-nara', city: 'nara', name: 'Museo Nacional de Nara', category: 'Museo', reviewed: '2026-09',
   image: 'assets/japon-nara-museo.jpg',
   lat: 34.683096, lon: 135.838311,
   lead: 'El gran museo del arte budista de Japón, con una sala de escultura sagrada abierta todo el año y una exposición de otoño que reúne, durante solo unas semanas, los tesoros del siglo VIII del Shōsō-in de Tōdai-ji.',

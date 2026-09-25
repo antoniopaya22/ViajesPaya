@@ -1,6 +1,6 @@
 // Isshin-ji — ficha propia con estructura de bloques (ver japan.js: renderBlocks).
 addJapanPlace({
-  slug: 'isshin-ji', city: 'osaka', zone: 'tennoji', name: 'Isshin-ji', category: 'Templo',
+  slug: 'isshin-ji', city: 'osaka', zone: 'tennoji', name: 'Isshin-ji', category: 'Templo', reviewed: '2026-09',
   image: 'assets/japon-isshin-ji.jpg',
   lat: 34.6595, lon: 135.5136,
   lead: 'Un templo de puerta ultramoderna famoso por sus estatuas de Buda hechas con los restos de cientos de miles de fieles fallecidos.',

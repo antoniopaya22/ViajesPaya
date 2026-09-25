@@ -1,6 +1,6 @@
 // Castillo Nijō — ficha con estructura de bloques.
 addJapanPlace({
-  slug: 'castillo-nijo', city: 'kioto', zone: 'centro', name: 'Castillo Nijō', category: 'Castillo',
+  slug: 'castillo-nijo', city: 'kioto', zone: 'centro', name: 'Castillo Nijō', category: 'Castillo', reviewed: '2026-09',
   image: 'assets/japon-castillo-nijo.jpg',
   lat: 35.0142, lon: 135.7481,
   lead: 'La residencia de los shōgun Tokugawa en Kioto, con suelos que «cantan» al caminar sobre ellos.',

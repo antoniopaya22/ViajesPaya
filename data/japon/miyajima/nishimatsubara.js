@@ -1,6 +1,6 @@
 // Nishimatsubara y acuario de Miyajima — ficha propia con estructura de bloques (ver japan.js: renderBlocks).
 addJapanPlace({
-  slug: 'nishimatsubara', city: 'miyajima', name: 'Nishimatsubara y acuario de Miyajima', category: 'Naturaleza y acuario',
+  slug: 'nishimatsubara', city: 'miyajima', name: 'Nishimatsubara y acuario de Miyajima', category: 'Naturaleza y acuario', reviewed: '2026-09',
   image: 'assets/japon-nishimatsubara.jpg',
   lat: 34.2954, lon: 132.3154,
   lead: 'Una lengua de arena con vistas al torii desde otro ángulo, camino de un pequeño santuario y del acuario dedicado al mar interior de Seto.',

@@ -1,6 +1,6 @@
 // Zōjō-ji — ficha con estructura de bloques (ver japan.js: renderBlocks).
 addJapanPlace({
-  slug: 'zojo-ji', city: 'tokio', zone: 'minato', name: 'Zōjō-ji', category: 'Templo',
+  slug: 'zojo-ji', city: 'tokio', zone: 'minato', name: 'Zōjō-ji', category: 'Templo', reviewed: '2026-09',
   image: 'assets/japon-zojo-ji.jpg',
   lat: 35.6575, lon: 139.7484,
   lead: 'El gran templo familiar de los Tokugawa, con la puerta más antigua de Minato, justo a los pies de la Torre de Tokio.',

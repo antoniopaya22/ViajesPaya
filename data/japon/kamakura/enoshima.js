@@ -1,6 +1,6 @@
 // Playas de Kamakura y Enoshima — ficha propia con estructura de bloques (ver japan.js: renderBlocks).
 addJapanPlace({
-  slug: 'enoshima', city: 'kamakura', name: 'Playas de Kamakura y Enoshima', category: 'Playa e isla',
+  slug: 'enoshima', city: 'kamakura', name: 'Playas de Kamakura y Enoshima', category: 'Playa e isla', reviewed: '2026-09',
   image: 'assets/japon-enoshima.jpg',
   lat: 35.3006, lon: 139.4803,
   lead: 'Las playas de Yuigahama, Zaimokuza y Koshigoe y, un poco más allá, la pequeña isla de Enoshima.',

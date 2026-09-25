@@ -1,6 +1,6 @@
 // Chion-in y parque Maruyama — ficha con estructura de bloques.
 addJapanPlace({
-  slug: 'chion-in-maruyama', city: 'kioto', zone: 'higashiyama-sur', name: 'Chion-in y parque Maruyama', category: 'Templo y parque',
+  slug: 'chion-in-maruyama', city: 'kioto', zone: 'higashiyama-sur', name: 'Chion-in y parque Maruyama', category: 'Templo y parque', reviewed: '2026-09',
   image: 'assets/japon-chion-in-maruyama.jpg',
   lat: 35.0056, lon: 135.7831,
   lead: 'La mayor puerta de madera de Japón y el parque de los cerezos más popular de Kioto, uno junto al otro.',

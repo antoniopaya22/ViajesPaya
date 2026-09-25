@@ -1,6 +1,6 @@
 // Museo de la Historia de Genji — ficha propia con estructura de bloques (ver japan.js: renderBlocks).
 addJapanPlace({
-  slug: 'museo-genji', city: 'uji', name: 'Museo de la Historia de Genji', category: 'Museo',
+  slug: 'museo-genji', city: 'uji', name: 'Museo de la Historia de Genji', category: 'Museo', reviewed: '2026-09',
   image: 'assets/japon-genji-museum.jpg',
   lat: 34.8941, lon: 135.8102,
   lead: 'Un museo dedicado a los diez capítulos finales de la primera gran novela de la literatura mundial, ambientados aquí en Uji.',

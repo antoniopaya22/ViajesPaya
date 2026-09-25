@@ -1,6 +1,6 @@
 // Santuario Tsurugaoka Hachimangū — ficha propia con estructura de bloques (ver japan.js: renderBlocks).
 addJapanPlace({
-  slug: 'tsurugaoka-hachimangu', city: 'kamakura', name: 'Santuario Tsurugaoka Hachimangū', category: 'Santuario',
+  slug: 'tsurugaoka-hachimangu', city: 'kamakura', name: 'Santuario Tsurugaoka Hachimangū', category: 'Santuario', reviewed: '2026-09',
   image: 'assets/japon-tsurugaoka-hachimangu.jpg',
   lat: 35.3258, lon: 139.5564,
   lead: 'El santuario sintoísta más importante de Kamakura, dedicado al dios patrón de los samurái.',

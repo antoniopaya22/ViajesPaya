@@ -1,6 +1,6 @@
 // Castillo de Himeji — ficha propia con estructura de bloques (ver japan.js: renderBlocks).
 addJapanPlace({
-  slug: 'castillo-de-himeji', city: 'himeji', name: 'Castillo de Himeji', category: 'Castillo',
+  slug: 'castillo-de-himeji', city: 'himeji', name: 'Castillo de Himeji', category: 'Castillo', reviewed: '2026-09',
   image: 'assets/himeji.jpg',
   lat: 34.8394, lon: 134.6939,
   lead: 'La «garza blanca» de Japón: un castillo original del periodo Edo, con seis siglos de historia, que nunca fue destruido.',

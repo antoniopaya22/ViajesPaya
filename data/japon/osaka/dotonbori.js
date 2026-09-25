@@ -1,6 +1,6 @@
 // Dōtonbori — ficha propia con estructura de bloques (ver japan.js: renderBlocks).
 addJapanPlace({
-  slug: 'dotonbori', city: 'osaka', zone: 'namba', name: 'Dōtonbori', category: 'Barrio y ocio',
+  slug: 'dotonbori', city: 'osaka', zone: 'namba', name: 'Dōtonbori', category: 'Barrio y ocio', reviewed: '2026-09',
   image: 'assets/dotonbori.jpg',
   lat: 34.6687, lon: 135.5015,
   lead: 'El canal de los neones, la comida callejera y el corredor más fotografiado de Osaka, presidido por el atleta luminoso de Glico Man.',

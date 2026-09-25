@@ -1,6 +1,6 @@
 // Meiji Jingū — ficha con estructura de bloques (ver japan.js: renderBlocks).
 addJapanPlace({
-  slug: 'meiji-jingu', city: 'tokio', zone: 'harajuku-shibuya', name: 'Meiji Jingū', category: 'Santuario',
+  slug: 'meiji-jingu', city: 'tokio', zone: 'harajuku-shibuya', name: 'Meiji Jingū', category: 'Santuario', reviewed: '2026-09',
   image: 'assets/meiji.jpg',
   lat: 35.6764, lon: 139.6993,
   lead: 'Un bosque de 120.000 árboles y un gran santuario dedicado al emperador Meiji, junto a Harajuku.',

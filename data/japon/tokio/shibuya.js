@@ -1,6 +1,6 @@
 // Shibuya — ficha con estructura de bloques (ver japan.js: renderBlocks).
 addJapanPlace({
-  slug: 'shibuya', city: 'tokio', zone: 'harajuku-shibuya', name: 'Shibuya', category: 'Barrio',
+  slug: 'shibuya', city: 'tokio', zone: 'harajuku-shibuya', name: 'Shibuya', category: 'Barrio', reviewed: '2026-09',
   image: 'assets/japon-shibuya.jpg',
   lat: 35.6595, lon: 139.7005,
   lead: 'El cruce peatonal más famoso del mundo y el termómetro de la moda japonesa, en permanente reconstrucción desde 2015.',

@@ -1,6 +1,6 @@
 // Jardín Yoshiki-en — ficha propia con estructura de bloques (ver japan.js: renderBlocks).
 addJapanPlace({
-  slug: 'yoshiki-en', city: 'nara', name: 'Jardín Yoshiki-en', category: 'Jardín',
+  slug: 'yoshiki-en', city: 'nara', name: 'Jardín Yoshiki-en', category: 'Jardín', reviewed: '2026-09',
   image: 'assets/japon-yoshiki-en.jpg',
   lat: 34.685102, lon: 135.837212,
   lead: 'Tres jardines distintos —de estanque, de musgo y de té— reunidos en un único recinto tranquilo, justo al lado de Isui-en pero con muchos menos visitantes.',

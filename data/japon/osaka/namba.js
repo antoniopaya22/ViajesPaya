@@ -1,6 +1,6 @@
 // Namba — ficha propia con estructura de bloques (ver japan.js: renderBlocks).
 addJapanPlace({
-  slug: 'namba', city: 'osaka', zone: 'namba', name: 'Namba', category: 'Barrio',
+  slug: 'namba', city: 'osaka', zone: 'namba', name: 'Namba', category: 'Barrio', reviewed: '2026-09',
   image: 'assets/japon-namba.jpg',
   lat: 34.6656, lon: 135.5008,
   lead: 'El corazón comercial del sur de Osaka: galerías techadas, tiendas de artículos de cocina y un centro comercial con jardines en la azotea.',

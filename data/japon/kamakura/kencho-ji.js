@@ -1,6 +1,6 @@
 // Kenchō-ji — ficha propia con estructura de bloques (ver japan.js: renderBlocks).
 addJapanPlace({
-  slug: 'kencho-ji', city: 'kamakura', name: 'Kenchō-ji', category: 'Templo zen',
+  slug: 'kencho-ji', city: 'kamakura', name: 'Kenchō-ji', category: 'Templo zen', reviewed: '2026-09',
   image: 'assets/japon-kencho-ji.jpg',
   lat: 35.3319, lon: 139.5503,
   lead: 'El primero y más antiguo de los cinco grandes templos zen de Kamakura, con una subida final que regala las mejores vistas de la ciudad.',

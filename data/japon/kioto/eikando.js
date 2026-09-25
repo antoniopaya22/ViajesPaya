@@ -1,6 +1,6 @@
 // Eikan-dō (Zenrin-ji) — ficha propia con estructura de bloques (ver japan.js: renderBlocks).
 addJapanPlace({
-  slug: 'eikando', city: 'kioto', zone: 'higashiyama-norte', name: 'Eikan-dō (Zenrin-ji)', category: 'Templo',
+  slug: 'eikando', city: 'kioto', zone: 'higashiyama-norte', name: 'Eikan-dō (Zenrin-ji)', category: 'Templo', reviewed: '2026-09',
   image: 'assets/japon-eikando.jpg',
   lat: 35.0145, lon: 135.7953,
   lead: 'Un templo de más de 1.100 años al pie de Higashiyama, célebre por su Buda que gira la cabeza para mirar atrás y por ser, sin exagerar, uno de los mejores rincones de Kioto para el momiji de otoño.',

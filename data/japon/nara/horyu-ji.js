@@ -1,6 +1,6 @@
 // Hōryū-ji — ficha propia con estructura de bloques (ver japan.js: renderBlocks).
 addJapanPlace({
-  slug: 'horyu-ji', city: 'nara', name: 'Hōryū-ji', category: 'Templo',
+  slug: 'horyu-ji', city: 'nara', name: 'Hōryū-ji', category: 'Templo', reviewed: '2026-09',
   image: 'assets/japon-horyu-ji.jpg',
   lat: 34.6144, lon: 135.7342,
   lead: 'El templo de madera más antiguo del mundo, con esculturas budistas de los siglos VI y VII que muestran la fuerte conexión de Japón con China y Corea.',

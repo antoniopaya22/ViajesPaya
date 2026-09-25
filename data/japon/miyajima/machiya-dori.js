@@ -1,6 +1,6 @@
 // Calle Machiya-dōri — ficha propia con estructura de bloques (ver japan.js: renderBlocks).
 addJapanPlace({
-  slug: 'machiya-dori', city: 'miyajima', name: 'Calle Machiya-dōri', category: 'Calle histórica',
+  slug: 'machiya-dori', city: 'miyajima', name: 'Calle Machiya-dōri', category: 'Calle histórica', reviewed: '2026-09',
   image: 'assets/japon-machiya-dori.jpg',
   lat: 34.2962, lon: 132.3186,
   lead: 'La antigua calle principal de Miyajima, un paso más tranquila que Omotesandō, con ryokan, galerías y farolillos de papel encendidos al anochecer.',

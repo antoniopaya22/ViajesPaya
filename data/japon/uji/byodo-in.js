@@ -1,6 +1,6 @@
 // Byōdō-in — ficha propia con estructura de bloques (ver japan.js: renderBlocks).
 addJapanPlace({
-  slug: 'byodo-in', city: 'uji', name: 'Byōdō-in', category: 'Templo',
+  slug: 'byodo-in', city: 'uji', name: 'Byōdō-in', category: 'Templo', reviewed: '2026-09',
   image: 'assets/uji.jpg',
   lat: 34.8894, lon: 135.8077,
   lead: 'El Salón del Fénix junto a un estanque, la imagen que aparece en la moneda de 10 yenes.',

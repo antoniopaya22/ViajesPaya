@@ -1,6 +1,6 @@
 // Sensō-ji — ficha con estructura de bloques (ver japan.js: renderBlocks).
 addJapanPlace({
-  slug: 'senso-ji', city: 'tokio', zone: 'este', name: 'Sensō-ji', category: 'Templo',
+  slug: 'senso-ji', city: 'tokio', zone: 'este', name: 'Sensō-ji', category: 'Templo', reviewed: '2026-09',
   image: 'assets/sensoji.jpg',
   lat: 35.7148, lon: 139.7967,
   lead: 'El templo budista más antiguo de Tokio, corazón espiritual de Asakusa y dedicado a Kannon, diosa de la misericordia.',

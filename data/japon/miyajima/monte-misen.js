@@ -1,6 +1,6 @@
 // Monte Misen — ficha propia con estructura de bloques (ver japan.js: renderBlocks).
 addJapanPlace({
-  slug: 'monte-misen', city: 'miyajima', name: 'Monte Misen', category: 'Naturaleza y senderismo',
+  slug: 'monte-misen', city: 'miyajima', name: 'Monte Misen', category: 'Naturaleza y senderismo', reviewed: '2026-09',
   image: 'assets/japon-monte-misen.jpg',
   lat: 34.2872, lon: 132.3266,
   lead: 'La montaña sagrada de Miyajima, con un fuego que arde desde hace más de mil doscientos años y vistas al mar interior de Seto desde su cima.',

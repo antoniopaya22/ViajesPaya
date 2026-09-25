@@ -1,6 +1,6 @@
 // Kōshō-ji — ficha propia con estructura de bloques (ver japan.js: renderBlocks).
 addJapanPlace({
-  slug: 'koshoji', city: 'uji', name: 'Kōshō-ji', category: 'Templo zen',
+  slug: 'koshoji', city: 'uji', name: 'Kōshō-ji', category: 'Templo zen', reviewed: '2026-09',
   image: 'assets/japon-koshoji.jpg',
   lat: 34.8895, lon: 135.8134,
   lead: 'El primer templo zen sōtō de Japón, con una subida entre arces junto a un arroyo que suena como un koto.',

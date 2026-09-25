@@ -1,6 +1,6 @@
 // Santuario de Itsukushima — ficha propia con estructura de bloques (ver japan.js: renderBlocks).
 addJapanPlace({
-  slug: 'itsukushima', city: 'miyajima', name: 'Santuario de Itsukushima', category: 'Santuario',
+  slug: 'itsukushima', city: 'miyajima', name: 'Santuario de Itsukushima', category: 'Santuario', reviewed: '2026-09',
   image: 'assets/miyajima.jpg',
   lat: 34.2960, lon: 132.3197,
   lead: 'Pasarelas rojas sobre el mar y un gran torii que cambia de aspecto con la marea, en un santuario que lleva más de ocho siglos flotando sobre la bahía.',

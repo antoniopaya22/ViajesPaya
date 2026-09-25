@@ -1,6 +1,6 @@
 // Shinsekai — ficha propia con estructura de bloques (ver japan.js: renderBlocks).
 addJapanPlace({
-  slug: 'shinsekai', city: 'osaka', zone: 'tennoji', name: 'Shinsekai', category: 'Barrio',
+  slug: 'shinsekai', city: 'osaka', zone: 'tennoji', name: 'Shinsekai', category: 'Barrio', reviewed: '2026-09',
   image: 'assets/japon-shinsekai.jpg',
   lat: 34.6524, lon: 135.5063,
   lead: 'El «nuevo mundo» retro-futurista de Osaka, con la torre Tsutenkaku como epicentro y el kushikatsu como bandera gastronómica.',

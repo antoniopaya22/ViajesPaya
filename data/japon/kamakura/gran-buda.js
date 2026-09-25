@@ -1,6 +1,6 @@
 // Gran Buda de Kamakura (Kōtoku-in) — ficha propia con estructura de bloques (ver japan.js: renderBlocks).
 addJapanPlace({
-  slug: 'gran-buda', city: 'kamakura', name: 'Gran Buda de Kamakura', category: 'Templo',
+  slug: 'gran-buda', city: 'kamakura', name: 'Gran Buda de Kamakura', category: 'Templo', reviewed: '2026-09',
   image: 'assets/kamakura.jpg',
   lat: 35.3167, lon: 139.5357,
   lead: 'Una estatua de bronce de 13,35 metros que lleva siglos meditando al aire libre, frente al cielo de Kamakura.',

@@ -1,6 +1,6 @@
 // Santuario Ujigami — ficha propia con estructura de bloques (ver japan.js: renderBlocks).
 addJapanPlace({
-  slug: 'ujigami-jinja', city: 'uji', name: 'Santuario Ujigami', category: 'Santuario',
+  slug: 'ujigami-jinja', city: 'uji', name: 'Santuario Ujigami', category: 'Santuario', reviewed: '2026-09',
   image: 'assets/japon-ujigami-jinja.jpg',
   lat: 34.8909, lon: 135.8095,
   lead: 'Uno de los santuarios sintoístas más antiguos conservados de Japón, junto al río Uji.',

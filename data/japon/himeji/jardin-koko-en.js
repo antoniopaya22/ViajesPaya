@@ -1,6 +1,6 @@
 // Jardín Kōko-en — ficha propia con estructura de bloques (ver japan.js: renderBlocks).
 addJapanPlace({
-  slug: 'jardin-koko-en', city: 'himeji', name: 'Jardín Kōko-en', category: 'Jardín',
+  slug: 'jardin-koko-en', city: 'himeji', name: 'Jardín Kōko-en', category: 'Jardín', reviewed: '2026-09',
   image: 'assets/japon-jardin-koko-en.jpg',
   lat: 34.8365, lon: 134.6897,
   lead: 'Nueve jardines de estilo Edo pegados a las murallas del castillo de Himeji, para pasear despacio después de la subida a la torre.',

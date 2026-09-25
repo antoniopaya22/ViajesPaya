@@ -1,6 +1,6 @@
 // Templo Daiganji — ficha propia con estructura de bloques (ver japan.js: renderBlocks).
 addJapanPlace({
-  slug: 'daiganji', city: 'miyajima', name: 'Templo Daiganji', category: 'Templo',
+  slug: 'daiganji', city: 'miyajima', name: 'Templo Daiganji', category: 'Templo', reviewed: '2026-09',
   image: 'assets/japon-daiganji.jpg',
   lat: 34.2952, lon: 132.3202,
   lead: 'El templo budista que administró el santuario de Itsukushima durante siete siglos, justo a la salida de su recinto, con el acceso más antiguo de la isla a un lado.',

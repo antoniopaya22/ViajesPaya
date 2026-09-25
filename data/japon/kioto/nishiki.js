@@ -1,6 +1,6 @@
 // Mercado Nishiki — ficha con estructura de bloques.
 addJapanPlace({
-  slug: 'nishiki', city: 'kioto', zone: 'centro', name: 'Mercado Nishiki', category: 'Mercado',
+  slug: 'nishiki', city: 'kioto', zone: 'centro', name: 'Mercado Nishiki', category: 'Mercado', reviewed: '2026-09',
   image: 'assets/japon-nishiki.jpg',
   lat: 35.005, lon: 135.764,
   lead: '«La cocina de Kioto»: una calle techada con más de 130 puestos de producto fresco y elaboraciones típicas.',

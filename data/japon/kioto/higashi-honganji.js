@@ -1,6 +1,6 @@
 // Higashi Hongan-ji — ficha con estructura de bloques.
 addJapanPlace({
-  slug: 'higashi-honganji', city: 'kioto', zone: 'estacion', name: 'Higashi Hongan-ji', category: 'Templo',
+  slug: 'higashi-honganji', city: 'kioto', zone: 'estacion', name: 'Higashi Hongan-ji', category: 'Templo', reviewed: '2026-09',
   image: 'assets/japon-higashi-honganji.jpg',
   lat: 34.9917, lon: 135.7589,
   lead: 'Uno de los edificios de madera más grandes del mundo, reconstruido con cuerdas trenzadas con cabello donado.',

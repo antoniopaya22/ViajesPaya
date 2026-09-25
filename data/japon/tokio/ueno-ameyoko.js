@@ -1,6 +1,6 @@
 // Ueno y Ameyoko — ficha con estructura de bloques (ver japan.js: renderBlocks).
 addJapanPlace({
-  slug: 'ueno-ameyoko', city: 'tokio', zone: 'este', name: 'Ueno y Ameyoko', category: 'Parque y mercado',
+  slug: 'ueno-ameyoko', city: 'tokio', zone: 'este', name: 'Ueno y Ameyoko', category: 'Parque y mercado', reviewed: '2026-09',
   image: 'assets/japon-ueno-ameyoko.jpg',
   lat: 35.7156, lon: 139.7745,
   lead: 'Museos, cerezos y pandas en el parque de Ueno, un mercado callejero de posguerra justo al lado.',

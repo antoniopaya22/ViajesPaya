@@ -1,6 +1,6 @@
 // Asakusa — ficha con estructura de bloques (ver japan.js: renderBlocks).
 addJapanPlace({
-  slug: 'asakusa', city: 'tokio', zone: 'este', name: 'Asakusa', category: 'Barrio histórico',
+  slug: 'asakusa', city: 'tokio', zone: 'este', name: 'Asakusa', category: 'Barrio histórico', reviewed: '2026-09',
   image: 'assets/japon-asakusa.jpg',
   lat: 35.7118, lon: 139.7967,
   lead: 'El shitamachi más tradicional de Tokio, alrededor del templo Sensō-ji, con calles comerciales, izakaya y algún rincón inesperado.',

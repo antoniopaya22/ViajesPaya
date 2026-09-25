@@ -1,6 +1,6 @@
 // Puente Uji-bashi — ficha propia con estructura de bloques (ver japan.js: renderBlocks).
 addJapanPlace({
-  slug: 'uji-bashi', city: 'uji', name: 'Puente Uji-bashi', category: 'Puente histórico',
+  slug: 'uji-bashi', city: 'uji', name: 'Puente Uji-bashi', category: 'Puente histórico', reviewed: '2026-09',
   image: 'assets/japon-uji-bashi.jpg',
   lat: 34.8928, lon: 135.806,
   lead: 'Uno de los tres puentes más antiguos de Japón, escenario de batallas y de los capítulos finales de «Genji».',

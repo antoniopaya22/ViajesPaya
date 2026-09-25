@@ -1,6 +1,6 @@
 // Shinjuku — ficha con estructura de bloques (ver japan.js: renderBlocks).
 addJapanPlace({
-  slug: 'shinjuku', city: 'tokio', zone: 'shinjuku', name: 'Shinjuku', category: 'Barrio',
+  slug: 'shinjuku', city: 'tokio', zone: 'shinjuku', name: 'Shinjuku', category: 'Barrio', reviewed: '2026-09',
   image: 'assets/japon-shinjuku.jpg',
   lat: 35.6938, lon: 139.7034,
   lead: 'Rascacielos, jardines, callejones de posguerra y el barrio rojo de Tokio, alrededor de la estación más transitada del mundo.',

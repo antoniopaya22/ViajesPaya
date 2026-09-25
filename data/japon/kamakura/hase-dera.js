@@ -1,6 +1,6 @@
 // Templo Hase-dera — ficha propia con estructura de bloques (ver japan.js: renderBlocks).
 addJapanPlace({
-  slug: 'hase-dera', city: 'kamakura', name: 'Templo Hase-dera', category: 'Templo',
+  slug: 'hase-dera', city: 'kamakura', name: 'Templo Hase-dera', category: 'Templo', reviewed: '2026-09',
   image: 'assets/japon-hase-dera.jpg',
   lat: 35.3122, lon: 139.5361,
   lead: 'Miles de pequeñas estatuas Jizō, un gran Kannon de madera dorada y vistas a la bahía de Kamakura.',

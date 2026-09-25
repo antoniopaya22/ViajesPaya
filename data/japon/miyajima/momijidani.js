@@ -1,6 +1,6 @@
 // Parque Momijidani — ficha propia con estructura de bloques (ver japan.js: renderBlocks).
 addJapanPlace({
-  slug: 'momijidani', city: 'miyajima', name: 'Parque Momijidani', category: 'Parque y naturaleza',
+  slug: 'momijidani', city: 'miyajima', name: 'Parque Momijidani', category: 'Parque y naturaleza', reviewed: '2026-09',
   image: 'assets/japon-momijidani.jpg',
   lat: 34.2973, lon: 132.3226,
   lead: 'El «valle de los arces», un parque frondoso a los pies del monte Misen y la puerta natural hacia la montaña.',

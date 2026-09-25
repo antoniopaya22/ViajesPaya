@@ -1,6 +1,6 @@
 // Ninna-ji — ficha con estructura de bloques.
 addJapanPlace({
-  slug: 'ninna-ji', city: 'kioto', zone: 'noroeste', name: 'Ninna-ji', category: 'Templo',
+  slug: 'ninna-ji', city: 'kioto', zone: 'noroeste', name: 'Ninna-ji', category: 'Templo', reviewed: '2026-09',
   image: 'assets/japon-ninna-ji.jpg',
   lat: 35.0307, lon: 135.7148,
   lead: 'Un templo imperial con una pagoda de cinco pisos y cerezos que florecen más tarde que el resto de Kioto.',

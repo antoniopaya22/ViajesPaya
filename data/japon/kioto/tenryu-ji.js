@@ -1,6 +1,6 @@
 // Tenryū-ji — ficha propia con estructura de bloques (ver japan.js: renderBlocks).
 addJapanPlace({
-  slug: 'tenryu-ji', city: 'kioto', zone: 'arashiyama', name: 'Tenryū-ji', category: 'Templo',
+  slug: 'tenryu-ji', city: 'kioto', zone: 'arashiyama', name: 'Tenryū-ji', category: 'Templo', reviewed: '2026-09',
   image: 'assets/japon-tenryu-ji.jpg',
   lat: 35.016, lon: 135.6738,
   lead: 'El templo zen más importante de Arashiyama, con un jardín de estanque de 1339 que ha sobrevivido intacto a ocho incendios.',

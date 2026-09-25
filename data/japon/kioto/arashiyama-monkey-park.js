@@ -1,6 +1,6 @@
 // Arashiyama Monkey Park Iwatayama — ficha propia con estructura de bloques (ver japan.js: renderBlocks).
 addJapanPlace({
-  slug: 'arashiyama-monkey-park', city: 'kioto', zone: 'arashiyama', name: 'Arashiyama Monkey Park Iwatayama', category: 'Naturaleza',
+  slug: 'arashiyama-monkey-park', city: 'kioto', zone: 'arashiyama', name: 'Arashiyama Monkey Park Iwatayama', category: 'Naturaleza', reviewed: '2026-09',
   image: 'assets/japon-arashiyama-monkey-park.jpg',
   lat: 35.0106, lon: 135.6775,
   lead: 'Una subida a pie por el monte Iwatayama hasta una caseta de observación donde decenas de macacos japoneses en libertad conviven con una de las mejores vistas panorámicas sobre Kioto.',

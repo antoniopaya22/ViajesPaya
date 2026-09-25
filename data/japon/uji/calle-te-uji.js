@@ -1,6 +1,6 @@
 // Calle del té de Uji — ficha propia con estructura de bloques (ver japan.js: renderBlocks).
 addJapanPlace({
-  slug: 'calle-te-uji', city: 'uji', name: 'Calle del té de Uji', category: 'Calle y gastronomía',
+  slug: 'calle-te-uji', city: 'uji', name: 'Calle del té de Uji', category: 'Calle y gastronomía', reviewed: '2026-09',
   image: 'assets/japon-calle-te-uji.jpg',
   lat: 34.8878, lon: 135.8072,
   lead: 'La calle que lleva hasta Byōdō-in, llena de casas de té y tiendas dedicadas al matcha.',

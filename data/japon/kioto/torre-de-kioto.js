@@ -1,6 +1,6 @@
 // Torre de Kioto — ficha con estructura de bloques (ver japan.js: renderBlocks).
 addJapanPlace({
-  slug: 'torre-de-kioto', city: 'kioto', zone: 'estacion', name: 'Torre de Kioto', category: 'Torre panorámica',
+  slug: 'torre-de-kioto', city: 'kioto', zone: 'estacion', name: 'Torre de Kioto', category: 'Torre panorámica', reviewed: '2026-09',
   image: 'assets/japon-torre-de-kioto.jpg',
   lat: 34.9875, lon: 135.7592,
   lead: 'Una torre-vela de 131 metros frente a la estación de Kioto: la construcción más alta de la ciudad y, durante décadas, su edificio más discutido.',

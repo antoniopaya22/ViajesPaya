@@ -1,6 +1,6 @@
 // Sannenzaka y Ninenzaka — ficha con estructura de bloques.
 addJapanPlace({
-  slug: 'sannenzaka-ninenzaka', city: 'kioto', zone: 'higashiyama-sur', name: 'Sannenzaka y Ninenzaka', category: 'Calles históricas',
+  slug: 'sannenzaka-ninenzaka', city: 'kioto', zone: 'higashiyama-sur', name: 'Sannenzaka y Ninenzaka', category: 'Calles históricas', reviewed: '2026-09',
   image: 'assets/japon-sannenzaka-ninenzaka.jpg',
   lat: 34.9975, lon: 135.7817,
   lead: 'Las cuestas empedradas de Higashiyama, entre tiendas centenarias, una pagoda icónica y un Starbucks en una casa Edo.',

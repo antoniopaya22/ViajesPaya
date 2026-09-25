@@ -1,6 +1,6 @@
 // Parque de Nara — ficha propia con estructura de bloques (ver japan.js: renderBlocks).
 addJapanPlace({
-  slug: 'parque-nara', city: 'nara', name: 'Parque de Nara', category: 'Parque y naturaleza',
+  slug: 'parque-nara', city: 'nara', name: 'Parque de Nara', category: 'Parque y naturaleza', reviewed: '2026-09',
   image: 'assets/japon-parque-nara.jpg',
   lat: 34.6851, lon: 135.8430,
   lead: 'Un gran parque de más de 500 hectáreas donde templos, santuarios y más de 1.400 ciervos sagrados conviven en libertad desde hace siglos.',

@@ -1,6 +1,6 @@
 // Tōdai-ji — ficha propia con estructura de bloques (ver japan.js: renderBlocks).
 addJapanPlace({
-  slug: 'todai-ji', city: 'nara', name: 'Tōdai-ji', category: 'Templo',
+  slug: 'todai-ji', city: 'nara', name: 'Tōdai-ji', category: 'Templo', reviewed: '2026-09',
   image: 'assets/nara.jpg',
   lat: 34.6890, lon: 135.8398,
   lead: 'El gran templo de Nara y su monumental Buda de bronce, bajo el mayor edificio de madera del mundo.',

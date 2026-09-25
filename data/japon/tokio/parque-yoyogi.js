@@ -1,6 +1,6 @@
 // Parque Yoyogi — ficha con estructura de bloques (ver japan.js: renderBlocks).
 addJapanPlace({
-  slug: 'parque-yoyogi', city: 'tokio', zone: 'harajuku-shibuya', name: 'Parque Yoyogi', category: 'Parque',
+  slug: 'parque-yoyogi', city: 'tokio', zone: 'harajuku-shibuya', name: 'Parque Yoyogi', category: 'Parque', reviewed: '2026-09',
   image: 'assets/japon-parque-yoyogi.jpg',
   lat: 35.6716, lon: 139.6949,
   lead: 'El cuarto parque urbano más grande de Tokio, junto al santuario Meiji y a un paso del bullicio de Harajuku.',

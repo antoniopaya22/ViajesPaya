@@ -1,6 +1,6 @@
 // Torre de Tokio — ficha con estructura de bloques (ver japan.js: renderBlocks).
 addJapanPlace({
-  slug: 'torre-tokio', city: 'tokio', zone: 'minato', name: 'Torre de Tokio', category: 'Mirador',
+  slug: 'torre-tokio', city: 'tokio', zone: 'minato', name: 'Torre de Tokio', category: 'Mirador', reviewed: '2026-09',
   image: 'assets/japon-torre-tokio.jpg',
   lat: 35.6586, lon: 139.7454,
   lead: 'La torre roja y blanca inspirada en la Eiffel, símbolo de la recuperación económica de la posguerra, junto al templo Zōjō-ji.',

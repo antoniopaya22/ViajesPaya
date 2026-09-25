@@ -1,6 +1,6 @@
 // Heian Jingū y canal Okazaki — ficha con estructura de bloques.
 addJapanPlace({
-  slug: 'heian-jingu', city: 'kioto', zone: 'higashiyama-norte', name: 'Heian Jingū y canal Okazaki', category: 'Santuario y paseo',
+  slug: 'heian-jingu', city: 'kioto', zone: 'higashiyama-norte', name: 'Heian Jingū y canal Okazaki', category: 'Santuario y paseo', reviewed: '2026-09',
   image: 'assets/japon-heian-jingu.jpg',
   lat: 35.0156, lon: 135.7824,
   lead: 'Un santuario de 1895 que reconstruye a menor escala el antiguo palacio de la capital Heian.',

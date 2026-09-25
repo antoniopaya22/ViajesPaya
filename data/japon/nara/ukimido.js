@@ -1,6 +1,6 @@
 // Pabellón Ukimido — ficha propia con estructura de bloques (ver japan.js: renderBlocks).
 addJapanPlace({
-  slug: 'ukimido', city: 'nara', name: 'Pabellón Ukimido', category: 'Paisaje y arquitectura',
+  slug: 'ukimido', city: 'nara', name: 'Pabellón Ukimido', category: 'Paisaje y arquitectura', reviewed: '2026-09',
   image: 'assets/japon-ukimido.jpg',
   lat: 34.6788, lon: 135.8425,
   lead: 'Un pequeño pabellón hexagonal de madera que parece flotar sobre el estanque Sagi, uno de los rincones más fotografiados del parque de Nara fuera de los grandes templos.',

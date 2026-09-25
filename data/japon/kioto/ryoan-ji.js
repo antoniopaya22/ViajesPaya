@@ -1,6 +1,6 @@
 // Ryōan-ji — ficha con estructura de bloques.
 addJapanPlace({
-  slug: 'ryoan-ji', city: 'kioto', zone: 'noroeste', name: 'Ryōan-ji', category: 'Templo zen',
+  slug: 'ryoan-ji', city: 'kioto', zone: 'noroeste', name: 'Ryōan-ji', category: 'Templo zen', reviewed: '2026-09',
   image: 'assets/japon-ryoan-ji.jpg',
   lat: 35.0345, lon: 135.7182,
   lead: 'El jardín zen de piedras más famoso de Japón: quince rocas que nunca se ven todas a la vez.',

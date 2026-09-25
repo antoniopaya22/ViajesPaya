@@ -1,6 +1,6 @@
 // Sanjūsangen-dō — ficha propia con estructura de bloques (ver japan.js: renderBlocks).
 addJapanPlace({
-  slug: 'sanjusangen-do', city: 'kioto', zone: 'higashiyama-sur', name: 'Sanjūsangen-dō', category: 'Templo',
+  slug: 'sanjusangen-do', city: 'kioto', zone: 'higashiyama-sur', name: 'Sanjūsangen-dō', category: 'Templo', reviewed: '2026-09',
   image: 'assets/japon-sanjusangen-do.jpg',
   lat: 34.9878, lon: 135.7717,
   lead: 'Un salón de madera de 120 metros, el más largo de Japón, con 1001 estatuas doradas de la diosa Kannon alineadas en penumbra.',

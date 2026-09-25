@@ -1,6 +1,6 @@
 // Kōdai-ji — ficha propia con estructura de bloques (ver japan.js: renderBlocks).
 addJapanPlace({
-  slug: 'kodai-ji', city: 'kioto', zone: 'higashiyama-sur', name: 'Kōdai-ji', category: 'Templo',
+  slug: 'kodai-ji', city: 'kioto', zone: 'higashiyama-sur', name: 'Kōdai-ji', category: 'Templo', reviewed: '2026-09',
   image: 'assets/japon-kodai-ji.jpg',
   lat: 35.0008, lon: 135.7811,
   lead: 'El templo que Nene, viuda de Toyotomi Hideyoshi, mandó construir en 1606 para rezar por el alma de su marido: laca dorada, jardines de Kobori Enshū y dos casas de té de Sen no Rikyū.',

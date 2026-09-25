@@ -156,6 +156,9 @@ for (const place of places) {
     }
   }
   if (place.blocks) walkBlocksForIcons(place.blocks, label);
+
+  if (!place.reviewed) warn(`${label}: missing "reviewed" date`);
+  else if (!/^\d{4}-(0[1-9]|1[0-2])$/.test(place.reviewed)) fail(`${label}: "reviewed" date "${place.reviewed}" is not in YYYY-MM format`);
 }
 
 // ---- 5. Country guide + per-city transport blocks (same icon/image rules) ----
@@ -165,6 +168,7 @@ if (japanCountry && japanCountry.guide) walkBlocksForIcons(japanCountry.guide.bl
 if (japanCountry && japanCountry.image) checkImageFile(japanCountry.image, 'japanCountry', { cardContext: true });
 for (const city of cities) {
   if (city.transport) walkBlocksForIcons(city.transport.blocks, `${city.slug}.transport`);
+  if (city.food) walkBlocksForIcons(city.food.blocks, `${city.slug}.food`);
   if (city.image) checkImageFile(city.image, `city ${city.slug}`, { cardContext: true });
 }
 

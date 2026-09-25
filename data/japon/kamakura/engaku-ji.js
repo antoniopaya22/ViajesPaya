@@ -1,6 +1,6 @@
 // Engaku-ji — ficha propia con estructura de bloques (ver japan.js: renderBlocks).
 addJapanPlace({
-  slug: 'engaku-ji', city: 'kamakura', name: 'Engaku-ji', category: 'Templo zen',
+  slug: 'engaku-ji', city: 'kamakura', name: 'Engaku-ji', category: 'Templo zen', reviewed: '2026-09',
   image: 'assets/japon-engaku-ji.jpg',
   lat: 35.3378, lon: 139.5494,
   lead: 'Un templo levantado para honrar a los caídos de las invasiones mongolas, con una escalinata de cedros que anuncia su recinto.',

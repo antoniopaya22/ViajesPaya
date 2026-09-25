@@ -1,6 +1,6 @@
 // Castillo de Osaka — ficha propia con estructura de bloques (ver japan.js: renderBlocks).
 addJapanPlace({
-  slug: 'castillo-de-osaka', city: 'osaka', zone: 'castillo', name: 'Castillo de Osaka', category: 'Castillo y museo',
+  slug: 'castillo-de-osaka', city: 'osaka', zone: 'castillo', name: 'Castillo de Osaka', category: 'Castillo y museo', reviewed: '2026-09',
   image: 'assets/castillo-osaka.jpg',
   lat: 34.6873, lon: 135.5262,
   lead: 'La gran torre dorada y blanca que Toyotomi Hideyoshi levantó para unificar Japón, hoy centro de un parque de dos kilómetros cuadrados.',

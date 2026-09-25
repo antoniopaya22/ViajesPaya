@@ -1,6 +1,6 @@
 // Palacio Heijō — ficha propia con estructura de bloques (ver japan.js: renderBlocks).
 addJapanPlace({
-  slug: 'heijo-palace', city: 'nara', name: 'Palacio Heijō', category: 'Yacimiento histórico',
+  slug: 'heijo-palace', city: 'nara', name: 'Palacio Heijō', category: 'Yacimiento histórico', reviewed: '2026-09',
   image: 'assets/japon-heijo-palace.jpg',
   lat: 34.6911, lon: 135.7956,
   lead: 'Las ruinas del antiguo centro del poder imperial japonés, con un gran salón de audiencias reconstruido sobre los cimientos originales.',
