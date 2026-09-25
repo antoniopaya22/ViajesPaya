@@ -143,6 +143,25 @@ const pinDivIcon = (big, color) => L.divIcon({
   popupAnchor: [0, big ? -46 : -34]
 });
 const zoneMapState = {};
+// Leaflet and Chart.js are heavy (~350KB combined) and only needed on some pages — load on demand
+// instead of on every page (home/destinations/saved/credits never show a map or chart).
+function loadScript(src) { return new Promise((resolve, reject) => { const s = document.createElement('script'); s.src = src; s.onload = resolve; s.onerror = reject; document.head.appendChild(s); }); }
+function loadStylesheet(href) { return new Promise((resolve, reject) => { const l = document.createElement('link'); l.rel = 'stylesheet'; l.href = href; l.onload = resolve; l.onerror = reject; document.head.appendChild(l); }); }
+let leafletLoading = null;
+function ensureLeaflet() {
+  if (window.L) return Promise.resolve();
+  if (!leafletLoading) leafletLoading = Promise.all([
+    loadStylesheet('https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css'),
+    loadScript('https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js')
+  ]);
+  return leafletLoading;
+}
+let chartLoading = null;
+function ensureChart() {
+  if (window.Chart) return Promise.resolve();
+  if (!chartLoading) chartLoading = loadScript('https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.5.1/chart.umd.min.js');
+  return chartLoading;
+}
 function destroyMaps() { activeMaps.forEach(m => { try { m.remove(); } catch {} }); activeMaps.length = 0; Object.keys(zoneMapState).forEach(k => delete zoneMapState[k]); }
 function initMaps() {
   if (!window.L) return;
@@ -459,8 +478,8 @@ function render(preserveScroll = false) {
   });
   document.title = `${document.querySelector('main h1')?.textContent.trim() || 'ViajesPaya'} — ViajesPaya`;
   if (!preserveScroll) window.scrollTo({top:0,behavior:'instant'});
-  initMaps();
-  initCharts();
+  if (document.querySelector('.leaflet-map, .leaflet-multimap')) ensureLeaflet().then(initMaps);
+  if (document.querySelector('.timeline-canvas')) ensureChart().then(initCharts);
 }
 
 function openSearch() {
