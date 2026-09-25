@@ -145,3 +145,8 @@ vite.config.ts.timestamp-*
 # Generated per-city data bundles (scripts/generate-bundles.js) — built fresh on every
 # deploy from data/japon/<city>/*.js, never committed so they can't drift from source.
 data/japon/*.bundle.js
+
+# Generated static per-route HTML shells (scripts/generate-og-pages.js) — one per place/city/
+# country, with page-specific title/meta/OG tags for link previews and non-JS crawlers. Built
+# fresh on every deploy so they can't drift from script.js/japan.js/data/japon.
+og-pages/

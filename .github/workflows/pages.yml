@@ -33,12 +33,15 @@ jobs:
       - uses: actions/configure-pages@v5
       - name: Generar bundles de datos por ciudad
         run: node scripts/generate-bundles.js
+      - name: Generar páginas estáticas por ruta (SEO y vista previa al compartir)
+        run: node scripts/generate-og-pages.js
       - name: Preparar archivos públicos
         run: |
           mkdir _site
           cp index.html styles.css script.js japan.js credits.js japan-credits.js favicon.svg manifest.json sw.js .nojekyll _site/
           cp -R data _site/
           cp -R assets _site/
+          cp -R og-pages/* _site/
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
