@@ -288,6 +288,32 @@ function renderBlocks(blocks) {
 }
 const bookmarkIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M6 3.75h12a1 1 0 0 1 1 1V21l-7-4-7 4V4.75a1 1 0 0 1 1-1Z"/></svg>';
 const compass = '<svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="1.5"/><path d="m27.6 12.4-4.9 10.3-10.3 4.9 4.9-10.3 10.3-4.9Z" fill="currentColor"/><circle cx="20" cy="20" r="2.2" fill="#f7f5ef"/></svg>';
+const searchIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M20 20l-4.8-4.8"/></svg>';
+const closeIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="M5 5l14 14M19 5 5 19"/></svg>';
+function searchPlaces(query) {
+  const q = query.trim().toLowerCase();
+  if (!q) return [];
+  return places
+    .map(p => {
+      const city = cityBy(p.city);
+      const country = city && countryBy(city.country);
+      const haystacks = [p.name, p.category, city?.name, country?.name].filter(Boolean).map(s => s.toLowerCase());
+      if (!haystacks.some(h => h.includes(q))) return null;
+      const score = p.name.toLowerCase().startsWith(q) ? 0 : p.name.toLowerCase().includes(q) ? 1 : 2;
+      return { p, city, country, score };
+    })
+    .filter(Boolean)
+    .sort((a,b) => a.score - b.score)
+    .slice(0, 8);
+}
+function renderSearchResults(query) {
+  const panel = document.querySelector('[data-search-results]');
+  if (!panel) return;
+  if (!query.trim()) { panel.innerHTML = '<p class="search-hint">Escribe para buscar entre todos los lugares, por nombre, ciudad o categoría.</p>'; return; }
+  const matches = searchPlaces(query);
+  if (!matches.length) { panel.innerHTML = `<p class="search-hint">Sin resultados para «${query}».</p>`; return; }
+  panel.innerHTML = matches.map(({p,city,country}) => `<a class="search-result" href="${placeUrl(p)}"><img src="${p.image}" alt="" loading="lazy"/><div><strong>${p.name}</strong><span>${p.category} · ${city ? city.name : ''}${country ? ', ' + country.name : ''}</span></div></a>`).join('');
+}
 const route = () => location.hash.replace(/^#\/?/, '').split('/').filter(Boolean);
 const saved = () => { try { return JSON.parse(localStorage.getItem('viajespaya-saved') || '[]'); } catch { return []; } };
 const save = ids => localStorage.setItem('viajespaya-saved', JSON.stringify(ids));
@@ -297,8 +323,9 @@ function header() {
   return `<header class="site-header"><div class="shell header-inner">
     <a class="brand" href="#/" aria-label="ViajesPaya, inicio"><span class="brand-mark">${compass}</span><span>viajes<span class="brand-accent">paya</span><small>GUÍAS PARA PERDERSE BIEN</small></span></a>
     <nav class="main-nav" aria-label="Navegación principal"><a href="#/" data-nav="home">Inicio</a><a href="#/destinos" data-nav="destinos">Destinos</a><a href="#/guardados" data-nav="guardados">Guardados <span class="saved-count">${count}</span></a></nav>
+    <button type="button" class="search-toggle" data-search-toggle aria-label="Buscar" aria-expanded="false">${searchIcon}</button>
     <a class="header-cta" href="#/destinos">Explorar destinos <span aria-hidden="true">↗</span></a>
-  </div></header>`;
+  </div><div class="search-panel" data-search-panel hidden><div class="shell search-panel-inner"><div class="search-input-wrap">${searchIcon}<input type="text" data-search-input placeholder="Busca un lugar, ciudad o categoría..." autocomplete="off" aria-label="Buscar lugares"/><button type="button" class="search-close" data-search-close aria-label="Cerrar búsqueda">${closeIcon}</button></div><div class="search-results" data-search-results><p class="search-hint">Escribe para buscar entre todos los lugares, por nombre, ciudad o categoría.</p></div></div></div></header>`;
 }
 
 function footer() {
@@ -425,6 +452,21 @@ function render(preserveScroll = false) {
   initCharts();
 }
 
+function openSearch() {
+  const panel = document.querySelector('[data-search-panel]');
+  const toggle = document.querySelector('[data-search-toggle]');
+  if (!panel) return;
+  panel.hidden = false;
+  toggle?.setAttribute('aria-expanded','true');
+  document.querySelector('[data-search-input]')?.focus();
+}
+function closeSearch() {
+  const panel = document.querySelector('[data-search-panel]');
+  const toggle = document.querySelector('[data-search-toggle]');
+  if (!panel) return;
+  panel.hidden = true;
+  toggle?.setAttribute('aria-expanded','false');
+}
 document.addEventListener('click', event => {
   const scrollButton = event.target.closest('[data-scroll]');
   if (scrollButton) {
@@ -437,6 +479,15 @@ document.addEventListener('click', event => {
     focusMapZone(zoneButton.dataset.mapTarget, zoneButton.dataset.zoneFocus);
     return;
   }
+  if (event.target.closest('[data-search-toggle]')) {
+    const panel = document.querySelector('[data-search-panel]');
+    if (panel && !panel.hidden) closeSearch(); else openSearch();
+    return;
+  }
+  if (event.target.closest('[data-search-close]')) { closeSearch(); return; }
+  if (event.target.closest('[data-search-result]') || event.target.closest('.search-result')) { closeSearch(); return; }
+  const panel = document.querySelector('[data-search-panel]');
+  if (panel && !panel.hidden && !event.target.closest('[data-search-panel]') && !event.target.closest('[data-search-toggle]')) { closeSearch(); return; }
   const button = event.target.closest('[data-save]');
   if (!button) return;
   const id = button.dataset.save;
@@ -445,6 +496,16 @@ document.addEventListener('click', event => {
   if (index >= 0) next.splice(index,1); else next.push(id);
   save(next);
   render(true);
+});
+document.addEventListener('input', event => {
+  if (event.target.matches('[data-search-input]')) renderSearchResults(event.target.value);
+});
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape') closeSearch();
+  if (event.key === 'Enter' && event.target.matches('[data-search-input]')) {
+    const first = document.querySelector('.search-result');
+    if (first) { location.hash = first.getAttribute('href'); closeSearch(); }
+  }
 });
 window.addEventListener('hashchange', () => render());
 render();
