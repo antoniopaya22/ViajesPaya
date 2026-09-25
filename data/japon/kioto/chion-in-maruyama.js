@@ -7,21 +7,21 @@ addJapanPlace({
   duration: '1–2 horas',
   price: 'Recinto de Chion-in gratuito; jardines Hōjō y Yūzen 500 ¥',
   stats: [
-    {value:'24 m', label:'altura de la puerta Sanmon, la mayor de Japón', icon:'🚪'},
-    {value:'106', label:'edificios repartidos por la ladera', icon:'🏛️'},
-    {value:'7 t', label:'peso de la gran campana Daishōrō', icon:'🔔'},
-    {value:'680+', label:'cerezos en el parque Maruyama', icon:'🌸'}
+    {value:'24 m', label:'altura de la puerta Sanmon, la mayor de Japón', icon:'gate'},
+    {value:'106', label:'edificios repartidos por la ladera', icon:'pagoda'},
+    {value:'7 t', label:'peso de la gran campana Daishōrō', icon:'bell'},
+    {value:'680+', label:'cerezos en el parque Maruyama', icon:'blossom'}
   ],
   blocks: [
     {type:'lead', text:'Chion-in es el templo principal de la escuela budista Jōdo, fundada por el monje Hōnen en el siglo XII, y se encuentra en Higashiyama entre el santuario Yasaka y el parque Maruyama. El complejo actual, de más de 106 edificios repartidos por la ladera del monte Kachōzan, data en su mayoría de reconstrucciones posteriores a un incendio del siglo XVII.'},
-    {type:'heading', text:'El templo Chion-in', icon:'🏛️'},
+    {type:'heading', text:'El templo Chion-in', icon:'pagoda'},
     {type:'stop', title:'Puerta Sanmon', text:[
       'De 1619, es la mayor puerta de madera de todo Japón: 24 metros de alto y tres accesos que simbolizan los tres caminos hacia la liberación budista.'
     ]},
     {type:'stop', title:'Salón Mieidō y el pasillo del ruiseñor', text:[
       'Tras subir la escalinata Otokozaka se llega al salón principal Mieidō, de 1639, con el pasillo del ruiseñor cantarín (Uguisubari-no-rōka) que cruje al caminar, y a la gran campana Daishōrō, de siete toneladas, una de las tres más grandes de Japón, que solo suena en ocasiones especiales.'
     ]},
-    {type:'heading', text:'El parque Maruyama', icon:'🌸'},
+    {type:'heading', text:'El parque Maruyama', icon:'blossom'},
     {type:'stop', title:'El cerezo llorón y el hanami', text:[
       'Convertido en parque público en 1871 y rediseñado en 1913 por el paisajista Jihei Ogawa, alberga el shidarezakura o cerezo llorón más fotografiado de Kioto, de unos 80 años, descendiente de un ejemplar anterior que vivió 300. Con más de 680 cerezos, es uno de los lugares más populares de la ciudad para el hanami en primavera.'
     ]}

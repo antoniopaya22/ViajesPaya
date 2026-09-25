@@ -7,9 +7,9 @@ addJapanPlace({
   duration: '1–1,5 horas',
   price: 'Recinto exterior gratuito (con tarifa especial en floración de cerezos)',
   stats: [
-    {value:'888', label:'año de fundación, por el emperador Uda', icon:'🏯'},
-    {value:'36 m', label:'altura de la pagoda de cinco pisos', icon:'🗼'},
-    {value:'200', label:'cerezos Omuro Zakura de floración tardía', icon:'🌸'}
+    {value:'888', label:'año de fundación, por el emperador Uda', icon:'pagoda'},
+    {value:'36 m', label:'altura de la pagoda de cinco pisos', icon:'tower'},
+    {value:'200', label:'cerezos Omuro Zakura de floración tardía', icon:'blossom'}
   ],
   blocks: [
     {type:'lead', text:'Fundado en 888 por orden del emperador Uda, que se convirtió en el primer «monje aristocrático» del templo, Ninna-ji mantuvo durante siglos la tradición de que hijos de la familia imperial ocuparan el cargo de monje principal. La mayoría de sus edificios, destruidos en un incendio durante las guerras Ōnin de 1467, son reconstrucciones de comienzos del siglo XVII financiadas por el patronazgo imperial.'},

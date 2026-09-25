@@ -7,9 +7,9 @@ addJapanPlace({
   duration: '1–1,5 horas',
   price: '800 ¥ (recinto principal); 1.200 ¥ en aperturas especiales del interior de la pagoda',
   stats: [
-    {value:'796', label:'año de fundación, dos años después de la capital', icon:'🏯'},
-    {value:'54,8 m', label:'altura de la pagoda, la más alta de Japón', icon:'🗼'},
-    {value:'1994', label:'declarado Patrimonio de la Humanidad', icon:'🏆'}
+    {value:'796', label:'año de fundación, dos años después de la capital', icon:'pagoda'},
+    {value:'54,8 m', label:'altura de la pagoda, la más alta de Japón', icon:'tower'},
+    {value:'1994', label:'declarado Patrimonio de la Humanidad', icon:'trophy'}
   ],
   blocks: [
     {type:'lead', text:'Tō-ji se fundó en 796, solo dos años después de que la capital se trasladara a Heian-kyō, como uno de los únicos tres templos budistas autorizados dentro de la ciudad en aquel momento; hoy es el único que sobrevive de los tres. En 823 el emperador Saga puso el templo en manos de Kūkai (Kōbō Daishi), fundador de la escuela Shingon, y desde entonces Tō-ji se convirtió en el centro de ese budismo esotérico en Japón.'},

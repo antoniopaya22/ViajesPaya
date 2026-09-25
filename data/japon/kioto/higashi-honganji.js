@@ -7,13 +7,13 @@ addJapanPlace({
   duration: '45–60 min',
   price: 'Entrada gratuita',
   stats: [
-    {value:'1602', label:'fundación, al dividirse el budismo Jōdo Shinshū', icon:'📜'},
-    {value:'76 m', label:'longitud del salón Goeidō', icon:'🏛️'},
-    {value:'4', label:'incendios sufridos durante el periodo Edo', icon:'🔥'}
+    {value:'1602', label:'fundación, al dividirse el budismo Jōdo Shinshū', icon:'scroll'},
+    {value:'76 m', label:'longitud del salón Goeidō', icon:'pagoda'},
+    {value:'4', label:'incendios sufridos durante el periodo Edo', icon:'flame'}
   ],
   blocks: [
     {type:'lead', text:'Higashi Hongan-ji nació en 1602 cuando el shōgun Tokugawa Ieyasu decidió dividir en dos la poderosa escuela budista Jōdo Shinshū, debilitando así su influencia: el templo occidental, Nishi Hongan-ji, y este, el oriental. Se trasladó a su ubicación actual, cerca de la estación de Kioto, en 1658.'},
-    {type:'heading', text:'Cuatro incendios y una reconstrucción con cabello', icon:'🔥'},
+    {type:'heading', text:'Cuatro incendios y una reconstrucción con cabello', icon:'flame'},
     {type:'stop', title:'Goeidō, el salón del fundador', text:[
       'Con 76 metros de largo, 58 de ancho y 38 de alto, el Goeidō es una de las estructuras de madera más grandes del mundo y alberga una imagen de Shinran, fundador de la escuela. El edificio actual se completó en 1895, tras el último de los cuatro grandes incendios que sufrió el templo durante el periodo Edo (1788, 1823, 1858 y 1864, este último durante el incidente Kinmon).'
     ]},

@@ -7,9 +7,9 @@ addJapanPlace({
   duration: '1–2 horas',
   price: 'Recinto exterior gratuito; San-mon y Hōjō 500 ¥ cada uno',
   stats: [
-    {value:'1291', label:'fundación, sobre el palacio de verano imperial', icon:'🏯'},
-    {value:'22 m', label:'altura de la puerta San-mon', icon:'🚪'},
-    {value:'93 m', label:'longitud del acueducto Suirokaku', icon:'💧'}
+    {value:'1291', label:'fundación, sobre el palacio de verano imperial', icon:'pagoda'},
+    {value:'22 m', label:'altura de la puerta San-mon', icon:'gate'},
+    {value:'93 m', label:'longitud del acueducto Suirokaku', icon:'droplet'}
   ],
   blocks: [
     {type:'lead', text:'Nanzen-ji nació en 1291 cuando el emperador Kameyama donó parte de su palacio de verano al budismo zen, tras encargar a un monje que ahuyentara los fenómenos paranormales que allí ocurrían. Aunque no forma parte de los cinco grandes templos zen de Kioto (Kyoto Gozan), el budismo zen sitúa a Nanzen-ji por encima de todos ellos, en una categoría propia.'},

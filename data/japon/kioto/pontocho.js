@@ -7,13 +7,13 @@ addJapanPlace({
   duration: '45–90 min',
   price: 'Paseo gratuito',
   stats: [
-    {value:'600 m', label:'de largo, junto al río Kamo', icon:'🏮'},
-    {value:'1712', label:'primeras casas de té del barrio', icon:'🍵'},
-    {value:'5', label:'hanamachi o barrios de geishas de Kioto', icon:'👘'}
+    {value:'600 m', label:'de largo, junto al río Kamo', icon:'lantern'},
+    {value:'1712', label:'primeras casas de té del barrio', icon:'teacup'},
+    {value:'5', label:'hanamachi o barrios de geishas de Kioto', icon:'lantern'}
   ],
   blocks: [
     {type:'lead', text:'Pontochō es uno de los cinco hanamachi o distritos de geishas de Kioto (los gokagai), formado por una sola calle peatonal de 600 metros de largo y apenas 5 de ancho. Antes de urbanizarse no era más que un banco de arena del río Kamo: tras las obras de refuerzo de sus márgenes en 1670, empezaron a construirse casas paralelas al río, y ya en 1712 surgieron las primeras casas de té que convirtieron la zona en un próspero barrio de placer.'},
-    {type:'heading', text:'De día y de noche', icon:'🌗'},
+    {type:'heading', text:'De día y de noche', icon:'lantern'},
     {type:'p', text:'La atmósfera de la calle cambia mucho según la hora. De día se puede ver a maikos y geishas sin maquillar, yendo de compras o a clase, junto a repartidores preparando los restaurantes para la noche. De noche, la calle se llena de gente entrando en bares y restaurantes, y con algo de suerte se puede ver a alguna maiko caminando deprisa entre banquetes.'},
     {type:'stop', title:'El santuario del tanuki', text:[
       'Escondido en la calle hay un pequeño santuario dedicado a un tanuki de cerámica. Según la tradición local, un incendio en 1978 que costó la vida a una geisha se detuvo justo en el punto donde se encontró la figura, hecha pedazos por el calor. Desde entonces, vecinos y negocios de la zona le rinden homenaje, y geishas y maikos le piden que mantenga la calle libre de fuego.'

@@ -154,15 +154,42 @@ function initMaps() {
 const arrow = '<span aria-hidden="true">↗</span>';
 const toList = value => Array.isArray(value) ? value.filter(Boolean) : (value ? [value] : []);
 const slugify = text => text.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'');
+// Icono SVG de línea, en vez de emoji (más nítido y consistente con el resto del sitio).
+const svgIcon = path => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${path}</svg>`;
+const topicIcons = {
+  gate: svgIcon('<path d="M2 7.5c3-1.6 17-1.6 20 0M4.5 10.5h15M7.5 10.5V19M16.5 10.5V19"/>'),
+  peak: svgIcon('<path d="M3 18h18M4 18l6.2-11L15 15l2.3-3.6L20 18"/>'),
+  footprints: svgIcon('<path d="M3.5 17.5c2-5.5 4.5 3 7.5-2s4.5 3 7.5-2"/><path d="M16.5 9.3l2.3-1.8-.6 2.8"/>'),
+  clock: svgIcon('<circle cx="12" cy="12" r="8.3"/><path d="M12 7.7V12l3.3 1.9"/>'),
+  pagoda: svgIcon('<path d="M12 2.5l2 2.4H10zM7 6.9h10M5.5 10.6h13M4 14.3h16M2.5 18h19"/>'),
+  bell: svgIcon('<path d="M7 15.5c0-4 1-8.2 5-8.2s5 4.2 5 8.2H7z"/><path d="M6 15.5h12M10.3 18.4a1.8 1.8 0 0 0 3.4 0M12 4.8v1.5"/>'),
+  heart: svgIcon('<path d="M12 19s-7.2-4.4-9.4-8.9C1.3 6.9 3.2 4 6.4 4c2 0 3.5 1.2 5.6 3.6C14.1 5.2 15.6 4 17.6 4c3.2 0 5.1 3 3.8 6.1C19.2 14.6 12 19 12 19z"/>'),
+  droplet: svgIcon('<path d="M12 3.2s6.2 6.7 6.2 11A6.2 6.2 0 1 1 5.8 14.2C5.8 9.9 12 3.2 12 3.2z"/>'),
+  blossom: svgIcon('<circle cx="12" cy="8" r="2.6"/><circle cx="16" cy="12" r="2.6"/><circle cx="12" cy="16" r="2.6"/><circle cx="8" cy="12" r="2.6"/><circle cx="12" cy="12" r="1.5" fill="currentColor" stroke="none"/>'),
+  scroll: svgIcon('<path d="M6 4h9a3 3 0 0 1 3 3v10a3 3 0 0 1-3 3H8a2 2 0 0 1-2-2z"/><path d="M6 4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2M9.5 9h5M9.5 12.5h5"/>'),
+  flame: svgIcon('<path d="M12 3c1.4 2.8-2.3 3.8-2.3 7.1A4.3 4.3 0 0 0 12 21a4.3 4.3 0 0 0 4.3-4.3c0-1-.4-1.7-1-2.4.3 1.3-.5 2.2-1.4 2.2-1.2 0-1.7-1-1.2-2.1.6-1.3 1.7-2.2 1.2-3.9-.3-1.1-1.2-2.2-1.9-3.3C12.6 6.5 12 4.6 12 3z"/>'),
+  trophy: svgIcon('<path d="M8 4h8v4a4 4 0 0 1-8 0z"/><path d="M8 5H5a3 3 0 0 0 3 4M16 5h3a3 3 0 0 1-3 4M12 12v3M9 19h6M9.3 15.5h5.4l.5 3.5H8.8z"/>'),
+  ruler: svgIcon('<path d="M4 16.3 16.3 4l3.7 3.7L7.7 20z"/><path d="M8 12.3 9.5 13.8M11 9.3 12.5 10.8M14 6.3 15.5 7.8"/>'),
+  teacup: svgIcon('<path d="M4 9h13v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5z"/><path d="M17 10.5h1.3a2.3 2.3 0 0 1 0 4.6H17M7 4.6c.5 1 1.5 1 2 0M11 4.6c.5 1 1.5 1 2 0"/>'),
+  lantern: svgIcon('<path d="M12 2.5v2M9 4.5h6M7.5 6.5c0-1 2-1 4.5-1s4.5 0 4.5 1c1 2 1 9 0 11-.6 1-2.4 1.3-4.5 1.3s-3.9-.3-4.5-1.3c-1-2-1-9 0-11z"/><path d="M7 12h10M9 19.5h6v2H9z"/>'),
+  tree: svgIcon('<path d="M12 3l4 6h-2.5l3 5H14l2.5 4h-9L10 14H7.5l3-5H8z"/><path d="M12 18v3"/>'),
+  rock: svgIcon('<path d="M3 17c0-3 2-5 4-6-1-2 .5-4 3-4 1.5 0 2.5.7 3 1.7 2-1 4.5.2 5 2.3 2 .3 3 2 3 4 0 1.2-.5 2-1.5 2z"/>'),
+  eye: svgIcon('<path d="M2 12s3.5-6.5 10-6.5S22 12 22 12s-3.5 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="2.6"/>'),
+  tower: svgIcon('<path d="M12 3l2 3h-4z"/><path d="M9.5 6h5l1 12H8.5z"/><path d="M9.8 18.2h4.4"/>'),
+  wood: svgIcon('<rect x="3.5" y="6" width="17" height="3" rx="1"/><rect x="3.5" y="11" width="17" height="3" rx="1"/><rect x="3.5" y="16" width="17" height="3" rx="1"/>'),
+  bag: svgIcon('<path d="M7 8V6a5 5 0 0 1 10 0v2"/><path d="M4.5 8h15l-1 12h-13z"/>'),
+  book: svgIcon('<path d="M4 5.5a2 2 0 0 1 2-2h4v15H6a2 2 0 0 0-2 2z"/><path d="M20 5.5a2 2 0 0 0-2-2h-4v15h4a2 2 0 0 1 2 2z"/>')
+};
 function renderBlocks(blocks) {
   let stop = 0;
   return blocks.map(block => {
     if (block.type === 'lead') return `<p class="story-text">${block.text}</p>`;
     if (block.type === 'p') return `<p class="story-detail">${block.text}</p>`;
-    if (block.type === 'heading') return `<div class="block-heading" id="${slugify(block.text)}"><h3>${block.icon ? `<span class="heading-icon">${block.icon}</span> ` : ''}${block.text}</h3></div>`;
+    if (block.type === 'heading') return `<div class="block-heading" id="${slugify(block.text)}"><h3>${block.icon && topicIcons[block.icon] ? `<span class="heading-icon">${topicIcons[block.icon]}</span>` : ''}${block.text}</h3></div>`;
     if (block.type === 'callout') return `<div class="curiosity"><span>✳ ${block.label || '¿SABÍAS QUE...?'}</span><ul>${toList(block.items).map(i => `<li>${i}</li>`).join('')}</ul></div>`;
     if (block.type === 'image') return `<figure class="block-image"><img src="${block.src}" alt="${block.alt || ''}" loading="lazy"/>${block.caption ? `<figcaption>${block.caption}</figcaption>` : ''}</figure>`;
     if (block.type === 'list') return `<div class="block-list">${block.title ? `<h4>${block.title}</h4>` : ''}<ul>${toList(block.items).map(i => `<li>${i}</li>`).join('')}</ul></div>`;
+    if (block.type === 'cards') return `<div class="card-block">${block.title ? `<h4>${block.title}</h4>` : ''}${block.intro ? `<p>${block.intro}</p>` : ''}<div class="mini-card-grid">${toList(block.items).map(c => `<article class="mini-card">${c.icon && topicIcons[c.icon] ? `<span class="mini-card-icon">${topicIcons[c.icon]}</span>` : ''}<h5>${c.title}</h5><p>${c.text}</p></article>`).join('')}</div></div>`;
     if (block.type === 'stop') {
       stop += 1;
       return `<div class="walk-stop"><span class="walk-stop-number">${stop}</span><div class="walk-stop-body"><h4>${block.title}</h4>${toList(block.text).map(p => `<p>${p}</p>`).join('')}${block.image ? `<div class="walk-stop-image"><img src="${block.image.src}" alt="${block.image.alt || block.title}" loading="lazy"/></div>` : ''}</div></div>`;
@@ -236,8 +263,8 @@ function placePage(place) {
   const storyBody = place.blocks
     ? `${renderBlocks(place.blocks)}`
     : `<p class="story-text">${place.story}</p>${(place.history || []).map(paragraph => `<p class="story-detail">${paragraph}</p>`).join('')}${curiosities.length ? `<div class="curiosity"><span>✳ ¿SABÍAS QUE...?</span><ul>${curiosities.map(c => `<li>${c}</li>`).join('')}</ul></div>` : ''}`;
-  const storyToc = headings.length ? `<div class="story-toc"><span>En este recorrido</span>${headings.map(h => `<a href="#${slugify(h.text)}" data-scroll="${slugify(h.text)}">${h.icon ? `${h.icon} ` : ''}${h.text}</a>`).join('')}</div>` : '';
-  const statsBlock = place.stats?.length ? `<section class="section stats-section"><div class="shell"><div class="stats-grid">${place.stats.map(s => `<div class="stat-card">${s.icon ? `<span class="stat-icon">${s.icon}</span>` : ''}<strong>${s.value}</strong><span>${s.label}</span></div>`).join('')}</div>${headings.length ? `<div class="highlights-row">${headings.map((h,i) => `<a class="highlight-chip" href="#${slugify(h.text)}" data-scroll="${slugify(h.text)}"><span>${i+1}</span>${h.icon ? `${h.icon} ` : ''}${h.text}</a>`).join('')}</div>` : ''}</div></section>` : '';
+  const storyToc = headings.length ? `<div class="story-toc"><span>En este recorrido</span>${headings.map(h => `<a href="#${slugify(h.text)}" data-scroll="${slugify(h.text)}">${h.text}</a>`).join('')}</div>` : '';
+  const statsBlock = place.stats?.length ? `<section class="section stats-section"><div class="shell"><div class="stats-grid">${place.stats.map(s => `<div class="stat-card">${s.icon && topicIcons[s.icon] ? `<span class="stat-icon">${topicIcons[s.icon]}</span>` : ''}<strong>${s.value}</strong><span>${s.label}</span></div>`).join('')}</div>${headings.length ? `<div class="highlights-row">${headings.map((h,i) => `<a class="highlight-chip" href="#${slugify(h.text)}" data-scroll="${slugify(h.text)}"><span class="chip-num">${i+1}</span>${h.icon && topicIcons[h.icon] ? `<span class="chip-icon">${topicIcons[h.icon]}</span>` : ''}${h.text}</a>`).join('')}</div>` : ''}</div></section>` : '';
   const city = cityBy(place.city), country = countryBy(city.country);
   const active = saved().includes(`${place.city}/${place.slug}`);
   const related = places.filter(p => p.city === city.slug && p.slug !== place.slug);

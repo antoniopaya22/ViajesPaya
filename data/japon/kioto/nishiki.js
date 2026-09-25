@@ -7,35 +7,27 @@ addJapanPlace({
   duration: '1–2 horas',
   price: 'Paseo gratuito; cada elaboración se paga por separado, normalmente entre 200 y 800 ¥',
   stats: [
-    {value:'130+', label:'puestos de alimentación', icon:'🏮'},
-    {value:'400+', label:'años de historia como mercado', icon:'📜'},
-    {value:'1', label:'única calle techada en pleno centro', icon:'🛍️'}
+    {value:'130+', label:'puestos de alimentación', icon:'lantern'},
+    {value:'400+', label:'años de historia como mercado', icon:'scroll'},
+    {value:'1', label:'única calle techada en pleno centro', icon:'bag'}
   ],
   blocks: [
     {type:'lead', text:'El mercado Nishiki ocupa una estrecha calle peatonal techada en pleno centro de Kioto y reúne más de 130 puestos de alimentación. Los primeros puestos de comida aparecieron aquí a comienzos del siglo XIV, y ya en el periodo Edo se convirtió en un gran mercado especializado en pescado y marisco; desde hace más de 400 años combina la compra diaria de los vecinos con la curiosidad de los visitantes.'},
     {type:'p', text:'Es de mala educación comer mientras se camina por el mercado: lo habitual es apartarse junto al puesto donde se ha comprado y disfrutar la elaboración de pie, sin avanzar.'},
-    {type:'heading', text:'Qué comer en el mercado', icon:'🍢'},
-    {type:'stop', title:'Yuba y tofu', text:[
-      'La yuba es la fina película que se forma al hervir leche de soja, uno de los productos más representativos de la cocina de Kioto. Yubakichi la vende fresca y seca desde el siglo XVIII, y Hanayori-Kiyoe prepara una croqueta de yuba crujiente por fuera y cremosa por dentro. Konna Monja añade donuts de soja en sabores como azúcar moreno, chocolate o caramelo.'
+    {type:'heading', text:'Qué comer en el mercado', icon:'teacup'},
+    {type:'p', text:'Cada tramo de la calle tiene su especialidad. Esta es una selección para picar de puesto en puesto sin necesidad de sentarse en ningún sitio.'},
+    {type:'cards', items:[
+      {icon:'droplet', title:'Yuba y tofu', text:'Yubakichi la vende fresca y seca desde el siglo XVIII; Hanayori-Kiyoe hace una croqueta de yuba crujiente por fuera y cremosa por dentro.'},
+      {icon:'flame', title:'Tako-tamago y tempura', text:'Brocheta de pulpo confitado con huevo de codorniz en Kai; tempura de hamo en Uoriki y de langostinos en Nishiki Hirano.'},
+      {icon:'teacup', title:'Wagyu, pescado y unagi', text:'Wagyu al momento en las carnicerías, sashimi en la pescadería Kimura (desde 1620) y unagi kabayaki en Notoyo Nishi-ten.'},
+      {icon:'blossom', title:'Mochi y dulces', text:'Ichigo daifuku de Fuka, warabimochi de matcha de Sawawa, ichigo sando y gofres Snoopy-yaki de postre.'}
     ]},
-    {type:'stop', title:'Bocados para comer de pie', text:[
-      'El tako-tamago —una brocheta de pulpo confitado en salsa dulce, relleno de un huevo de codorniz— es uno de los más fotografiados; se prueba en Kai. La tempura también tiene mucho protagonismo: Uoriki fríe hamo (morenocio) del mar Interior de Seto, mientras Nishiki Hirano se especializa en langostinos. Los satsuma-age de Houkyuuan, pasteles de pescado fritos con relleno de edamame, patata o queso, son otra parada clásica.'
-    ]},
-    {type:'stop', title:'Carnes y pescados de casas centenarias', text:[
-      'Las carnicerías del mercado cocinan al momento el corte de wagyu que se elija, servido en una cajita de obento. La pescadería Kimura vende desde 1620 y ofrece sashimi o pescado a la parrilla con sake para acompañar. También hay unagi kabayaki (anguila asada y glaseada) en Notoyo Nishi-ten y brochetas de cangrejo, hervido o en tempura, en Yatai-mura Nishiki.'
-    ]},
-    {type:'stop', title:'Dulces y postres', text:[
-      'Kofukudo reúne mochi de todo tipo, pero los favoritos suelen ser el ichigo daifuku de Fuka —un mochi con una fresa entera dentro— y el warabimochi de matcha de Uji de Sawawa. El ichigo sando, un sándwich de pan de leche con nata y fresas frescas, y las brochetas de senbei y dango de Terakoya Honpo completan la ronda dulce. En Snoopy Cha-Ya se preparan gofres rellenos con forma del personaje.'
-    ]},
-    {type:'heading', text:'Qué comprar', icon:'🛍️'},
-    {type:'stop', title:'Para llevar a la cocina de casa', text:[
-      'Barricas de tsukemono (verduras encurtidas, incluida la berenjena Kamo, exclusiva de Kioto), alga konbu seca o en tsukudani, pescado seco como niboshi o sakura ebi, y paquetes de furikake para el arroz blanco son los clásicos que más se llevan los visitantes.'
-    ]},
-    {type:'stop', title:'Aritsugu, los cuchillos de Kioto', text:[
-      'Esta tienda familiar, con historia desde finales del siglo XVI, es una referencia para comprar cuchillos de cocina japoneses; graban el nombre del comprador de forma gratuita. También venden utensilios de aluminio, cobre y latón.'
-    ]},
-    {type:'stop', title:'Otros clásicos para llevar', text:[
-      'You-Zen y Heibei Shoten venden palillos japoneses de todos los precios y diseños, con posibilidad de grabado. Tsunoki, con más de 200 años de historia, es un buen sitio para comprar sake, shochu o whisky japonés. Y si te gustan los gatos, Neko Masshiguru tiene todo tipo de souvenirs con temática felina, desde maneki-neko a paraguas.'
+    {type:'heading', text:'Qué comprar', icon:'bag'},
+    {type:'p', text:'Además de comida para el momento, el mercado es un buen sitio para llevarse algo de Kioto a casa.'},
+    {type:'cards', items:[
+      {icon:'bag', title:'Para la despensa', text:'Tsukemono en barricas (incluida la berenjena Kamo), alga konbu, pescado seco y furikake para el arroz.'},
+      {icon:'wood', title:'Aritsugu, cuchillos de Kioto', text:'Tienda familiar desde finales del siglo XVI; graban el nombre del comprador gratis en el cuchillo.'},
+      {icon:'gate', title:'Otros clásicos', text:'Palillos grabados en You-Zen y Heibei Shoten, sake y whisky en Tsunoki, souvenirs de gatos en Neko Masshiguru.'}
     ]},
     {type:'callout', label:'¿SABÍAS QUE...?', items:[
       'La tienda de cuchillos Aritsugu tiene una historia familiar que se remonta a finales del siglo XVI y graba el nombre del comprador gratis.',

@@ -7,15 +7,15 @@ addJapanPlace({
   duration: '1,5–4 horas según se recorra solo la base o toda la montaña',
   price: 'Entrada gratuita',
   stats: [
-    {value:'32.000+', label:'santuarios Inari en todo Japón', icon:'🦊'},
-    {value:'4 km', label:'de senderos con torii hasta la cumbre', icon:'🥾'},
-    {value:'233 m', label:'altura de la cumbre Ichi-no-mine', icon:'⛰️'},
-    {value:'24 h', label:'abierto todos los días del año', icon:'🕐'}
+    {value:'32.000+', label:'santuarios Inari en todo Japón', icon:'gate'},
+    {value:'4 km', label:'de senderos con torii hasta la cumbre', icon:'footprints'},
+    {value:'233 m', label:'altura de la cumbre Ichi-no-mine', icon:'peak'},
+    {value:'24 h', label:'abierto todos los días del año', icon:'clock'}
   ],
   blocks: [
     {type:'lead', text:'Fushimi Inari es la sede principal de una red de más de 32.000 santuarios japoneses dedicados a Inari, deidad del arroz y, por extensión, de la prosperidad en los negocios. El zorro o kitsune, mensajero de Inari, aparece por todo el recinto —a menudo con una llave en la boca que representa el almacén del arroz— y los comerciantes donan torii con su nombre para pedir que el dios les sea propicio, una costumbre que ha ido formando el pasadizo de puertas rojas que hace célebre al lugar.'},
     {type:'p', text:'El itinerario empieza en la estación de JR Inari: 200 metros después del primer gran torii bermellón aparece la puerta Rōmon, inicio real de la visita. A partir de ahí el camino solo sube, así que conviene llevar agua y algo de comer si se piensa completar la montaña entera.'},
-    {type:'heading', text:'Un paseo por el santuario, torii a torii', icon:'⛩️'},
+    {type:'heading', text:'Un paseo por el santuario, torii a torii', icon:'gate'},
     {type:'stop', title:'Puerta Rōmon', image:{src:'assets/fushimi/romon.jpg', alt:'Puerta Romon de Fushimi Inari'}, text:[
       'La puerta principal de acceso al santuario se construyó en 1589 por orden de Toyotomi Hideyoshi. Cuenta la leyenda que, cuando su madre enfermó, Hideyoshi rezó a Inari y prometió una generosa donación si mejoraba; su recuperación llegó, y con el dinero se levantó esta puerta.'
     ]},
@@ -41,7 +41,7 @@ addJapanPlace({
     {type:'stop', title:'Intersección Yotsu-tsuji', image:{src:'assets/fushimi/yotsu-tsuji.jpg', alt:'Intersección Yotsu-tsuji'}, text:[
       'Unos 20 minutos después de Shin-ike se llega a la primera vista abierta sobre Kioto, con temperaturas algo más frescas en verano y hojas de momiji en otoño. Desde aquí se puede desviar al mirador Kojin-mine o al santuario Miyuki Hōhaisho, rodeado de bambú negro y conocido por su fude-zuka, un lugar donde enterrar ritualmente pinceles de caligrafía usados.'
     ]},
-    {type:'heading', text:'La ruta de la montaña, para quien sigue subiendo', icon:'🥾'},
+    {type:'heading', text:'La ruta de la montaña, para quien sigue subiendo', icon:'footprints'},
     {type:'p', text:'No hace falta completar el circuito de la montaña para disfrutar del santuario, pero quien sigue más allá de Yotsu-tsuji encuentra mucha menos gente y descubre que los torii no son un decorado: enlazan de verdad pequeños altares, estanques y cimas de culto reales a lo largo de unos 4 kilómetros y entre tres y cuatro horas de camino.'},
     {type:'stop', title:'Tercera cima, San-no-mine', text:['Aquí se encuentran las ruinas del antiguo santuario Shimosha Shinseki, dedicado a la deidad Shiragiku Okami.']},
     {type:'stop', title:'Cima intermedia, Ai-no-mine', text:['Una puerta torii de piedra, Nunetorii, con decoraciones que recuerdan al estilo gasshō de Shirakawa-go, marca el acceso a esta cima dedicada a la deidad Ise no Okami.']},

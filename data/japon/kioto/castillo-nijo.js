@@ -7,9 +7,9 @@ addJapanPlace({
   duration: '1,5–2 horas',
   price: 'Consulta la tarifa vigente en la web oficial',
   stats: [
-    {value:'1603', label:'año de construcción, para Tokugawa Ieyasu', icon:'🏯'},
-    {value:'1867', label:'aquí se anunció el fin del shogunato', icon:'📜'},
-    {value:'400+', label:'cerezos en los jardines del castillo', icon:'🌸'}
+    {value:'1603', label:'año de construcción, para Tokugawa Ieyasu', icon:'pagoda'},
+    {value:'1867', label:'aquí se anunció el fin del shogunato', icon:'scroll'},
+    {value:'400+', label:'cerezos en los jardines del castillo', icon:'blossom'}
   ],
   blocks: [
     {type:'lead', text:'El castillo Nijō se construyó en 1603 como residencia de Tokugawa Ieyasu, el primer shōgun del periodo Edo, y fue usado por su familia hasta 1867, cuando aquí mismo se anunció la devolución del poder político al emperador y el fin del shogunato. Es uno de los 17 Monumentos Históricos de la Antigua Kioto, Patrimonio de la Humanidad desde 1994.'},
