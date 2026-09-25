@@ -38,7 +38,9 @@ jobs:
       - name: Preparar archivos públicos
         run: |
           mkdir _site
-          cp index.html styles.css script.js japan.js credits.js japan-credits.js favicon.svg manifest.json sw.js .nojekyll _site/
+          # *.js as a glob (not a hardcoded list) so a new per-country file (like polonia.js)
+          # can never be forgotten here again — see the 2026-09 incident where it was.
+          cp *.js index.html styles.css favicon.svg manifest.json .nojekyll _site/
           cp -R data _site/
           cp -R assets _site/
           cp -R og-pages/* _site/
