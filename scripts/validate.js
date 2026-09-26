@@ -173,6 +173,7 @@ for (const place of places) {
 // ---- 5. Country guide + per-city transport blocks (same icon/image rules) ----
 for (const country of countries) {
   if (country.guide) walkBlocksForIcons(country.guide.blocks, `${country.__configSlug}.guide`);
+  if (country.food) walkBlocksForIcons(country.food.blocks, `${country.__configSlug}.food`);
   if (country.image) checkImageFile(country.image, `country ${country.__configSlug}`, { cardContext: true });
 }
 for (const city of cities) {

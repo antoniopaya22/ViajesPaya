@@ -13,6 +13,25 @@ const polandCountry = {
       {type: 'heading', text: 'Entre Cracovia y Varsovia', icon: 'ruler'},
       {type: 'p', text: 'Las dos ciudades están conectadas por trenes intercity frecuentes que las convierten en la forma más práctica de combinar ambos destinos en un mismo viaje; consulta horarios y precios actuales en la web de PKP Intercity.'}
     ]
+  },
+  food: {
+    title: 'Comida típica <em>de Polonia.</em>',
+    intro: 'Más allá del obwarzanek de Cracovia o los bares de leche de Varsovia, estos son los grandes platos y bebidas de la cocina polaca en todo el país.',
+    blocks: [
+      {type: 'heading', text: 'Pierogi, con relleno para cada ocasión', icon: 'flame'},
+      {type: 'p', text: 'Los rellenos clásicos van del pierogi ruskie (requesón, patata y cebolla) al de carne, pasando por el de col y setas —típico de la cena de Nochebuena polaca, la Wigilia— o el de fruta; los pierogi leniwe («perezosos»), en cambio, no llevan relleno: son más bien unos ñoquis de requesón, huevo y harina. En la región de Biłgoraj existe además una variante propia, con trigo sarraceno, patata y queso, horneada en vez de hervida.'},
+      {type: 'heading', text: 'Bigos, el guiso que mejora con los días', icon: 'flame'},
+      {type: 'p', text: 'Documentado desde el siglo XVII, el bigos original ni siquiera llevaba col: era una mezcla de ingredientes troceados con mantequilla y condimentos agridulces, con posibles raíces en el «compositum» medieval latino. La versión con chucrut que se conoce hoy, el «bigos hultajski», se popularizó en el siglo XVIII, bajo el reinado de Augusto III. Se considera un plato que mejora al recalentarlo o incluso congelarlo, lo que lo convirtió en comida práctica para cazadores y viajeros; Adam Mickiewicz lo inmortalizó en su poema nacional Pan Tadeusz (1834), elogiando «su maravilloso sabor, color y aroma».'},
+      {type: 'heading', text: 'Żurek', icon: 'droplet'},
+      {type: 'p', text: 'Esta sopa agria se elabora fermentando harina de centeno (el zakwas, una especie de masa madre), a veces con avena o pan agrio. La versión de Semana Santa lleva salchicha blanca (biała kiełbasa) y huevo cocido, y existen variantes regionales: en Silesia se sirve sobre puré de patata, en Podlasie con el huevo partido por la mitad, y en la región de Subcarpacia se prepara con avena fermentada (żur owsiany).'},
+      {type: 'heading', text: 'Kiełbasa con sello europeo', icon: 'bag'},
+      {type: 'p', text: 'La kiełbasa krakowska sucha staropolska tiene el sello europeo de Especialidad Tradicional Garantizada desde 2018. La kiełbasa lisiecka, con Indicación Geográfica Protegida, procede de las localidades de Liszki y Czernichów, cerca de Cracovia —un manuscrito de 1894 ya documenta que 34 de los 87 carniceros de la comarca trabajaban en estos dos municipios—; se elabora con un 85% de jamón, se cura entre 2 y 4 días y se ahúma con madera de aliso, haya o árboles frutales.'},
+      {type: 'heading', text: 'Vodka: un origen disputado', icon: 'droplet'},
+      {type: 'p', text: 'La primera mención escrita conocida de la «wódka» aparece en documentos judiciales de Sandomierz, en 1405; en Rusia, la primera referencia en cirílico no llega hasta 1533, y describe una bebida medicinal traída «desde Polonia». Esto solo prueba la fecha de los registros, no quién la inventó realmente: el origen exacto sigue siendo objeto de disputa histórica entre ambos países. Desde 2008, «Polska Wódka» es una Indicación Geográfica protegida por la Unión Europea: solo puede llevar ese nombre el vodka elaborado enteramente en Polonia a partir de cereales tradicionales o patata cultivados en el país. Entre las variedades más conocidas está la żubrówka, aromatizada con una brizna de hierba de bisonte recogida a mano en el bosque de Białowieża, producida comercialmente desde 1928.'},
+      {type: 'callout', label: '¿SABÍAS QUE...?', items: [
+        'Los pączki que se comen por millones el Jueves Graso (Tłusty Czwartek) se conocen en Polonia desde la Edad Media, pero su masa ligera y esponjosa actual se refinó con la influencia de cocineros franceses; los rellenos más clásicos son la mermelada de ciruela (powidła) y, más antigua todavía, la de pétalos de rosa.'
+      ]}
+    ]
   }
 };
 

@@ -87,6 +87,42 @@ const japanCountry = {
         'Los templos que iluminan sus arces o cerezos por la noche suelen vender la entrada nocturna aparte de la diurna, y no siempre se puede permanecer dentro de un turno a otro: conviene decidir de antemano si ir de día, de noche, o ambas veces.'
       ]}
     ]
+  },
+  food: {
+    title: 'Comida típica <em>de Japón.</em>',
+    intro: 'Más allá de la comida callejera de cada ciudad, estos son los grandes platos e ingredientes que definen la cocina japonesa en todo el país.',
+    blocks: [
+      {type:'heading', text:'Sushi y sashimi, del pescado fermentado al nigiri', icon:'droplet'},
+      {type:'p', text:'El sushi nació como método de conservación: el narezushi, pescado fermentado en arroz, probablemente se originó en el sudeste asiático y llegó a Japón con la expansión del cultivo de arroz inundado en el periodo Yayoi. El funazushi, elaborado con carpa cruciana del lago Biwa (Shiga), sigue siendo hoy el heredero directo de aquella tradición.'},
+      {type:'p', text:'El nigiri tal como se conoce hoy nace en el periodo Edo: se atribuye su creación a Hanaya Yohei hacia 1824, en el barrio de Ryōgoku, como una comida rápida de porciones más grandes y menos avinagradas que las actuales. Técnicamente, sushi es cualquier preparación con arroz avinagrado (shari), mientras que sashimi es solo pescado o marisco crudo en lonchas, sin arroz: la palabra ya aparece en un recetario de 1489.'},
+      {type:'cards', title:'Tres formas de comerlo', items:[
+        {icon:'droplet', title:'Nigiri', text:'Una bola de arroz prensada a mano con una loncha de pescado encima.'},
+        {icon:'droplet', title:'Makizushi', text:'Rollos enrollados con una esterilla de bambú, envueltos en alga nori.'},
+        {icon:'droplet', title:'Temaki', text:'Conos grandes de alga nori pensados para comerse con las manos.'}
+      ]},
+      {type:'heading', text:'Ramen: un mismo plato, un acento distinto en cada región', icon:'flame'},
+      {type:'p', text:'El ramen desciende de los fideos cantoneses que trajeron inmigrantes chinos a Yokohama a finales del siglo XIX, conocidos primero como «nankin soba» y más tarde «chūka soba». El nombre «ramen» se impuso tras el lanzamiento del ramen instantáneo de Momofuku Ando en 1958, y el plato se convirtió en un icono nacional en la posguerra, cuando la escasez de arroz y la llegada de trigo importado de Estados Unidos impulsaron su consumo.'},
+      {type:'cards', title:'Cuatro estilos regionales', items:[
+        {icon:'flame', title:'Sapporo', text:'Caldo de miso, con maíz, mantequilla y marisco.'},
+        {icon:'flame', title:'Hakata (Fukuoka)', text:'Caldo tonkotsu lechoso de hueso de cerdo, fideos finos, ajo triturado y jengibre encurtido.'},
+        {icon:'flame', title:'Tokio', text:'Caldo shoyu (soja), con fideos finos y rizados.'},
+        {icon:'flame', title:'Kitakata', text:'Fideos gruesos y planos en caldo de cerdo y niboshi; la ciudad con más locales de ramen per cápita de Japón.'}
+      ]},
+      {type:'heading', text:'Wagyu, la ternera más marmoleada del mundo', icon:'trophy'},
+      {type:'p', text:'Wagyu no es una raza sino cuatro, oficializadas en 1944 (Japanese Black, Brown, Polled y Shorthorn); más del 90% del ganado wagyu es de la variedad Black. Se clasifica por rendimiento (A-B-C) y calidad (1 a 5, según marmoleado, color y firmeza), hasta el máximo A5.'},
+      {type:'cards', title:'Dos denominaciones históricas', items:[
+        {icon:'trophy', title:'Kobe', text:'Solo la cepa Tajima de Japanese Black, criada en Hyōgo; exige un marmoleado mínimo BMS 6 y una canal de menos de 500 kg. Se exporta fuera de Japón solo desde 2012.'},
+        {icon:'trophy', title:'Matsusaka', text:'Solo hembras vírgenes de Japanese Black en la prefectura de Mie, cada una con un identificador propio de 10 dígitos trazable hasta la granja.'}
+      ]},
+      {type:'heading', text:'Sake y la cultura del izakaya', icon:'teacup'},
+      {type:'p', text:'El grado de pulido del arroz (seimai-buai) determina el tipo de sake: honjōzō (65-70% del grano restante), ginjō (60% o menos, fermentación lenta en frío) y daiginjō (50% o menos); el junmai es el que no lleva alcohol añadido.'},
+      {type:'p', text:'El izakaya —literalmente «quedarse» más «tienda de sake»— tiene raíces documentadas ya en el Kojiki, del siglo VIII. Se consolidó en el periodo Edo, cuando las tabernas donde se bebía de pie empezaron a ofrecer primero barriles para sentarse y después pequeños aperitivos (sakana), sentando las bases del izakaya moderno.'},
+      {type:'heading', text:'Konbini, la comida de las tiendas de conveniencia', icon:'bag'},
+      {type:'p', text:'Japón tiene una tienda de conveniencia por cada 2.000 habitantes —frente a una por cada 8.000 en Estados Unidos—, lideradas por 7-Eleven, Lawson y FamilyMart. Reciben reparto de comida fresca desde fábricas varias veces al día, lo que explica una calidad muy por encima de la media internacional del formato; el onigiri, por ejemplo, incorporó en los años 80 un envoltorio de plástico que mantiene el alga nori separada y crujiente hasta el momento de comerlo.'},
+      {type:'callout', label:'¿SABÍAS QUE...?', items:[
+        'La tempura no es una técnica japonesa original: la introdujeron comerciantes y misioneros portugueses en el siglo XVI, a través de Nagasaki; su nombre vendría del latín «tempora», los periodos de ayuno católico en los que se comía pescado y verdura rebozados en vez de carne.'
+      ]}
+    ]
   }
 };
 

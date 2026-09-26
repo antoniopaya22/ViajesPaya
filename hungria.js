@@ -11,6 +11,26 @@ const hungaryCountry = {
       {type: 'heading', text: 'La moneda es el forint, no el euro', icon: 'bag'},
       {type: 'p', text: 'Hungría es miembro de la Unión Europea pero no ha adoptado el euro: su moneda es el forint húngaro (Ft o HUF). Se paga con tarjeta en la mayoría de comercios, pero conviene llevar algo de efectivo para mercados y baños termales.'}
     ]
+  },
+  food: {
+    title: 'Comida típica <em>de Hungría.</em>',
+    intro: 'Más allá del gulyás, el lángos o el kürtőskalács de Budapest, estos son los grandes ingredientes y bebidas que definen la cocina húngara.',
+    blocks: [
+      {type: 'heading', text: 'Paprika, el ingrediente que define la cocina húngara', icon: 'flame'},
+      {type: 'p', text: 'La paprika llegó a Hungría a través del Imperio Otomano y se cultivó por primera vez en 1569, al principio como planta ornamental y medicinal, no alimentaria. Hoy existen cinco grados comerciales oficiales, del más suave (édesnemes, el clásico dulce) al más picante (erős); la variedad dulce moderna es en realidad un desarrollo del siglo XX, cuando un fitomejorador de Szeged encontró en los años veinte un ejemplar dulce por mutación natural y lo propagó por injerto.'},
+      {type: 'p', text: 'Kalocsa, con paprika documentada desde 1729 y su propio Museo del Pimentón, y Szeged, sede de grandes productoras del sector, se disputan el título no oficial de capital húngara de la paprika. En la Universidad de Szeged, el científico Albert Szent-Györgyi usó paprika húngara para aislar la vitamina C en 1930, un trabajo que le valió el Premio Nobel de Medicina de 1937.'},
+      {type: 'heading', text: 'Pörkölt y paprikás, primos del gulyás', icon: 'flame'},
+      {type: 'p', text: 'El gulyás es una sopa; el pörkölt es un guiso: se prepara con carne deshuesada, sin patata y sin espesar con harina, friendo primero la cebolla y añadiendo la paprika fuera del fuego para que no se queme. El «goulash» que se sirve fuera de Hungría se parece en realidad mucho más a un pörkölt que al gulyás original. El paprikás —de donde viene el conocido csirkepaprikás o «chicken paprikash»— es un pörkölt acabado con nata agria (tejföl), de salsa más clara y cremosa, que se sirve tradicionalmente con nokedli, unos pequeños dumplings de huevo.'},
+      {type: 'heading', text: 'Halászlé, la sopa de pescado del Danubio', icon: 'droplet'},
+      {type: 'p', text: 'Esta sopa roja y picante, cargada de paprika, es originaria de la llanura panónica que riegan el Danubio y el Tisza, y está considerada una de las sopas más picantes de Europa. Se prepara con un caldo de recortes de pescado cocido durante horas, cebolla caramelizada y paprika, al que luego se añaden trozos de carpa, siluro, perca o lucio; existen estilos regionales propios en Szeged, Paks y Baja, cada uno con su propia proporción de pescado y de fideos.'},
+      {type: 'heading', text: 'Tokaji, vino de reyes', icon: 'teacup'},
+      {type: 'p', text: 'El Tokaji Aszú, elaborado con uvas afectadas por la podredumbre noble y recogidas y prensadas a mano, está considerado el vino botritizado documentado más antiguo del mundo. Se suele describir como la primera denominación de origen delimitada legalmente del mundo, aunque esa fecha se cita de forma distinta según la fuente (1737 u otra posterior) y la propia Chianti italiana recibió su delimitación legal ya en 1716, así que conviene tomar el título con cautela. La célebre frase «vino de reyes, rey de los vinos», atribuida a Luis XIV de Francia, no tiene una fuente primaria documentada: es una tradición muy repetida, no una cita verificada.'},
+      {type: 'heading', text: 'Pálinka', icon: 'droplet'},
+      {type: 'p', text: 'La referencia verificable más antigua de la pálinka data de 1332, cuando se ofreció en la corte de Carlos Roberto de Hungría a la reina Isabel como remedio contra la artritis, bajo el nombre «Aqua vitae reginae Hungariae» («agua de vida de la reina de Hungría»). Hoy es una Indicación Geográfica protegida por la Unión Europea: solo puede llamarse pálinka el aguardiente de fruta producido, destilado, madurado y embotellado en Hungría (y, para el de albaricoque, en cuatro provincias austriacas concretas). Se elabora con doble destilación en alambiques de cobre, alcanza entre un 40 y un 70% de graduación, y se sirve ligeramente templado, en copas tipo tulipán.'},
+      {type: 'callout', label: '¿SABÍAS QUE...?', items: [
+        'La tarta Dobos, creada por el confitero de Budapest József C. Dobos y presentada en la Exposición General de 1885 —donde la probaron el emperador Francisco José I y la emperatriz Sissi—, se diseñó para durar y viajar mejor que los pasteles de su época: su capa superior de caramelo duro y brillante sellaba la humedad, lo que permitió que se hiciera popular por toda Europa en una época con poca refrigeración disponible.'
+      ]}
+    ]
   }
 };
 
