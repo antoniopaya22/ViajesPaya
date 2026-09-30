@@ -199,7 +199,8 @@ const japanCities = [
   zones:[
     {slug:'castillo',name:'Castillo de Osaka'},
     {slug:'tennoji',name:'Tennōji y Shinsekai'},
-    {slug:'namba',name:'Namba y Dōtonbori'}
+    {slug:'namba',name:'Namba y Dōtonbori'},
+    {slug:'sumiyoshi',name:'Sumiyoshi'}
   ],
   transport: {
     title: 'Cómo moverse <em>por Osaka.</em>',

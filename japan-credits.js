@@ -1,5 +1,29 @@
 // Créditos de fotografías específicas de las fichas de Japón.
 Object.assign(imageCredits, {
+  "japon-osaka-shinsaibashi.jpg": {
+    "url": "https://commons.wikimedia.org/wiki/File:Shinsaibashi_Suji_Shopping_Street_Osaka_Japan_by_Don_Ramey_Logan.jpg",
+    "artist": "WPPilot",
+    "license": "CC BY-SA 4.0",
+    "sourceTitle": "File:Shinsaibashi Suji Shopping Street Osaka Japan by Don Ramey Logan.jpg"
+  },
+  "japon-osaka-amerikamura.jpg": {
+    "url": "https://commons.wikimedia.org/wiki/File:Amerikamura_(Busy).jpg",
+    "artist": "BradBeattie",
+    "license": "CC BY-SA 3.0",
+    "sourceTitle": "File:Amerikamura (Busy).jpg"
+  },
+  "japon-osaka-kuromon.jpg": {
+    "url": "https://commons.wikimedia.org/wiki/File:Osaka_Kuromon_Ichiba_Market_2017-12_(2).jpg",
+    "artist": "Mr.ちゅらさん",
+    "license": "CC BY-SA 4.0",
+    "sourceTitle": "File:Osaka Kuromon Ichiba Market 2017-12 (2).jpg"
+  },
+  "japon-osaka-sumiyoshi.jpg": {
+    "url": "https://commons.wikimedia.org/wiki/File:Sorihashi_Bridge,_Sumiyoshi-taisha_Shrine_-_Oct_15,_2015.jpg",
+    "artist": "chiron3636",
+    "license": "CC BY 2.0",
+    "sourceTitle": "File:Sorihashi Bridge, Sumiyoshi-taisha Shrine - Oct 15, 2015.jpg"
+  },
   "japon-nishiki.jpg": {
     "url": "https://commons.wikimedia.org/wiki/File%3ANishiki_Ichiba%2C_la_cocina_de_Kioto_(14702738483).jpg",
     "artist": "Lorena a.k.a. Loretahur",
