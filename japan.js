@@ -110,6 +110,44 @@ const japanCountry = {
     title: 'Información <em>práctica.</em>',
     intro: 'Conectividad, presupuesto, etiqueta y calendario de temporadas para preparar el viaje.',
     blocks: [
+      {type:'heading', text:'Templo o santuario: cómo distinguirlos', icon:'gate'},
+      {type:'p', text:'En Japón conviven dos tradiciones religiosas que la mayoría de la población practica a la vez: el sintoísmo, cuyos lugares de culto son los santuarios, y el budismo, con sus templos. Los kami del sintoísmo —espíritus de la naturaleza, deidades y antepasados— se veneran en los santuarios; en los templos se honra al Buda y a otras figuras budistas. Las dos cosas se ven constantemente en cualquier itinerario, así que conviene saber distinguirlas.'},
+      {type:'table', wrap:true, title:'Santuario y templo, de un vistazo', columns:['','Santuario (sintoísmo)','Templo (budismo)'], rows:[
+        ['A quién se venera','Los kami: deidades, fuerzas de la naturaleza, antepasados','El Buda, los bodisatvas y otras figuras budistas'],
+        ['Nombre','Acaba en -jinja, -jingū, -taisha, -gū o -sha','Acaba en -ji, -tera, -dera, -in o -dō'],
+        ['Puerta de entrada','Torii: dos pilares y dos travesaños, a menudo bermellón','Sanmon: pórtico de dos pisos, a veces con estatuas guardianas nio'],
+        ['Guardianes','Komainu (perros-león) por parejas; zorros en los santuarios de Inari','Estatuas nio, dos figuras feroces a los lados de la puerta'],
+        ['Rasgos habituales','Cuerdas de paja trenzada (shimenawa) y tiras de papel plegado (shide)','Pagoda, campana, salón principal con estatuas de Buda; a veces un cementerio'],
+        ['Cómo se reza','Dos reverencias, dos palmadas y una reverencia','Manos juntas en silencio (gasshō) y una reverencia, sin palmadas'],
+        ['Ritos de purificación','Fuente temizuya para lavarse las manos y la boca','Incensario: se lleva el humo hacia uno mismo']
+      ]},
+      {type:'heading', text:'Cómo se visita un santuario', icon:'gate'},
+      {type:'cards', title:'Los cuatro gestos', items:[
+        {icon:'gate', title:'1. Inclinarse ante el torii', text:'El torii marca el límite entre el espacio corriente y el espacio de los kami. Es habitual hacer una pequeña reverencia antes de cruzarlo.'},
+        {icon:'teacup', title:'2. Purificarse en el temizuya', text:'Con el cazo en la mano derecha, lávate la mano izquierda; pasa el cazo a la izquierda y lávate la derecha; vierte un poco de agua en la palma izquierda, llévatela a la boca sin beber directamente del cazo y escúpela con discreción; por último, deja que el resto del agua limpie el mango sosteniendo el cazo en vertical.'},
+        {icon:'bell', title:'3. Ofrenda y oración', text:'Ante el altar principal, echa una moneda en la caja de ofrendas (saisen-bako) y haz dos reverencias, dos palmadas con las manos ante el pecho, la oración en silencio y una última reverencia.'},
+        {icon:'eye', title:'4. Excepciones', text:'La fórmula habitual es la de «dos, dos, uno», pero en algunos santuarios, como Izumo Taisha o Usa Jingū, se dan cuatro palmadas en vez de dos. Si hay carteles, síguelos.'}
+      ]},
+      {type:'heading', text:'Cómo se visita un templo', icon:'pagoda'},
+      {type:'cards', title:'Qué hacer y qué no', items:[
+        {icon:'pagoda', title:'Reverencia en la puerta', text:'Al cruzar el sanmon, inclínate una vez. Aquí no hay torii ni ritual de palmadas.'},
+        {icon:'flame', title:'Incienso', text:'Un manojo de varillas suele costar unos 100 ¥. Enciende una en la llama, apaga la llama moviendo la varilla (no soplando, se considera una falta de respeto) y colócala en el incensario. Es tradicional acercarse el humo con la mano.'},
+        {icon:'heart', title:'Gasshō', text:'Junta las palmas a la altura de la nariz, en silencio, e inclínate. No se aplaude en un templo.'},
+        {icon:'footprints', title:'Descalzarse', text:'En muchos salones hay que quitarse los zapatos; busca la zona con calzado o las estanterías de entrada.'}
+      ]},
+      {type:'heading', text:'Cuando templos y santuarios eran casi lo mismo', icon:'scroll'},
+      {type:'p', text:'Hasta 1868 el budismo y el sintoísmo estaban tan entrelazados (shinbutsu shūgō) que a menudo un mismo recinto funcionaba como templo y como santuario, y los kami se interpretaban como manifestaciones de los budas. Con la Restauración Meiji, el gobierno impulsó el sintoísmo como religión de Estado y ordenó separar ambos cultos (shinbutsu bunri): se expulsó al clero budista de los santuarios y se prohibió llamar a los kami por nombres budistas. La separación fue acompañada de una persecución del budismo (haibutsu kishaku) que destruyó numerosos templos y estatuas. De ahí que hoy no sea raro encontrar un templo y un santuario pegados, como restos de aquellos complejos compartidos.'},
+      {type:'heading', text:'Amuletos, sellos y suerte', icon:'bag'},
+      {type:'cards', title:'Lo que se compra en ambos', items:[
+        {icon:'scroll', title:'Goshuin', text:'Sello caligrafiado con tinta y sellos rojos que se recibe en muchos templos y santuarios; suele costar unos 300 ¥ y se guarda en un cuaderno especial (goshuinchō, de unos 1.000 a 2.000 ¥).'},
+        {icon:'bag', title:'Omamori', text:'Amuletos de tela para la protección y la suerte; se venden en los santuarios y también en muchos templos.'},
+        {icon:'wood', title:'Ema', text:'Tablillas de madera en las que se escribe un deseo y se cuelgan en el propio recinto.'},
+        {icon:'lantern', title:'Omikuji', text:'Papel con una predicción de suerte que se obtiene a cambio de una pequeña ofrenda; si sale mal, se ata a los soportes previstos.'}
+      ]},
+      {type:'callout', label:'EJEMPLOS EN ESTA GUÍA', items:[
+        'Santuarios: <a href="#/pais/japon/ciudad/kioto/lugar/fushimi-inari">Fushimi Inari</a>, <a href="#/pais/japon/ciudad/kioto/lugar/heian-jingu">Heian Jingū</a>, <a href="#/pais/japon/ciudad/kioto/lugar/yasaka-jinja">Yasaka Jinja</a>, <a href="#/pais/japon/ciudad/nara/lugar/kasuga-taisha">Kasuga Taisha</a>, <a href="#/pais/japon/ciudad/osaka/lugar/sumiyoshi-taisha">Sumiyoshi Taisha</a>, <a href="#/pais/japon/ciudad/tokio/lugar/meiji-jingu">Meiji Jingū</a> y <a href="#/pais/japon/ciudad/kamakura/lugar/tsurugaoka-hachimangu">Tsurugaoka Hachimangū</a>.',
+        'Templos: <a href="#/pais/japon/ciudad/kioto/lugar/kiyomizu-dera">Kiyomizu-dera</a>, <a href="#/pais/japon/ciudad/kioto/lugar/kinkaku-ji">Kinkaku-ji</a>, <a href="#/pais/japon/ciudad/kioto/lugar/nanzen-ji">Nanzen-ji</a>, <a href="#/pais/japon/ciudad/nara/lugar/todai-ji">Tōdai-ji</a>, <a href="#/pais/japon/ciudad/tokio/lugar/senso-ji">Sensō-ji</a> y <a href="#/pais/japon/ciudad/kamakura/lugar/hase-dera">Hase-dera</a>.'
+      ]},
       {type:'heading', text:'Conectividad: eSIM o wifi de bolsillo', icon:'book'},
       {type:'cards', title:'Qué te compensa más', items:[
         {icon:'book', title:'eSIM', text:'Desde unos 600 ¥ para pocos GB hasta 2.000-2.800 ¥ para dos semanas de datos: la opción más barata si viajas solo o en pareja y tu móvil admite eSIM.'},
