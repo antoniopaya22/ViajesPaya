@@ -44,6 +44,11 @@ jobs:
           cp -R data _site/
           cp -R assets _site/
           cp -R og-pages/* _site/
+      - name: Versionar el service worker con el commit
+        run: |
+          # A new SW_VERSION per deploy makes every visitor's cache refresh (and shows the "new version" banner).
+          sed -i "s/const SW_VERSION = '[^']*'/const SW_VERSION = '${GITHUB_SHA::10}'/" _site/sw.js
+          grep "const SW_VERSION = '${GITHUB_SHA::10}'" _site/sw.js
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site

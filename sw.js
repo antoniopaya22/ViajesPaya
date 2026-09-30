@@ -1,8 +1,8 @@
 // ViajesPaya service worker — offline support for the whole static site.
-// Bump SW_VERSION only when this caching logic itself changes, not on content updates:
-// every same-origin GET already gets stale-while-revalidate, so new deploys reach
-// users automatically without needing a manifest of files to keep in sync.
-const SW_VERSION = 'v2';
+// SW_VERSION is replaced with the commit hash by the deploy workflow, so every deploy
+// installs a fresh cache (old ones are deleted on activate) and open pages are told to reload.
+// Locally it stays 'dev'.
+const SW_VERSION = 'dev';
 const CACHE_NAME = `viajespaya-${SW_VERSION}`;
 const SHELL_URLS = ['./', './index.html', './styles.css', './manifest.json', './favicon.svg'];
 
@@ -10,15 +10,15 @@ self.addEventListener('install', event => {
   event.waitUntil(
     (async () => {
       const cache = await caches.open(CACHE_NAME);
-      await cache.addAll(SHELL_URLS);
+      await cache.addAll(SHELL_URLS.map(url => new Request(url, { cache: 'reload' })));
       // The whole site's data (every country/city/place) loads as same-origin
       // <script src> tags on the shell page — discover and cache them straight
       // from index.html so a new country/city/bundle is precached automatically,
       // with no separate file list to keep in sync (see the pages.yml deploy
       // outage this same drift caused once already).
-      const shellHtml = await (await fetch('./')).text();
+      const shellHtml = await (await fetch('./', { cache: 'reload' })).text();
       const scriptUrls = [...shellHtml.matchAll(/<script\s+src="(\.\/[^"]+)"/g)].map(m => m[1]);
-      await cache.addAll(scriptUrls);
+      await cache.addAll(scriptUrls.map(url => new Request(url, { cache: 'reload' })));
       await self.skipWaiting();
     })()
   );
