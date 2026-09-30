@@ -43,6 +43,65 @@ const japanCountry = {
         {icon:'bag', title:'Welcome Suica / Tourist Pasmo', text:'Versión turística sin depósito, válida 28 días: la opción más simple si no vas a volver a Japón a corto plazo.'},
         {icon:'bag', title:'Suica en Apple Wallet', text:'Si tienes iPhone, añadir Suica al Wallet evita colas en la estación y cualquier posible falta de tarjetas físicas.'}
       ]},
+      {type:'heading', text:'Cómo usar la tarjeta IC paso a paso', icon:'bag'},
+      {type:'cards', title:'Del mostrador a la puerta de embarque', items:[
+        {icon:'bag', title:'1. Cargar saldo', text:'Solo se recarga con efectivo, en las máquinas de billetes marcadas como «Welcome Suica», en los cajeros Seven Bank de las tiendas 7-Eleven o en las máquinas de recarga. Se elige el importe en múltiplos de 1.000 ¥ y la tarjeta admite un saldo máximo de 20.000 ¥.'},
+        {icon:'bag', title:'2. Entrar', text:'Apoya la tarjeta sobre el lector de la puerta de acceso durante aproximadamente un segundo, hasta oír el pitido.'},
+        {icon:'bag', title:'3. Salir', text:'Vuelve a apoyarla en el lector de salida: la tarifa exacta se descuenta al salir, no al entrar. Si el saldo no alcanza, la puerta se cierra; carga la diferencia en la máquina de ajuste de tarifa de dentro del recinto y sal.'},
+        {icon:'bag', title:'4. Pagar en tiendas y máquinas', text:'También sirve en konbini, cafeterías, taquillas de consigna y máquinas expendedoras con el símbolo de dinero electrónico: di «Suica» o acerca la tarjeta al terminal.'}
+      ]},
+      {type:'callout', label:'¿SABÍAS QUE...?', items:[
+        'Desde 2013 las tarjetas IC regionales —Suica, Pasmo, ICOCA, PiTaPa, Toica, Manaca, Kitaca, Sugoca, Nimoca…— son intercambiables: una tarjeta comprada en Tokio vale en Kioto o Osaka, y viceversa.',
+        'Una tarjeta IC normal no vale para el Shinkansen Tōkaidō entre Tokio y Osaka salvo que la registres antes en el servicio online Smart EX (las tarifas se cargan entonces a una tarjeta de crédito, no al saldo de la IC).'
+      ]},
+      {type:'heading', text:'Trenes: categorías y billete sencillo', icon:'footprints'},
+      {type:'p', text:'Los trenes de una misma línea se dividen por categorías según cuántas estaciones saltan: local (para en todas), rápido (kaisoku), exprés (kyūkō), limited express (tokkyū) y Shinkansen. En local, rápido y exprés no hay diferencia de precio; en limited express y Shinkansen se paga un suplemento sobre la tarifa base (entre 500 y 4.000 ¥ el primero, entre 800 y 8.000 ¥ el segundo, según la distancia). Antes de subir, comprueba en el panel del andén qué categoría llega: en muchos andenes comparten vía trenes locales y rápidos.'},
+      {type:'cards', title:'Billete sencillo en máquina (sin tarjeta IC)', items:[
+        {icon:'ruler', title:'1. Mapa de tarifas', text:'Busca tu estación de destino en el plano de líneas sobre la máquina y anota el importe que aparece junto a su nombre. Si solo está en japonés, compra el billete más barato y paga la diferencia al llegar.'},
+        {icon:'ruler', title:'2. Pagar y elegir', text:'Cambia la máquina a inglés con el botón de idioma, inserta monedas o billetes y pulsa el botón con el importe (o el destino). Recoge el billete y el cambio.'},
+        {icon:'ruler', title:'3. Puertas de acceso', text:'Inserta el billete en la ranura de la puerta y recógelo al otro lado. Para el Shinkansen hay que pasar por un segundo juego de puertas.'},
+        {icon:'ruler', title:'4. Al llegar', text:'Introduce el billete en la puerta de salida; queda retenido. Si el importe no alcanzaba, usa antes una máquina de ajuste de tarifa (fare adjustment) y paga la diferencia.'}
+      ]},
+      {type:'heading', text:'Shinkansen de Kioto a Tokio: comprar el billete en la estación', icon:'ruler'},
+      {type:'table', title:'Kioto → Tokio, un trayecto (precios orientativos 2026)', columns:['Tren','Duración','Asiento reservado'], rows:[
+        ['Nozomi','~2 h 15 min','~14.170 ¥'],
+        ['Hikari','~2 h 40 min','~13.850 ¥'],
+        ['Kodama','~3 h 40 min','~13.850 ¥']
+      ]},
+      {type:'p', text:'El asiento de vagón libre (sin reserva) cuesta unos 13.320 ¥ por trayecto. Los importes se mueven unos cientos de yenes según la temporada; confírmalos en la ventanilla o en la web de JR Central.'},
+      {type:'p', text:'Un billete de Shinkansen se compone de varios conceptos: la tarifa base del trayecto, un suplemento del tren y, si reservas asiento, unas centenas de yenes más de reserva; en el Nozomi hay además un suplemento adicional. Por eso el precio final varía unos cientos de yenes según la temporada y el tipo de asiento. Casi todos los trenes tienen vagones de asiento reservado y vagones de asiento libre (jiyū-seki), estos últimos algo más baratos, señalizados en el andén y en los coches. El Nozomi pasa a ser íntegramente de asiento reservado en puentes largos, Año Nuevo, Golden Week y Obon.'},
+      {type:'cards', title:'Tres formas de comprarlo', items:[
+        {icon:'ruler', title:'En la ventanilla (Midori no Madoguchi)', text:'Busca el símbolo verde de la oficina de billetes JR en la estación de Kioto. Lleva anotado: número de viajeros, fecha, estación de origen y destino, vagón ordinario o Green, asiento reservado o libre y, si reservas, nombre de tren y hora. Si hay cola, entregar esos datos escritos en un papel agiliza la compra. La mayoría acepta tarjeta de crédito.'},
+        {icon:'ruler', title:'En una máquina', text:'Algunas máquinas venden Shinkansen con menú en inglés, pero no todas permiten reservar asiento: unas solo venden asiento libre. Si no te fías, ve a la ventanilla.'},
+        {icon:'ruler', title:'Por internet con Smart EX', text:'El servicio Smart EX de JR Central permite reservar el Tōkaidō Shinkansen desde el móvil y viajar directamente con una tarjeta IC registrada o un código QR, sin pasar por ventanilla; permite reservar con hasta un año de antelación, frente a un mes en ventanilla y máquina.'}
+      ]},
+      {type:'p', text:'Con el billete de papel recibirás normalmente dos tickets —el de tarifa base y el de suplemento (a veces fusionados en uno)—. En las puertas normales de la estación introduce solo el de tarifa base; en las puertas del Shinkansen, ambos a la vez. Sigue las señales bilingües hasta el andén y busca en el suelo la marca con el número de tu vagón y si es reservado o libre; los andenes están dispuestos para hacer cola en el punto exacto donde se abre cada puerta. Si viajas con maleta grande, recuerda la norma de equipaje del apartado siguiente.'},
+      {type:'callout', label:'¿SABÍAS QUE...?', items:[
+        'Con el JR Pass la reserva de asiento es gratuita en ventanilla y en máquina, pero el Nozomi no está cubierto: Hikari y Kodama sí.',
+        'Los billetes de Shinkansen se pueden reservar desde un mes antes del viaje, a las 10:00; en días normales los trenes rara vez se llenan con más de unas horas de antelación, salvo en puentes, Año Nuevo, Golden Week y Obon.'
+      ]},
+      {type:'heading', text:'Cómo funcionan los metros', icon:'footprints'},
+      {type:'p', text:'Todas las ciudades con metro —Tokio, Osaka, Kioto— funcionan con la misma lógica: tarifa por distancia, puertas de acceso donde se toca la tarjeta IC o se inserta el billete, y máquinas con plano de tarifas y menú en inglés. Las líneas se identifican por color y nombre, y en los andenes cada dirección se indica con el nombre de la estación terminal, no con «norte» o «sur»: mira el nombre de la última parada de tu sentido en el panel.'},
+      {type:'cards', title:'Diferencias entre ciudades', items:[
+        {icon:'footprints', title:'Tokio', text:'Conviven dos compañías —Tokyo Metro y Toei— y trenes JR que dan servicio dentro de la ciudad, como la línea Yamanote. Cada red tiene sus propias tarifas; con tarjeta IC el cobro se calcula solo al pasar por las puertas, mientras que con billete suelto conviene mirar el plano de tarifas de la máquina.'},
+        {icon:'footprints', title:'Osaka', text:'Un solo operador, Osaka Metro, con la línea Midōsuji como columna vertebral norte-sur (Umeda, Namba, Tennōji). En la máquina de billetes hay un botón de trasbordo para combinar metro con autobús o con líneas privadas: pulsa primero ese botón y luego el de tarifa.'},
+        {icon:'footprints', title:'Kioto', text:'Solo dos líneas de metro (Karasuma y Tōzai), que cubren menos zona turística que el autobús: el metro es útil para bajar por el eje norte-sur o cruzar el centro este-oeste.'}
+      ]},
+      {type:'p', text:'Si el billete no alcanza para el destino, no hay problema: en la salida hay una máquina de ajuste de tarifa (a menudo de color amarillo) donde se paga solo la diferencia. Los metros cierran de noche: el último tren sale, según la línea, en torno a la medianoche, así que conviene consultar el último servicio en una aplicación de rutas antes de cenar lejos.'},
+      {type:'heading', text:'Cómo coger el autobús', icon:'footprints'},
+      {type:'cards', title:'Paso a paso, en la mayoría de ciudades', items:[
+        {icon:'footprints', title:'1. Subir', text:'Lo habitual es subir por la puerta trasera y bajar por la delantera; en Tokio y en algunos autobuses de tarifa única es al revés. Si pagas con tarjeta IC, tócala en el lector al subir (o al bajar, según la ciudad); en efectivo, coge el ticket numerado de la máquina junto a la puerta.'},
+        {icon:'footprints', title:'2. Seguir la tarifa', text:'En la pantalla junto al conductor aparecen las paradas y el importe que corresponde a cada número de ticket; ese importe va subiendo con la distancia. En ciudades de tarifa única no hay ticket ni cálculo.'},
+        {icon:'footprints', title:'3. Avisar la parada', text:'Pulsa el botón iluminado del asiento o de la barra antes de tu parada (suele decir «とまります»). El bus solo se detiene si alguien lo ha pedido o hay gente esperando.'},
+        {icon:'footprints', title:'4. Bajar y pagar', text:'Acércate a la puerta delantera cuando el bus se detenga, toca la tarjeta o echa el importe exacto en la caja junto al conductor; la máquina de cambio de ahí convierte billetes de 1.000 ¥ en monedas. Los billetes de más valor normalmente no se aceptan.'}
+      ]},
+      {type:'cards', title:'Cómo cambia según la ciudad', items:[
+        {icon:'footprints', title:'Kioto', text:'Tarifa única de 230 ¥ en la zona central; se sube por la puerta trasera y se paga o se toca la tarjeta al bajar por la delantera. Es el transporte clave para Higashiyama, Arashiyama y el norte.'},
+        {icon:'footprints', title:'Osaka', text:'Se sube por la puerta trasera y se baja por la delantera; en la zona central la tarifa es única (unos 210 ¥ según las fuentes consultadas, conviene comprobar el importe vigente). El metro es más práctico para casi todo lo turístico.'},
+        {icon:'footprints', title:'Tokio', text:'En los autobuses de Toei se sube por la puerta delantera, se paga o se toca la tarjeta una sola vez al subir y se baja por la puerta central. Existe un pase de un día de 700 ¥ para los autobuses Toei dentro de los 23 distritos.'},
+        {icon:'footprints', title:'Nara', text:'Nara Kotsu combina líneas de tarifa única, donde se sube por delante y se paga al conductor, con líneas por distancia, donde se sube por detrás con ticket numerado o tarjeta IC y se paga al bajar. Comprueba en la parte delantera del bus cuál es el caso.'},
+        {icon:'footprints', title:'Kamakura', text:'Los autobuses Enoden funcionan con pago anticipado —se sube por delante, se indica la parada de destino y se paga o se toca la tarjeta al subir—; los de Keikyu suben por la puerta central o trasera con ticket numerado o tarjeta IC.'}
+      ]},
       {type:'heading', text:'Equipaje grande en el Shinkansen', icon:'clock'},
       {type:'p', text:'Desde 2020, llevar una maleta cuyas tres dimensiones sumen más de 160 cm obliga a reservar el asiento con el hueco para equipaje grande (la última fila del vagón) en los Shinkansen Tōkaidō, Sanyō, Kyūshū y Nishi-Kyūshū —los que conectan Tokio, Kioto, Osaka e Hiroshima—. La reserva no tiene coste extra si se hace al reservar el asiento, pero subir sin haberla hecho conlleva un cargo de 1.000 ¥ a bordo y el revisor puede pedirte que cambies el equipaje de sitio. La norma no aplica a los Shinkansen de JR East (Tōhoku, Jōetsu, Hokuriku) ni a trenes limitados como el Haruka.'},
       {type:'heading', text:'Conectividad: eSIM o wifi de bolsillo', icon:'book'},
