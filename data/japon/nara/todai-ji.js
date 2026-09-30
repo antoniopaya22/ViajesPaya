@@ -39,7 +39,7 @@ addJapanPlace({
     ]},
     {type:'heading', text:'Omizutori, el festival del fuego', icon:'flame'},
     {type:'stop', title:'Antorchas gigantes en el vecino Nigatsu-dō', text:[
-      'Cada noche del 1 al 14 de marzo, en el Nigatsu-dō —un salón anexo situado en la ladera, algo apartado del Daibutsu-den—, los monjes suben al balcón con antorchas de entre 6 y 8 metros de longitud y las agitan para hacer caer una lluvia de brasas sobre los fieles congregados abajo: se cree que ejerce de purificación. La ceremonia Shuni-e de la que forma parte se celebra sin interrupción desde el año 752, lo que la convierte en uno de los rituales budistas más antiguos de Japón que siguen en activo.'
+      'Cada noche del 1 al 14 de marzo, en el <a href="#/pais/japon/ciudad/nara/lugar/nigatsu-do">Nigatsu-dō</a> —un salón anexo situado en la ladera, algo apartado del Daibutsu-den—, los monjes suben al balcón con antorchas de entre 6 y 8 metros de longitud y las agitan para hacer caer una lluvia de brasas sobre los fieles congregados abajo: se cree que ejerce de purificación. La ceremonia Shuni-e de la que forma parte se celebra sin interrupción desde el año 752, lo que la convierte en uno de los rituales budistas más antiguos de Japón que siguen en activo.'
     ]},
     {type:'callout', label:'¿SABÍAS QUE...?', items:[
       'El Daibutsu-den actual, con solo siete vanos de ancho frente a los once del edificio original, sigue siendo la mayor estructura de madera del mundo.',

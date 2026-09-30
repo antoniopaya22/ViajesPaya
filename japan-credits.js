@@ -1,5 +1,77 @@
 // Créditos de fotografías específicas de las fichas de Japón.
 Object.assign(imageCredits, {
+  "japon-comida-sushi.jpg": {
+    "url": "https://commons.wikimedia.org/wiki/File:Hand_rolls_and_assorted_nigiri_sushi.jpg",
+    "artist": "RightCowLeftCoast",
+    "license": "CC BY-SA 4.0",
+    "sourceTitle": "File:Hand rolls and assorted nigiri sushi.jpg"
+  },
+  "japon-comida-kaitenzushi.jpg": {
+    "url": "https://commons.wikimedia.org/wiki/File:Kaiten_sushi_(2131921293).jpg",
+    "artist": "Benjamin Hollis (Flickr)",
+    "license": "CC BY 2.0",
+    "sourceTitle": "File:Kaiten sushi (2131921293).jpg"
+  },
+  "japon-comida-ramen.jpg": {
+    "url": "https://commons.wikimedia.org/wiki/File:Onomichi_ramen_and_jiaozi_by_The_Other_View_in_Onomichi.jpg",
+    "artist": "The Other View (Flickr)",
+    "license": "CC BY-SA 2.0",
+    "sourceTitle": "File:Onomichi ramen and jiaozi by The Other View in Onomichi.jpg"
+  },
+  "japon-comida-gyoza.jpg": {
+    "url": "https://commons.wikimedia.org/wiki/File:Japanese_pan_fried_gyoza.jpg",
+    "artist": "Adryan R. Villanueva",
+    "license": "CC BY-SA 4.0",
+    "sourceTitle": "File:Japanese pan fried gyoza.jpg"
+  },
+  "japon-comida-tonkatsu.jpg": {
+    "url": "https://commons.wikimedia.org/wiki/File:%E3%81%A8%E3%82%93%E3%81%8B%E3%81%A4%E5%92%8C%E5%B9%B82022_01.jpg",
+    "artist": "ノボホショコロトソ",
+    "license": "CC BY 4.0",
+    "sourceTitle": "File:とんかつ和幸2022 01.jpg"
+  },
+  "japon-comida-wagyu.jpg": {
+    "url": "https://commons.wikimedia.org/wiki/File:Motobu_Beef_for_Yakiniku.jpg",
+    "artist": "Miyuki Meinaka",
+    "license": "CC BY-SA 4.0",
+    "sourceTitle": "File:Motobu Beef for Yakiniku.jpg"
+  },
+  "japon-comida-yakiniku.jpg": {
+    "url": "https://commons.wikimedia.org/wiki/File:Kashiraniku_001.jpg",
+    "artist": "Ocdp",
+    "license": "CC0",
+    "sourceTitle": "File:Kashiraniku 001.jpg"
+  },
+  "japon-comida-teppanyaki.jpg": {
+    "url": "https://commons.wikimedia.org/wiki/File:Kobe_steak_preparation,_in_kobe,_02.jpg",
+    "artist": "sailko",
+    "license": "CC BY-SA 3.0",
+    "sourceTitle": "File:Kobe steak preparation, in kobe, 02.jpg"
+  },
+  "japon-comida-okonomiyaki.jpg": {
+    "url": "https://commons.wikimedia.org/wiki/File:Okonomiyaki_-a_Japanese_savory_pancake_in_Osaka,_Japan.jpg",
+    "artist": "Joli Rumi",
+    "license": "CC BY-SA 4.0",
+    "sourceTitle": "File:Okonomiyaki -a Japanese savory pancake in Osaka, Japan.jpg"
+  },
+  "japon-comida-sake.jpg": {
+    "url": "https://commons.wikimedia.org/wiki/File:Meiji_Jingu_sake_barrels_closeup_2016-12-04.jpg",
+    "artist": "KFP",
+    "license": "CC BY 4.0",
+    "sourceTitle": "File:Meiji Jingu sake barrels closeup 2016-12-04.jpg"
+  },
+  "japon-comida-konbini.jpg": {
+    "url": "https://commons.wikimedia.org/wiki/File:LAWSON_Isesaki_midorimachi.jpg",
+    "artist": "Happiness626",
+    "license": "CC BY-SA 4.0",
+    "sourceTitle": "File:LAWSON Isesaki midorimachi.jpg"
+  },
+  "japon-nigatsudo.jpg": {
+    "url": "https://commons.wikimedia.org/wiki/File:Todai-ji_Nigatsu-do_National_Treasure_%E5%9B%BD%E5%AE%9D%E6%9D%B1%E5%A4%A7%E5%AF%BA%E4%BA%8C%E6%9C%88%E5%A0%8201.JPG",
+    "artist": "Nekosuki",
+    "license": "CC BY-SA 4.0",
+    "sourceTitle": "File:Todai-ji Nigatsu-do National Treasure 国宝東大寺二月堂01.JPG"
+  },
   "japon-osaka-shinsaibashi.jpg": {
     "url": "https://commons.wikimedia.org/wiki/File:Shinsaibashi_Suji_Shopping_Street_Osaka_Japan_by_Don_Ramey_Logan.jpg",
     "artist": "WPPilot",

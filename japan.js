@@ -93,6 +93,7 @@ const japanCountry = {
     intro: 'Más allá de la comida callejera de cada ciudad, estos son los grandes platos e ingredientes que definen la cocina japonesa en todo el país.',
     blocks: [
       {type:'heading', text:'Sushi y sashimi, del pescado fermentado al nigiri', icon:'droplet'},
+      {type:'image', src:'assets/japon-comida-sushi.jpg', alt:'Piezas de nigiri y sashimi', caption:'Nigiri y sashimi: arroz avinagrado con pescado encima, o solo el pescado en lonchas.'},
       {type:'p', text:'El sushi nació como método de conservación: el narezushi, pescado fermentado en arroz, probablemente se originó en el sudeste asiático y llegó a Japón con la expansión del cultivo de arroz inundado en el periodo Yayoi. El funazushi, elaborado con carpa cruciana del lago Biwa (Shiga), sigue siendo hoy el heredero directo de aquella tradición.'},
       {type:'p', text:'El nigiri tal como se conoce hoy nace en el periodo Edo: se atribuye su creación a Hanaya Yohei hacia 1824, en el barrio de Ryōgoku, como una comida rápida de porciones más grandes y menos avinagradas que las actuales. Técnicamente, sushi es cualquier preparación con arroz avinagrado (shari), mientras que sashimi es solo pescado o marisco crudo en lonchas, sin arroz: la palabra ya aparece en un recetario de 1489.'},
       {type:'cards', title:'Tres formas de comerlo', items:[
@@ -100,7 +101,16 @@ const japanCountry = {
         {icon:'droplet', title:'Makizushi', text:'Rollos enrollados con una esterilla de bambú, envueltos en alga nori.'},
         {icon:'droplet', title:'Temaki', text:'Conos grandes de alga nori pensados para comerse con las manos.'}
       ]},
+      {type:'heading', text:'Kaiten-zushi: el sushi que da vueltas', icon:'droplet'},
+      {type:'image', src:'assets/japon-comida-kaitenzushi.jpg', alt:'Platos de sushi en una cinta transportadora', caption:'En un kaiten-zushi los platos pasan frente a cada comensal y se cogen al vuelo.'},
+      {type:'p', text:'El sushi giratorio nació en 1958 en Osaka, cuando Yoshiaki Shiraishi abrió Mawaru Genroku Sushi tras años buscando cómo servir sushi barato con poco personal: la idea le llegó viendo una cinta transportadora de botellas en una fábrica de cerveza Asahi. Tras muchas pruebas fijó la velocidad de la cinta en unos 8 centímetros por segundo, lo bastante lenta para coger el plato sin prisas y lo bastante rápida para que nadie se impaciente. El sistema se dio a conocer al mundo en la Expo de Osaka de 1970.'},
+      {type:'list', title:'Dónde probarlo', items:[
+        '<strong>Heiroku Sushi</strong> (Tokio) — una de las cadenas más populares del país; su local más conocido está en la avenida Omotesandō.',
+        '<strong>Sushiro</strong> y <strong>Kura Sushi</strong> — las grandes cadenas de sushi giratorio de precio ajustado, con locales por todo Japón y cada vez más en el centro de las ciudades. No esperes sushi de alta gama, pero sí buena relación calidad-precio.',
+        '<strong>Kaiten Sushi Uogashi</strong> (Kioto) — una pequeña cadena con calidad algo superior a las anteriores y un buen local cerca de la estación de Kioto.'
+      ]},
       {type:'heading', text:'Ramen: un mismo plato, un acento distinto en cada región', icon:'flame'},
+      {type:'image', src:'assets/japon-comida-ramen.jpg', alt:'Un bol de ramen', caption:'Caldo, fideos y toppings: la combinación cambia según la región.'},
       {type:'p', text:'El ramen desciende de los fideos cantoneses que trajeron inmigrantes chinos a Yokohama a finales del siglo XIX, conocidos primero como «nankin soba» y más tarde «chūka soba». El nombre «ramen» se impuso tras el lanzamiento del ramen instantáneo de Momofuku Ando en 1958, y el plato se convirtió en un icono nacional en la posguerra, cuando la escasez de arroz y la llegada de trigo importado de Estados Unidos impulsaron su consumo.'},
       {type:'cards', title:'Cuatro estilos regionales', items:[
         {icon:'flame', title:'Sapporo', text:'Caldo de miso, con maíz, mantequilla y marisco.'},
@@ -108,16 +118,81 @@ const japanCountry = {
         {icon:'flame', title:'Tokio', text:'Caldo shoyu (soja), con fideos finos y rizados.'},
         {icon:'flame', title:'Kitakata', text:'Fideos gruesos y planos en caldo de cerdo y niboshi; la ciudad con más locales de ramen per cápita de Japón.'}
       ]},
+      {type:'list', title:'Dónde probarlo', items:[
+        '<strong>Tenkaippin</strong> (Kioto) — cadena de ramen de Kioto con un caldo kotteri (denso) muy popular en todo el país.',
+        '<strong>Hakata Ikkosha</strong> (Kioto, Osaka y Tokio) — tonkotsu ramen al estilo de Fukuoka.',
+        '<strong>Kitakata Ramen Bannai</strong> (Kioto, Osaka y Tokio) — ramen de Kitakata, uno de los tres estilos más famosos de Japón junto al de Sapporo y el de Hakata.',
+        '<strong>Ichiran</strong> (Kioto, Osaka y Tokio) — tonkotsu ramen con cabinas individuales para comer con la mínima interacción posible.',
+        '<strong>Afuri</strong> (Tokio) — ramen con yuzu, con opciones veganas.',
+        '<strong>Tsuta</strong> (Tokio) — el primer restaurante de ramen con una estrella Michelin, con caldos de salsa de soja y de sal.',
+        '<strong>Nakiryu</strong> (Tokio) — el segundo ramen con estrella Michelin (2016); su plato más popular son los fideos dandan, con carne picada de cerdo y caldo picante de origen sichuanés.'
+      ]},
+      {type:'list', title:'Callejones del ramen: varios locales en un mismo sitio', items:[
+        '<strong>Tokyo Ramen Street</strong> (Tokio) — ocho grandes restaurantes de ramen bajo la estación de Tokio; los fines de semana siempre hay cola.',
+        '<strong>Tokyo Ramen Yokochō</strong> (Tokio) — otro callejón, distinto del anterior, en la zona subterránea de Yaesu; se puede ir andando entre ambos por los pasillos subterráneos.',
+        '<strong>Ramen Gekisenjō</strong> (Tokio) — en el centro comercial KITTE Marunouchi, junto a la salida Marunouchi de la estación.',
+        '<strong>Ramen Kokugikan Mai</strong> (Tokio) — en el interior del centro comercial Aqua City, en Odaiba.',
+        '<strong>Kyoto Ramen Kōji</strong> (Kioto) — en la planta 10 de la estación de Kioto, ideal por su ubicación.',
+        '<strong>Ichijōji Ramen Street</strong> (Kioto) — al noreste de la ciudad, una zona entera dedicada a restaurantes de ramen.'
+      ]},
+      {type:'heading', text:'Gyoza, el jiaozi chino que Japón hizo suyo', icon:'flame'},
+      {type:'image', src:'assets/japon-comida-gyoza.jpg', alt:'Gyozas fritas en un plato', caption:'La gyoza japonesa se fríe por un lado hasta dorarla y se termina al vapor.'},
+      {type:'p', text:'La gyoza desciende del jiaozi chino, una empanadilla documentada ya en la dinastía Tang (618-907). Un recetario del periodo Edo describe tres formas de cocinarla —frita, a la plancha y al vapor—, y desde la era Meiji se servía en los barrios chinos de Yokohama y Kobe, pero siguió siendo un plato percibido como chino. Su popularización llegó tras la Segunda Guerra Mundial, con el regreso de muchos japoneses repatriados de China acostumbrados a comerla. Y mientras en China el jiaozi suele hervirse, en Japón se impuso la versión frita por un lado.'},
+      {type:'callout', label:'¿SABÍAS QUE...?', items:[
+        'Utsunomiya, al norte de Tokio, se presenta como la «ciudad de la gyoza» de Japón: cuenta con cerca de 350 restaurantes especializados, y se considera que el primero abrió junto a su estación en 1952.'
+      ]},
+      {type:'heading', text:'Tonkatsu y gyukatsu: la chuleta empanada', icon:'scroll'},
+      {type:'image', src:'assets/japon-comida-tonkatsu.jpg', alt:'Tonkatsu cortado con col y arroz', caption:'Tonkatsu: chuleta de cerdo empanada en panko, cortada en tiras y servida con col cruda.'},
+      {type:'p', text:'El tonkatsu nació en 1899 en Rengatei, un restaurante occidental de Ginza (Tokio) abierto en 1895, como adaptación de la côtelette de veau francesa que Japón había importado en el periodo Meiji. Allí sustituyeron el ternero por cerdo, más barato, y cambiaron la fritura en sartén con mantequilla por la fritura sumergida en aceite —una técnica tomada de la tempura—, menos grasienta al paladar japonés. Junto con el curry rice y el korokke, se cuenta entre los tres grandes yōshoku, la cocina occidental adaptada en Japón.'},
+      {type:'p', text:'La variante de ternera, el gyukatsu, se sirve por dentro poco hecha y suele terminar de cocinarse en una pequeña parrilla individual en la mesa.'},
+      {type:'list', title:'Dónde probarlo', items:[
+        '<strong>Tonkatsu Sugita</strong> (Tokio) — barra especializada en tonkatsu de calidad a precios razonables, en el barrio de Kuramae.',
+        '<strong>Ginza Katsukami</strong> (Tokio) — barra de tonkatsu con menús omakase, en Ginza.',
+        '<strong>Katsukura</strong> (Kioto) — cadena de tonkatsu nacida en Kioto, famosa por su salsa especial con sésamo que muele el propio comensal.',
+        '<strong>Misokatsu Yabaton</strong> (Osaka y Tokio) — cerdo empanado con salsa de miso rojo, típico de Nagoya, con locales también en estas dos ciudades.',
+        '<strong>Hirata Bokujō</strong> (Tokio) — tonkatsu premium de cerdo de la propia granja, de las variedades Kinka y Sangen.',
+        '<strong>Tonki</strong> (Tokio) — restaurante especializado en tonkatsu en Tokio.',
+        '<strong>Wagyumafia The Cutlet Sandwich</strong> (Tokio, Nakameguro) — katsusando de wagyu, incluso de carne de Kobe: carísimo, pero muy comentado.',
+        '<strong>Gyukatsu Ichi Ni San</strong> (Tokio, Akihabara) — pequeño local de gyukatsu donde merece la pena hacer cola.'
+      ]},
       {type:'heading', text:'Wagyu, la ternera más marmoleada del mundo', icon:'trophy'},
+      {type:'image', src:'assets/japon-comida-wagyu.jpg', alt:'Carne de wagyu con su marmoleado', caption:'El marmoleado —vetas de grasa entre la carne— es lo que define al wagyu.'},
       {type:'p', text:'Wagyu no es una raza sino cuatro, oficializadas en 1944 (Japanese Black, Brown, Polled y Shorthorn); más del 90% del ganado wagyu es de la variedad Black. Se clasifica por rendimiento (A-B-C) y calidad (1 a 5, según marmoleado, color y firmeza), hasta el máximo A5.'},
       {type:'cards', title:'Dos denominaciones históricas', items:[
         {icon:'trophy', title:'Kobe', text:'Solo la cepa Tajima de Japanese Black, criada en Hyōgo; exige un marmoleado mínimo BMS 6 y una canal de menos de 500 kg. Se exporta fuera de Japón solo desde 2012.'},
         {icon:'trophy', title:'Matsusaka', text:'Solo hembras vírgenes de Japanese Black en la prefectura de Mie, cada una con un identificador propio de 10 dígitos trazable hasta la granja.'}
       ]},
+      {type:'heading', text:'Yakiniku: la brasa que llegó de Corea', icon:'flame'},
+      {type:'image', src:'assets/japon-comida-yakiniku.jpg', alt:'Carne cocinándose en una parrilla de yakiniku', caption:'En el yakiniku cada comensal asa su propia carne sobre una parrilla en la mesa.'},
+      {type:'p', text:'El yakiniku —carne cortada en piezas finas y asada por el propio comensal— tiene su origen en la barbacoa coreana. Los restaurantes de este estilo que dieron forma al yakiniku actual los abrieron hacia 1945, sobre todo en Osaka y Tokio, coreanos residentes en Japón (zainichi). El término «yakiniku» se generalizó en la posguerra como una forma neutra de referirse a estos locales, en un momento en que las referencias a Corea se dividían entre Corea del Norte y Corea del Sur.'},
+      {type:'list', title:'Dónde probarlo', items:[
+        '<strong>Sumibi Yakiniku Nakahara</strong> (Tokio) — restaurante de primer nivel especializado en yakiniku de wagyu; si consigues sitio en la barra, mejor todavía.',
+        '<strong>Gyu-Kaku</strong> — la gran cadena de yakiniku, con menús de tabehodai (todo lo que quieras comer) por todo el país.',
+        '<strong>Nikudoko Danro</strong> (Kioto) — yakiniku en un extremo de <a href="#/pais/japon/ciudad/kioto/lugar/pontocho">Pontochō</a>.'
+      ]},
+      {type:'heading', text:'Teppanyaki: la plancha convertida en espectáculo', icon:'trophy'},
+      {type:'image', src:'assets/japon-comida-teppanyaki.jpg', alt:'Un cocinero preparando comida en una plancha de teppanyaki', caption:'En el teppanyaki el cocinero trabaja frente al comensal sobre una gran plancha de hierro.'},
+      {type:'p', text:'En septiembre de 1945, en un Kobe todavía devastado por la guerra, Shigeji Fujioka abrió el primer restaurante de teppanyaki del mundo, Misono. Había ido a los muelles a buscar una plancha de hierro para cocinar okonomiyaki; cuando un soldado estadounidense echó en falta la carne, le asó ternera sobre esa misma plancha y nació el estilo. Gustó más a los extranjeros que a los japoneses, y los cocineros fueron reforzando el espectáculo —cuchillos, malabares, la «cebolla volcán» en llamas— hasta convertirlo en lo que hoy se conoce en todo el mundo.'},
+      {type:'heading', text:'Okonomiyaki y takoyaki: la plancha popular', icon:'flame'},
+      {type:'image', src:'assets/japon-comida-okonomiyaki.jpg', alt:'Okonomiyaki con salsa, mayonesa y copos de bonito', caption:'Okonomiyaki con su salsa dulce, mayonesa y copos de bonito por encima.'},
+      {type:'p', text:'El okonomiyaki —literalmente «lo que te guste a la plancha»— adoptó su forma y su nombre actuales en Osaka a finales de los años treinta, a partir de un tentempié anterior a la guerra llamado yōshokuyaki. En Hiroshima se desarrolló un estilo propio tras la Segunda Guerra Mundial, cuando la escasez llevó a estirar la masa con mucha más col.'},
+      {type:'cards', title:'Dos estilos, la misma plancha', items:[
+        {icon:'flame', title:'Estilo Osaka', text:'Todos los ingredientes se mezclan con la masa antes de cocinar; se sirve con mayonesa y una salsa algo especiada.'},
+        {icon:'flame', title:'Estilo Hiroshima', text:'Una fina base de masa sobre la que se apilan capas de col, fideos yakisoba o udon y huevo frito; lleva hasta cuatro veces más col y una salsa más dulce.'}
+      ]},
+      {type:'p', text:'El takoyaki, las bolitas de masa con pulpo, se atribuye a Tomekichi Endō, que en 1935 estableció en Osaka el puesto Aizuya, considerado el takoyaki más antiguo. Endō partió de un tentempié propio anterior —el rajioyaki, con ternera y konjac— inspirado en el akashiyaki de Hyōgo, hasta llegar a la receta con pulpo que hoy se vende en <a href="#/pais/japon/ciudad/osaka/lugar/dotonbori">Dōtonbori</a> y en cualquier festival de verano.'},
+      {type:'list', title:'Dónde probarlo', items:[
+        '<strong>Ajinoya</strong> (Osaka) — junto a <a href="#/pais/japon/ciudad/osaka/lugar/dotonbori">Dōtonbori</a>; hay que hacer cola, pero merece la pena.',
+        '<strong>Tsuruhashi Fugetsu</strong> (Osaka y Tokio) — cadena de okonomiyaki al estilo Osaka, yakisoba y otros platos de teppanyaki.',
+        '<strong>Negiyaki Yamamoto</strong> (Osaka) — cadena especializada en negiyaki, un tipo de okonomiyaki con cebolleta típico de Osaka.',
+        '<strong>Moheji</strong> (Tokio) — cadena de monjayaki con varios locales, con un dashi potente e ingredientes sorprendentes.'
+      ]},
       {type:'heading', text:'Sake y la cultura del izakaya', icon:'teacup'},
+      {type:'image', src:'assets/japon-comida-sake.jpg', alt:'Barriles de sake apilados', caption:'Barriles de sake decorativos (kazaridaru), ofrendas habituales en los santuarios.'},
       {type:'p', text:'El grado de pulido del arroz (seimai-buai) determina el tipo de sake: honjōzō (65-70% del grano restante), ginjō (60% o menos, fermentación lenta en frío) y daiginjō (50% o menos); el junmai es el que no lleva alcohol añadido.'},
       {type:'p', text:'El izakaya —literalmente «quedarse» más «tienda de sake»— tiene raíces documentadas ya en el Kojiki, del siglo VIII. Se consolidó en el periodo Edo, cuando las tabernas donde se bebía de pie empezaron a ofrecer primero barriles para sentarse y después pequeños aperitivos (sakana), sentando las bases del izakaya moderno.'},
       {type:'heading', text:'Konbini, la comida de las tiendas de conveniencia', icon:'bag'},
+      {type:'image', src:'assets/japon-comida-konbini.jpg', alt:'Una tienda de conveniencia japonesa', caption:'Las tiendas de conveniencia venden comida fresca renovada varias veces al día.'},
       {type:'p', text:'Japón tiene una tienda de conveniencia por cada 2.000 habitantes —frente a una por cada 8.000 en Estados Unidos—, lideradas por 7-Eleven, Lawson y FamilyMart. Reciben reparto de comida fresca desde fábricas varias veces al día, lo que explica una calidad muy por encima de la media internacional del formato; el onigiri, por ejemplo, incorporó en los años 80 un envoltorio de plástico que mantiene el alga nori separada y crujiente hasta el momento de comerlo.'},
       {type:'callout', label:'¿SABÍAS QUE...?', items:[
         'La tempura no es una técnica japonesa original: la introdujeron comerciantes y misioneros portugueses en el siglo XVI, a través de Nagasaki; su nombre vendría del latín «tempora», los periodos de ayuno católico en los que se comía pescado y verdura rebozados en vez de carne.'
