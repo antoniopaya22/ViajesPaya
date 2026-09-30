@@ -24,6 +24,36 @@ Object.assign(imageCredits, {
     "license": "CC BY 2.0",
     "sourceTitle": "File:Sorihashi Bridge, Sumiyoshi-taisha Shrine - Oct 15, 2015.jpg"
   },
+  "japon-kioto-palacio-imperial.jpg": {
+    "url": "https://commons.wikimedia.org/wiki/File:Kyoto-gosho_Shishinden_zenkei-5.jpg",
+    "artist": "Saigen Jiro",
+    "license": "CC0",
+    "sourceTitle": "File:Kyoto-gosho Shishinden zenkei-5.jpg"
+  },
+  "japon-kioto-nishi-honganji.jpg": {
+    "url": "https://commons.wikimedia.org/wiki/File:Kyoto_Nishi_Hongan-ji_Hof_2.jpg",
+    "artist": "Zairon",
+    "license": "CC BY-SA 4.0",
+    "sourceTitle": "File:Kyoto Nishi Hongan-ji Hof 2.jpg"
+  },
+  "japon-kioto-daigoji.jpg": {
+    "url": "https://commons.wikimedia.org/wiki/File:Cherry_blossoms_and_Five-storied_Pagoda,_Daigo-ji_temple,_Kyoto_-_Mar_27,_2009.jpg",
+    "artist": "Yousuke",
+    "license": "CC BY-SA 2.0",
+    "sourceTitle": "File:Cherry blossoms and Five-storied Pagoda, Daigo-ji temple, Kyoto - Mar 27, 2009.jpg"
+  },
+  "japon-kioto-camino-filosofia.jpg": {
+    "url": "https://commons.wikimedia.org/wiki/File:Cherry_Blossom_@_Philosopher%27s_Path_,Kyoto_-_panoramio.jpg",
+    "artist": "::::=UT=::::",
+    "license": "CC BY-SA 3.0",
+    "sourceTitle": "File:Cherry Blossom @ Philosopher's Path ,Kyoto - panoramio.jpg"
+  },
+  "japon-kioto-rio-kamo.jpg": {
+    "url": "https://commons.wikimedia.org/wiki/File:Nighttime_view_along_the_Kamo_River_in_Pontocho,_Kyoto,_Japan_20170409105043_(34159633185).jpg",
+    "artist": "Yiannis Theologos Michellis",
+    "license": "CC0",
+    "sourceTitle": "File:Nighttime view along the Kamo River in Pontocho, Kyoto, Japan 20170409105043 (34159633185).jpg"
+  },
   "japon-nishiki.jpg": {
     "url": "https://commons.wikimedia.org/wiki/File%3ANishiki_Ichiba%2C_la_cocina_de_Kioto_(14702738483).jpg",
     "artist": "Lorena a.k.a. Loretahur",
