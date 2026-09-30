@@ -2,15 +2,25 @@
 // Bump SW_VERSION only when this caching logic itself changes, not on content updates:
 // every same-origin GET already gets stale-while-revalidate, so new deploys reach
 // users automatically without needing a manifest of files to keep in sync.
-const SW_VERSION = 'v1';
+const SW_VERSION = 'v2';
 const CACHE_NAME = `viajespaya-${SW_VERSION}`;
-const PRECACHE_URLS = ['./', './index.html', './styles.css', './script.js', './japan.js', './credits.js', './japan-credits.js', './manifest.json', './favicon.svg'];
+const SHELL_URLS = ['./', './index.html', './styles.css', './manifest.json', './favicon.svg'];
 
 self.addEventListener('install', event => {
   event.waitUntil(
-    caches.open(CACHE_NAME)
-      .then(cache => cache.addAll(PRECACHE_URLS))
-      .then(() => self.skipWaiting())
+    (async () => {
+      const cache = await caches.open(CACHE_NAME);
+      await cache.addAll(SHELL_URLS);
+      // The whole site's data (every country/city/place) loads as same-origin
+      // <script src> tags on the shell page — discover and cache them straight
+      // from index.html so a new country/city/bundle is precached automatically,
+      // with no separate file list to keep in sync (see the pages.yml deploy
+      // outage this same drift caused once already).
+      const shellHtml = await (await fetch('./')).text();
+      const scriptUrls = [...shellHtml.matchAll(/<script\s+src="(\.\/[^"]+)"/g)].map(m => m[1]);
+      await cache.addAll(scriptUrls);
+      await self.skipWaiting();
+    })()
   );
 });
 
