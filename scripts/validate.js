@@ -174,6 +174,7 @@ for (const place of places) {
 for (const country of countries) {
   if (country.guide) walkBlocksForIcons(country.guide.blocks, `${country.__configSlug}.guide`);
   if (country.food) walkBlocksForIcons(country.food.blocks, `${country.__configSlug}.food`);
+  if (country.transport) walkBlocksForIcons(country.transport.blocks, `${country.__configSlug}.transport`);
   if (country.image) checkImageFile(country.image, `country ${country.__configSlug}`, { cardContext: true });
 }
 for (const city of cities) {

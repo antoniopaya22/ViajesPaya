@@ -415,18 +415,28 @@ function destinations() {
   return `<main id="contenido" class="page-main"><div class="shell">${breadcrumbs([{label:'Destinos'}])}<div class="page-intro"><span class="section-kicker">EL MAPA EMPIEZA AQUÍ</span><h1>¿Dónde nos <em>vamos?</em></h1><p>Elige un país y descubre sus ciudades, rutas y lugares imprescindibles.</p></div><div class="destination-grid destination-page-grid">${countries.map(countryCard).join('')}</div></div></main>`;
 }
 
-function countryPage(country) {
+const countryTabs = ['informacion','ciudades','comida','transporte'];
+function countryPage(country, tab = 'ciudades') {
   const selected = country.cities.map(cityBy);
-  const guide = country.guide;
-  const guideHeadings = guide ? guide.blocks.filter(b => b.type === 'heading') : [];
-  const guideToc = guideHeadings.length ? `<div class="highlights-row">${guideHeadings.map((h,i) => `<a class="highlight-chip" href="#${slugify(h.text)}" data-scroll="${slugify(h.text)}"><span class="chip-num">${i+1}</span>${h.icon && topicIcons[h.icon] ? `<span class="chip-icon">${topicIcons[h.icon]}</span>` : ''}${h.text}</a>`).join('')}</div>` : '';
-  const guideSection = guide ? `<section class="section guide-section" id="transporte"><div class="shell"><div class="section-heading"><div><span class="section-kicker">ANTES DE IR</span><h2>${guide.title}</h2></div><p>${guide.intro}</p></div>${guideToc}<div class="guide-body">${renderBlocks(guide.blocks)}</div></div></section>` : '';
-  const food = country.food;
-  const foodHeadings = food ? food.blocks.filter(b => b.type === 'heading') : [];
-  const foodToc = foodHeadings.length ? `<div class="highlights-row">${foodHeadings.map((h,i) => `<a class="highlight-chip" href="#${slugify(h.text)}" data-scroll="${slugify(h.text)}"><span class="chip-num">${i+1}</span>${h.icon && topicIcons[h.icon] ? `<span class="chip-icon">${topicIcons[h.icon]}</span>` : ''}${h.text}</a>`).join('')}</div>` : '';
-  const foodSection = food ? `<section class="section guide-section" id="comida"><div class="shell"><div class="section-heading"><div><span class="section-kicker">COMIDA TÍPICA</span><h2>${food.title}</h2></div><p>${food.intro}</p></div>${foodToc}<div class="guide-body">${renderBlocks(food.blocks)}</div></div></section>` : '';
-  const sectionNav = `<div class="shell"><nav class="zone-nav country-section-nav" aria-label="Secciones de ${country.name}"><a class="zone-chip" href="#ciudades" data-scroll="ciudades"><span class="zone-dot" style="background:var(--orange)"></span>Ciudades<span class="zone-chip-count">${selected.length}</span></a>${food ? `<a class="zone-chip" href="#comida" data-scroll="comida"><span class="zone-dot" style="background:var(--green)"></span>Comida</a>` : ''}${guide ? `<a class="zone-chip" href="#transporte" data-scroll="transporte"><span class="zone-dot" style="background:#a8672c"></span>Transporte</a>` : ''}</nav></div>`;
-  return `<main id="contenido"><div class="shell">${breadcrumbs([{label:'Destinos',href:'#/destinos'},{label:country.name}])}</div><section class="country-hero"><div class="shell country-hero-grid"><div class="country-copy"><span class="section-kicker">DESTINO / ${country.flag}</span><h1>${country.name}<span class="hero-period">.</span></h1><p>${country.intro}</p><div class="country-meta"><span>${selected.length} ${selected.length === 1 ? 'ciudad' : 'ciudades'} por explorar</span><span>✳</span><span>${country.kicker}</span></div></div><div class="country-image">${picture(country.image, `Vista de ${country.name}`)}</div></div></section>${sectionNav}<section class="section" id="ciudades"><div class="shell"><div class="section-heading"><div><span class="section-kicker">DE CALLE EN CALLE</span><h2>Ciudades de <em>${country.name}.</em></h2></div><p>Elige una ciudad y empieza a preparar tu próxima escapada.</p></div><div class="city-grid">${selected.map(cityCard).join('')}</div></div></section>${guideSection}${foodSection}</main>`;
+  const tocFor = blocks => {
+    const headings = blocks.filter(b => b.type === 'heading');
+    return headings.length ? `<div class="highlights-row">${headings.map((h,i) => `<a class="highlight-chip" href="#${slugify(h.text)}" data-scroll="${slugify(h.text)}"><span class="chip-num">${i+1}</span>${h.icon && topicIcons[h.icon] ? `<span class="chip-icon">${topicIcons[h.icon]}</span>` : ''}${h.text}</a>`).join('')}</div>` : '';
+  };
+  const guideSectionOf = (data, kicker) => data ? `<section class="section guide-section"><div class="shell"><div class="section-heading"><div><span class="section-kicker">${kicker}</span><h2>${data.title}</h2></div><p>${data.intro}</p></div>${tocFor(data.blocks)}<div class="guide-body">${renderBlocks(data.blocks)}</div></div></section>` : '';
+  const citiesSection = `<section class="section"><div class="shell"><div class="section-heading"><div><span class="section-kicker">DE CALLE EN CALLE</span><h2>Ciudades de <em>${country.name}.</em></h2></div><p>Elige una ciudad y empieza a preparar tu próxima escapada.</p></div><div class="city-grid">${selected.map(cityCard).join('')}</div></div></section>`;
+  const tabs = [
+    {id:'informacion', label:'Información', dot:'#c98a4b', data:country.guide, kicker:'ANTES DE IR'},
+    {id:'ciudades', label:'Ciudades', dot:'var(--orange)', count:selected.length},
+    {id:'comida', label:'Comida', dot:'var(--green)', data:country.food, kicker:'COMIDA TÍPICA'},
+    {id:'transporte', label:'Transporte', dot:'#a8672c', data:country.transport, kicker:'CÓMO MOVERSE'}
+  ].filter(t => t.id === 'ciudades' || t.data);
+  const active = tabs.find(t => t.id === tab) || tabs.find(t => t.id === 'ciudades');
+  const tabHref = t => t.id === 'ciudades' ? countryUrl(country.slug) : `${countryUrl(country.slug)}/${t.id}`;
+  const tabNav = `<div class="shell"><nav class="zone-nav country-section-nav" aria-label="Secciones de ${country.name}">${tabs.map(t => `<a class="zone-chip" href="${tabHref(t)}"${t === active ? ' aria-current="page"' : ''}><span class="zone-dot" style="background:${t.dot}"></span>${t.label}${t.count ? `<span class="zone-chip-count">${t.count}</span>` : ''}</a>`).join('')}</nav></div>`;
+  const body = active.id === 'ciudades' ? citiesSection : guideSectionOf(active.data, active.kicker);
+  const crumbs = [{label:'Destinos',href:'#/destinos'}, active.id === 'ciudades' ? {label:country.name} : {label:country.name,href:countryUrl(country.slug)}];
+  if (active.id !== 'ciudades') crumbs.push({label:active.label});
+  return `<main id="contenido"><div class="shell">${breadcrumbs(crumbs)}</div><section class="country-hero"><div class="shell country-hero-grid"><div class="country-copy"><span class="section-kicker">DESTINO / ${country.flag}</span><h1>${country.name}<span class="hero-period">.</span></h1><p>${country.intro}</p><div class="country-meta"><span>${selected.length} ${selected.length === 1 ? 'ciudad' : 'ciudades'} por explorar</span><span>✳</span><span>${country.kicker}</span></div></div><div class="country-image">${picture(country.image, `Vista de ${country.name}`)}</div></div></section>${tabNav}${body}</main>`;
 }
 
 function cityPage(city) {
@@ -526,6 +536,7 @@ function render(preserveScroll = false) {
     const country = countryBy(segments[1]);
     const city = cityBy(segments[3]);
     if (segments.length === 2 && country) content = countryPage(country);
+    else if (segments.length === 3 && country && countryTabs.includes(segments[2])) content = countryPage(country, segments[2]);
     else if (segments[2] === 'ciudad' && city && country && city.country === country.slug) {
       if (segments.length === 4) content = cityPage(city);
       else if (segments[4] === 'lugar' && segments.length === 6) {
@@ -541,7 +552,10 @@ function render(preserveScroll = false) {
     if ((segments.length === 0 && link.dataset.nav === 'home') || (segments[0] === link.dataset.nav)) link.setAttribute('aria-current','page');
   });
   document.title = `${document.querySelector('main h1')?.textContent.trim() || 'ViajesPaya'} — ViajesPaya`;
-  if (!preserveScroll) window.scrollTo({top:0,behavior:'instant'});
+  if (!preserveScroll) {
+    const tabNav = segments[0] === 'pais' && segments.length === 3 ? document.querySelector('.country-section-nav') : null;
+    window.scrollTo({top: tabNav ? Math.max(0, tabNav.getBoundingClientRect().top + window.scrollY - 24) : 0, behavior:'instant'});
+  }
   if (document.querySelector('.leaflet-map, .leaflet-multimap')) ensureLeaflet().then(initMaps);
   if (document.querySelector('.timeline-canvas')) ensureChart().then(initCharts);
 }

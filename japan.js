@@ -4,9 +4,9 @@ const japanCountry = {
   slug: 'japon', name: 'Japón', kicker: 'Tradición y energía urbana', flag: 'JP',
   intro: 'Templos, barrios llenos de vida y paisajes que invitan a mirar con atención. Explora cada lugar sin seguir un itinerario fijo.',
   image: 'assets/kioto.jpg', cities: ['kioto','nara','uji','osaka','miyajima','himeji','tokio','kamakura'],
-  guide: {
-    title: 'Guía práctica <em>de Japón.</em>',
-    intro: 'Transporte, tarjetas y presupuesto: lo esencial para organizar el viaje antes de pisar Japón.',
+  transport: {
+    title: 'Transporte <em>en Japón.</em>',
+    intro: 'Aeropuertos, pases, tarjetas IC, trenes, metro y autobuses: cómo moverte entre ciudades y dentro de ellas.',
     blocks: [
       {type:'heading', text:'Llegada: del aeropuerto a la ciudad', icon:'gate'},
       {type:'p', text:'Los vuelos internacionales suelen llegar a Narita o Haneda si el viaje empieza por Tokio, o al aeropuerto de Kansai si empieza por Osaka o Kioto. Los tres tienen un tren rápido directo al centro y alternativas más baratas en autobús o tren convencional.'},
@@ -103,7 +103,13 @@ const japanCountry = {
         {icon:'footprints', title:'Kamakura', text:'Los autobuses Enoden funcionan con pago anticipado —se sube por delante, se indica la parada de destino y se paga o se toca la tarjeta al subir—; los de Keikyu suben por la puerta central o trasera con ticket numerado o tarjeta IC.'}
       ]},
       {type:'heading', text:'Equipaje grande en el Shinkansen', icon:'clock'},
-      {type:'p', text:'Desde 2020, llevar una maleta cuyas tres dimensiones sumen más de 160 cm obliga a reservar el asiento con el hueco para equipaje grande (la última fila del vagón) en los Shinkansen Tōkaidō, Sanyō, Kyūshū y Nishi-Kyūshū —los que conectan Tokio, Kioto, Osaka e Hiroshima—. La reserva no tiene coste extra si se hace al reservar el asiento, pero subir sin haberla hecho conlleva un cargo de 1.000 ¥ a bordo y el revisor puede pedirte que cambies el equipaje de sitio. La norma no aplica a los Shinkansen de JR East (Tōhoku, Jōetsu, Hokuriku) ni a trenes limitados como el Haruka.'},
+      {type:'p', text:'Desde 2020, llevar una maleta cuyas tres dimensiones sumen más de 160 cm obliga a reservar el asiento con el hueco para equipaje grande (la última fila del vagón) en los Shinkansen Tōkaidō, Sanyō, Kyūshū y Nishi-Kyūshū —los que conectan Tokio, Kioto, Osaka e Hiroshima—. La reserva no tiene coste extra si se hace al reservar el asiento, pero subir sin haberla hecho conlleva un cargo de 1.000 ¥ a bordo y el revisor puede pedirte que cambies el equipaje de sitio. La norma no aplica a los Shinkansen de JR East (Tōhoku, Jōetsu, Hokuriku) ni a trenes limitados como el Haruka.'}
+    ]
+  },
+  guide: {
+    title: 'Información <em>práctica.</em>',
+    intro: 'Conectividad, presupuesto, etiqueta y calendario de temporadas para preparar el viaje.',
+    blocks: [
       {type:'heading', text:'Conectividad: eSIM o wifi de bolsillo', icon:'book'},
       {type:'cards', title:'Qué te compensa más', items:[
         {icon:'book', title:'eSIM', text:'Desde unos 600 ¥ para pocos GB hasta 2.000-2.800 ¥ para dos semanas de datos: la opción más barata si viajas solo o en pareja y tu móvil admite eSIM.'},
